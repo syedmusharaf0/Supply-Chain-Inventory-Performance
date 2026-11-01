@@ -1,107 +1,96 @@
-# Supply Chain & Inventory Performance Dashboard
+# Supply Chain & Inventory Performance
 
-**End-to-end inventory analytics project — SQL · Python (Pandas, SQLAlchemy) · Power BI**
+**SQL · Python (Pandas) · Power BI** — an end-to-end inventory analytics project for a
+multi-warehouse Indian distribution network (Mumbai, Delhi, Bengaluru), analysing
+13,032 daily stock records and 878 purchase orders across 24 SKUs.
+All monetary values are in **Indian Rupees (₹)**.
 
-An executive KPI dashboard and analysis pipeline for inventory, warehouse and
-fulfilment performance across three regional hubs, built around the four KPIs
-operations managers actually ask for: **Stock Turnover Ratio, Carrying Costs,
-Lead Time Variance and Stock-out Rates** — plus the bottleneck and overstock
-analysis needed to act on them.
+> 📊 **Full dashboard:** open [`dashboard/dashboard.html`](dashboard/dashboard.html)
+> in any browser — a complete, self-contained executive dashboard (KPI cards, charts,
+> warehouse & bottleneck tables). A Power BI version is specced in
+> [`dashboard/dashboard_guide.md`](dashboard/dashboard_guide.md) with measures in
+> [`dashboard/dax_measures.dax`](dashboard/dax_measures.dax).
 
-> **Portfolio note:** this project recreates, on a synthetic sample dataset,
-> the supply chain analytics work I delivered at **Cyepro Solutions**
-> (Data Analyst, Jul 2023 – Jan 2026): a PostgreSQL pipeline for
-> inventory/warehouse/fulfilment metrics, automated Python ETL for daily stock
-> records, and an executive Power BI dashboard. The sample data is generated
-> (`python/generate_sample_data.py`, seed 42) — no real company data is used.
+## Business questions
+- Which warehouses and SKUs lose the most sales to stock-outs?
+- Where is capital locked up in slow-moving, overstocked inventory?
+- Which suppliers miss their promised lead times, and by how much?
+- What is the real cost of holding inventory (carrying cost)?
 
-## Business problem
-Stock-outs lose sales silently, while overstocking ties up cash in carrying
-costs. Without a single KPI view, neither problem is visible until month-end.
-This project builds the daily pipeline and KPI layer that makes both visible
-early — by SKU, by warehouse and by supplier.
+## Key results (Jan – Jun 2025, sample data)
 
-## Dataset (sample)
-- **24 SKUs** in 5 categories (Electronics, FMCG, Apparel, Home Appliances, Auto Parts)
-- **3 warehouses:** Riyadh Central, Jeddah Hub, Dammam Hub
-- **13,032 daily stock records**, 1 Jan – 30 Jun 2025 (181 days)
-- **1,079 purchase orders** with standard vs actual lead times
-- Schema and column definitions: [`data/data_dictionary.md`](data/data_dictionary.md)
-
-## Key results (Jan – Jun 2025)
-Money values are shown in Saudi Riyal (SAR) with Indian Rupee (INR)
-equivalents at **1 SAR = ₹22.30** (approximate rate, for reporting only).
-
-| KPI | SAR | INR |
-|---|---|---|
-| Units sold | 243,335 units | — |
-| Units lost to stock-outs | 2,712 units | — |
-| Overall stock-out rate | 2.0% of SKU-days | — |
-| Stock turnover ratio (period) | 18.1 | — |
-| Average inventory value | SAR 1,689,742 | ₹37,681,254 |
-| Carrying cost (period, 20% p.a. assumption) | SAR 167,585 | ₹3,737,154 |
-| Orders arriving after standard lead time | 38.4% (average variance ≈ 0 days) | — |
+| KPI | Value |
+|---|---|
+| Units sold | 179,854 |
+| Units lost to stock-outs | 10,036 |
+| Overall stock-out rate | 5.29% |
+| Stock turnover (period) | 29.15× |
+| Average inventory value | ₹6,19,40,018 |
+| Carrying cost (20% p.a.) | ₹61,43,092 |
+| Purchase orders late | 39.0% |
+| Mean lead-time variance | +1.05 days |
 
 ## Insights
-1. **Riyadh Central is stocked too lean.** It sells the most (94,118 units) but
-   holds the least average inventory value (SAR 502,619) and has a **3.94%
-   stock-out rate — 1,648 lost units, 61% of all lost sales.** Reorder points
-   for Riyadh need raising.
-2. **Dammam Hub is overstocked.** It holds the most inventory value
-   (SAR 621,396) with the fewest sales and a 0.28% stock-out rate — capital is
-   sitting there that Riyadh needs. Inter-warehouse transfers beat new orders.
-3. **Long-lead-time slow movers stock out most.** Winter Jacket NorthPeak
-   (14-day lead time) has the worst stock-out rate at **5.16%** of days,
-   followed by Ceramic Dinner Set (4.24%) and Vacuum Cleaner Cyclone (4.05%) —
-   these SKUs need higher safety stock, not bigger orders.
-4. **Suppliers are "on time on average" but unreliable.** Mean lead time
-   variance is ≈ 0 days for every supplier, yet **38.4% of orders arrive
-   late** — averages hide the problem; the % late metric exposes it.
-5. **Biggest lost-sales value:** Air Fryer 5L (SAR 63,960 ≈ ₹1,426,308),
-   Winter Jacket NorthPeak (SAR 56,160 ≈ ₹1,252,368) and Car Battery 70Ah
-   (SAR 49,140 ≈ ₹1,095,822).
+- **Mumbai Central is the bottleneck:** leanest stock, highest demand — a
+  9.51% stock-out rate and
+  7,398 lost units
+  (74% of all lost units network-wide).
+- **Bengaluru Hub is overstocked:** the highest average inventory
+  (₹2,32,59,286) with the lowest turnover
+  (21.19×) and only a 1.09%
+  stock-out rate — capital is sitting in slow stock.
+- **Supplier reliability:** NutriCore India shows the worst average lead-time
+  variance (+1.55 days, 53.6% of orders late).
 
-![Stock-out rate by month](images/monthly_stockout_trend.svg)
-![Lead time variance by supplier](images/lead_time_variance_by_supplier.svg)
-![Bottleneck SKUs](images/top_bottleneck_skus.svg)
-![Turnover by category](images/turnover_by_category.svg)
+## Top bottleneck SKUs (lost sales value)
+
+| Product | Warehouse | Stock-out rate | Lost units | Lost value |
+|---|---|---|---|---|
+| Water Purifier 8L | Mumbai Central | 12.76% | 679 | ₹1,09,04,740 |
+| Smart Watch Series 5 | Mumbai Central | 4.99% | 222 | ₹71,79,480 |
+| LED Desk Lamp | Mumbai Central | 9.57% | 411 | ₹71,47,290 |
+| Memory Foam Pillow | Mumbai Central | 16.81% | 786 | ₹68,38,200 |
+| Dumbbell Set 10kg | Mumbai Central | 15.94% | 513 | ₹40,62,960 |
+
+## Charts
+![Stock Turnover by Category](images/turnover_by_category.svg)
+![Lead Time Variance by Supplier](images/lead_time_variance_by_supplier.svg)
+![Top Bottleneck SKUs](images/top_bottleneck_skus.svg)
+![Monthly Stock-Out Trend](images/monthly_stockout_trend.svg)
 
 ## Repository structure
 ```
-supply-chain-inventory-performance/
-├── README.md
-├── data/            sample dataset (CSV) + data dictionary
-├── sql/             PostgreSQL schema + 8 KPI queries (incl. LAG() trend)
-├── python/          data generator, ETL pipeline, KPI analysis
-├── dashboard/       Power BI dashboard build guide + DAX measures
-├── images/          KPI charts produced by the analysis
-└── outputs/         KPI result tables (CSV) produced by the analysis
+data/        dim_products, fact_daily_stock, fact_purchase_orders (CSV) + data dictionary
+sql/         01_schema_postgresql.sql, 02_kpi_queries.sql (8 KPI queries)
+python/      generate_sample_data.py, etl_pipeline.py, kpi_analysis.py
+dashboard/   dashboard.html (interactive dashboard), build_dashboard.py,
+             dashboard_guide.md (Power BI layout), dax_measures.dax
+outputs/     KPI result tables (CSV)
+images/      Charts (SVG)
 ```
 
 ## How to run
 ```bash
 pip install -r requirements.txt
-
-python python/generate_sample_data.py   # (re)create the sample dataset
-python python/etl_pipeline.py           # clean, validate, load to database
-python python/kpi_analysis.py           # KPI tables in outputs/, charts in images/
+python python/generate_sample_data.py   # creates the sample dataset (seed 42)
+python python/etl_pipeline.py           # validate -> transform -> load (SQLite demo DB)
+python python/kpi_analysis.py           # KPI tables + charts
+python dashboard/build_dashboard.py     # builds dashboard/dashboard.html
 ```
-The ETL loads into PostgreSQL when `DATABASE_URL` is set, and falls back to a
-local SQLite file (`database/supply_chain.db`) so the project runs anywhere.
-For Power BI, follow [`dashboard/dashboard_guide.md`](dashboard/dashboard_guide.md)
-and paste the measures from [`dashboard/dax_measures.dax`](dashboard/dax_measures.dax).
+For production, the same schema and queries run on PostgreSQL
+(`sql/01_schema_postgresql.sql`); the ETL loads to SQLite locally so the full
+pipeline runs anywhere with zero setup.
 
-## SQL highlights
-`sql/02_kpi_queries.sql` contains the dashboard's KPI definitions in pure SQL:
-stock turnover by SKU, carrying cost by warehouse, stock-out rate, lead time
-variance by supplier, bottleneck SKUs, overstocked SKUs, and a monthly
-stock-out trend using the `LAG()` window function for month-over-month change.
+## Tools & skills demonstrated
+PostgreSQL (joins, aggregation, `LAG()` window function) · Python (Pandas,
+SQLAlchemy, Matplotlib) · Power BI & DAX · KPI design (Stock Turnover,
+Stock-Out Rate, Carrying Cost, Lead Time Variance) · Data validation & ETL design
 
-## Tools
-PostgreSQL · SQL (window functions) · Python · Pandas · SQLAlchemy ·
-Power BI · DAX · Excel
+## Note on data
+The dataset is **synthetic sample data** generated by
+`python/generate_sample_data.py`, modelled on the structure of a real supply
+chain & inventory dashboard project (daily stock movements, purchase orders,
+reorder points, supplier lead times). It contains no real company data.
 
 ---
-**Syed Musharaf** — Data Analyst, Riyadh, Saudi Arabia
-LinkedIn: https://www.linkedin.com/in/syed-musharaf-5250372a6 ·
-Portfolio: https://syedmusharaf.github.io
+**Author:** Syed Musharaf — Data Analyst · [GitHub](https://github.com/syedmusharaf0)

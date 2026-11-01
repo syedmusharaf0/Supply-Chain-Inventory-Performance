@@ -1,165 +1,112 @@
+"""KPI analysis: compute supply chain KPIs with Pandas and export results + charts.
+
+Mirrors sql/02_kpi_queries.sql so the same KPIs can be produced from either
+SQL or Python. All monetary values are in Indian Rupees (INR).
+Outputs -> outputs/ (CSV) and images/ (SVG charts).
 """
-KPI analysis - Supply Chain & Inventory Performance
-
-Reads the loaded database (see etl_pipeline.py) and computes the executive
-KPIs used in the Power BI dashboard:
-  * Stock Turnover Ratio          * Carrying Cost (20% p.a. assumption)
-  * Lead Time Variance            * Stock-out Rate
-  * Bottleneck SKUs (lost sales)  * Overstocked SKUs (low turnover)
-
-Exports: outputs/*.csv  and chart images in images/*.png
-Run:  python python/kpi_analysis.py   (after etl_pipeline.py)
-"""
-from pathlib import Path
-
+import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import pandas as pd
-from sqlalchemy import create_engine
+from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
-OUT = BASE / "outputs"
-IMG = BASE / "images"
-CARRYING_RATE = 0.20  # 20% of average inventory value per year
-SAR_TO_INR = 22.30    # approximate reporting conversion, 1 SAR = 22.30 INR
+OUT, IMG = BASE / "outputs", BASE / "images"
+OUT.mkdir(exist_ok=True); IMG.mkdir(exist_ok=True)
+CARRYING_RATE, DAYS = 0.20, 181  # 20% p.a. carrying-cost assumption, Jan-Jun period
 
-plt.rcParams.update({"font.size": 10, "axes.edgecolor": "#666666",
-                     "axes.labelcolor": "#222222", "figure.dpi": 150})
+dim = pd.read_csv(BASE / "data/dim_products.csv")
+stock = pd.read_csv(BASE / "data/fact_daily_stock.csv", parse_dates=["date"])
+po = pd.read_csv(BASE / "data/fact_purchase_orders.csv", parse_dates=["order_date", "delivery_date"])
+cost = dim.set_index("sku")["unit_cost_inr"]
+stock["value"] = stock["closing_stock"] * stock["sku"].map(cost)
 
+def turnover_and_stockout(df: pd.DataFrame) -> dict:
+    sold_value = (df["units_sold"] * df["sku"].map(cost)).sum()
+    avg_inv_value = df.groupby("date")["value"].sum().mean()
+    demand = df["units_sold"].sum() + df["lost_sales_units"].sum()
+    return dict(units_sold=int(df["units_sold"].sum()), lost_units=int(df["lost_sales_units"].sum()),
+                stockout_rate_pct=round(100 * df["lost_sales_units"].sum() / demand, 2),
+                avg_inventory_value_inr=round(avg_inv_value),
+                turnover_period=round(sold_value / avg_inv_value, 2),
+                carrying_cost_inr=round(avg_inv_value * CARRYING_RATE * DAYS / 365))
 
-def main():
-    engine = create_engine(f"sqlite:///{BASE / 'database' / 'supply_chain.db'}")
-    stock = pd.read_sql("SELECT * FROM fact_daily_stock", engine, parse_dates=["date"])
-    products = pd.read_sql("SELECT * FROM dim_products", engine)
-    orders = pd.read_sql("SELECT * FROM fact_purchase_orders", engine)
-    df = stock.merge(products, on="sku", how="left")
-    days = (df["date"].max() - df["date"].min()).days + 1
+summary = turnover_and_stockout(stock)
+summary["orders_total"] = len(po)
+summary["orders_late_pct"] = round(100 * (po["actual_lead_time_days"] > po["promised_lead_time_days"]).mean(), 1)
+summary["mean_lead_time_variance_days"] = round(
+    (po["actual_lead_time_days"] - po["promised_lead_time_days"]).mean(), 2)
+pd.DataFrame([summary]).to_csv(OUT / "kpi_summary.csv", index=False)
 
-    # Average inventory VALUE per SKU = sum over warehouses of each
-    # location's mean closing-stock value (unit cost is constant per SKU).
-    inv_by_sku_wh = (df.assign(inv_value=df["closing_stock"] * df["unit_cost_sar"])
-                       .groupby(["sku", "warehouse"])["inv_value"].mean())
-    avg_inv_by_sku = inv_by_sku_wh.groupby("sku").sum()
-    avg_inv_by_wh = inv_by_sku_wh.groupby("warehouse").sum()
+wh = stock.groupby("warehouse_id").apply(lambda d: pd.Series(turnover_and_stockout(d)))
+wh.to_csv(OUT / "kpi_by_warehouse.csv")
 
-    # ---- KPI by SKU ------------------------------------------------------
-    by_sku = df.groupby(["sku", "product_name", "category", "supplier"]).agg(
-        units_sold=("units_sold", "sum"),
-        stockout_days=("stockout_day", "sum"),
-        total_days=("stockout_day", "size"),
-        units_lost_sales=("units_lost_sales", "sum"),
-    ).reset_index()
-    cost = products.set_index("sku")["unit_cost_sar"]
-    by_sku["cogs_sar"] = by_sku["units_sold"] * by_sku["sku"].map(cost)
-    by_sku["avg_inventory_value_sar"] = by_sku["sku"].map(avg_inv_by_sku).round(2)
-    by_sku["stock_turnover_ratio"] = (by_sku["cogs_sar"]
-                                      / by_sku["avg_inventory_value_sar"]).round(2)
-    by_sku["stockout_rate_pct"] = (100 * by_sku["stockout_days"]
-                                   / by_sku["total_days"]).round(2)
-    by_sku["est_lost_sales_value_sar"] = (by_sku["units_lost_sales"]
-                                          * by_sku["sku"].map(cost)).round(2)
-    by_sku["avg_inventory_value_inr"] = (by_sku["avg_inventory_value_sar"] * SAR_TO_INR).round(2)
-    by_sku["est_lost_sales_value_inr"] = (by_sku["est_lost_sales_value_sar"] * SAR_TO_INR).round(2)
-    by_sku = by_sku.drop(columns=["cogs_sar_x"], errors="ignore")
+sku = (stock.groupby(["sku", "warehouse_id"])
+       .agg(units_sold=("units_sold", "sum"), lost_units=("lost_sales_units", "sum"))
+       .reset_index())
+sku["demand"] = sku["units_sold"] + sku["lost_units"]
+sku["stockout_rate_pct"] = (100 * sku["lost_units"] / sku["demand"]).round(2)
+sku["lost_sales_value_inr"] = (sku["lost_units"] * sku["sku"].map(cost)).round(0)
+sku = sku.merge(dim[["sku", "product_name", "category"]], on="sku")
+sku.sort_values("lost_sales_value_inr", ascending=False).to_csv(OUT / "kpi_by_sku.csv", index=False)
 
-    # ---- KPI by warehouse -------------------------------------------------
-    by_wh = df.groupby("warehouse").agg(
-        units_sold=("units_sold", "sum"),
-        units_lost_sales=("units_lost_sales", "sum"),
-        stockout_days=("stockout_day", "sum"),
-        total_days=("stockout_day", "size"),
-    ).reset_index()
-    by_wh = by_wh.set_index("warehouse")
-    by_wh["avg_inventory_value_sar"] = avg_inv_by_wh.round(2)
-    by_wh = by_wh.reset_index()
-    by_wh["stockout_rate_pct"] = (100 * by_wh["stockout_days"] / by_wh["total_days"]).round(2)
-    by_wh["carrying_cost_sar"] = (by_wh["avg_inventory_value_sar"]
-                                  * CARRYING_RATE * days / 365).round(2)
-    by_wh["avg_inventory_value_inr"] = (by_wh["avg_inventory_value_sar"] * SAR_TO_INR).round(2)
-    by_wh["carrying_cost_inr"] = (by_wh["carrying_cost_sar"] * SAR_TO_INR).round(2)
+po["variance"] = po["actual_lead_time_days"] - po["promised_lead_time_days"]
+lt = (po.assign(supplier=po["sku"].map(dim.set_index("sku")["supplier"]))
+      .groupby("supplier")
+      .agg(orders=("po_number", "count"), avg_variance_days=("variance", "mean"),
+           late_pct=("variance", lambda s: round(100 * (s > 0).mean(), 1)))
+      .round(2).reset_index())
+lt.to_csv(OUT / "kpi_by_supplier_leadtime.csv", index=False)
 
-    # ---- Lead time variance by supplier -----------------------------------
-    orders["variance_days"] = orders["actual_lead_time_days"] - orders["standard_lead_time_days"]
-    by_supplier = orders.groupby("supplier").agg(
-        orders=("order_id", "count"),
-        avg_standard_lead_days=("standard_lead_time_days", "mean"),
-        avg_actual_lead_days=("actual_lead_time_days", "mean"),
-        lead_time_variance_days=("variance_days", "mean"),
-    ).reset_index()
-    late = orders.assign(late=orders["actual_lead_time_days"] > orders["standard_lead_time_days"])
-    by_supplier["pct_orders_late"] = (100 * late.groupby("supplier")["late"].mean()).values
-    by_supplier = by_supplier.round(2).sort_values("lead_time_variance_days", ascending=False)
+monthly = (stock.set_index("date").groupby(pd.Grouper(freq="M"))
+           .agg(units_sold=("units_sold", "sum"), lost_units=("lost_sales_units", "sum")))
+monthly["stockout_rate_pct"] = (100 * monthly["lost_units"] /
+                                (monthly["units_sold"] + monthly["lost_units"])).round(2)
+monthly.to_csv(OUT / "monthly_trend.csv")
 
-    # ---- Monthly trend ------------------------------------------------------
-    monthly = df.set_index("date").groupby(pd.Grouper(freq="M")).agg(
-        stockout_rate_pct=("stockout_day", lambda s: round(100 * s.mean(), 2)),
-        units_lost_sales=("units_lost_sales", "sum"),
-        units_sold=("units_sold", "sum"),
-    ).reset_index()
+# ---------------- Charts (SVG = text, GitHub-friendly) ----------------
+plt.rcParams.update({"font.size": 10, "axes.edgecolor": "#cccccc"})
+cat = dim.merge(stock.groupby("sku")["units_sold"].sum().rename("sold"), on="sku")
+cat["sold_value"] = cat["sold"] * cat["unit_cost_inr"]
+inv_cat = stock.merge(dim[["sku", "category"]], on="sku")
+inv_cat = inv_cat.groupby(["date", "category"])["value"].sum().groupby("category").mean()
+tc = (cat.groupby("category")["sold_value"].sum() / inv_cat).sort_values()
+fig, ax = plt.subplots(figsize=(7, 4)); tc.plot.barh(ax=ax, color="#1f6f8b")
+ax.set_xlabel("Stock turnover (period)"); ax.set_title("Stock Turnover by Category")
+fig.tight_layout(); fig.savefig(IMG / "turnover_by_category.svg", format="svg"); plt.close(fig)
 
-    # ---- Headline summary ---------------------------------------------------
-    summary = pd.DataFrame([{
-        "period_days": days,
-        "total_units_sold": int(df["units_sold"].sum()),
-        "total_units_lost_sales": int(df["units_lost_sales"].sum()),
-        "overall_stockout_rate_pct": round(100 * df["stockout_day"].mean(), 2),
-        "overall_turnover_ratio_period": round(
-            (df["units_sold"] * df["unit_cost_sar"]).sum()
-            / df.groupby(["sku", "warehouse"]).apply(
-                lambda g: (g["closing_stock"] * g["unit_cost_sar"]).mean()).sum(), 2),
-        "total_avg_inventory_value_sar": round(float(by_wh["avg_inventory_value_sar"].sum()), 2),
-        "total_carrying_cost_sar": round(float(by_wh["carrying_cost_sar"].sum()), 2),
-        "total_carrying_cost_inr": round(float(by_wh["carrying_cost_inr"].sum()), 2),
-        "sar_to_inr_rate": SAR_TO_INR,
-        "avg_lead_time_variance_days": round(float(orders["variance_days"].mean()), 2),
-        "pct_orders_late": round(100 * float(
-            (orders["actual_lead_time_days"] > orders["standard_lead_time_days"]).mean()), 2),
-    }])
+fig, ax = plt.subplots(figsize=(7, 4))
+lt.sort_values("avg_variance_days").plot.barh(x="supplier", y="avg_variance_days", ax=ax,
+                                              color="#c0392b", legend=False)
+ax.set_xlabel("Average lead time variance (days)"); ax.set_title("Lead Time Variance by Supplier")
+fig.tight_layout(); fig.savefig(IMG / "lead_time_variance_by_supplier.svg", format="svg"); plt.close(fig)
 
-    OUT.mkdir(exist_ok=True)
-    IMG.mkdir(exist_ok=True)
-    by_sku.sort_values("stock_turnover_ratio", ascending=False).to_csv(OUT / "kpi_by_sku.csv", index=False)
-    by_wh.to_csv(OUT / "kpi_by_warehouse.csv", index=False)
-    by_supplier.to_csv(OUT / "kpi_by_supplier_leadtime.csv", index=False)
-    monthly.to_csv(OUT / "monthly_trend.csv", index=False)
-    summary.to_csv(OUT / "kpi_summary.csv", index=False)
+top = sku.nlargest(8, "lost_sales_value_inr").iloc[::-1]
+fig, ax = plt.subplots(figsize=(7, 4.5))
+ax.barh(top["product_name"] + " (" + top["warehouse_id"] + ")", top["lost_sales_value_inr"] / 1000,
+        color="#e67e22")
+ax.set_xlabel("Lost sales value (₹ thousands)"); ax.set_title("Top Bottleneck SKUs by Lost Sales Value")
+fig.tight_layout(); fig.savefig(IMG / "top_bottleneck_skus.svg", format="svg"); plt.close(fig)
 
-    # ---- Charts ---------------------------------------------------------------
-    fig, ax = plt.subplots(figsize=(7, 3.4))
-    ax.plot(monthly["date"], monthly["stockout_rate_pct"], marker="o", color="#14406B")
-    ax.set_title("Stock-out rate by month (%)")
-    ax.set_ylabel("% of days with stock-outs")
-    fig.tight_layout(); fig.savefig(IMG / "monthly_stockout_trend.svg"); plt.close(fig)
+fig, ax = plt.subplots(figsize=(7, 4))
+ax.plot(monthly.index.strftime("%b"), monthly["stockout_rate_pct"], marker="o", color="#1f6f8b")
+ax.set_ylabel("Stock-out rate (%)"); ax.set_title("Monthly Stock-Out Rate Trend")
+fig.tight_layout(); fig.savefig(IMG / "monthly_stockout_trend.svg", format="svg"); plt.close(fig)
 
-    cat = by_sku.groupby("category")["stock_turnover_ratio"].mean().sort_values()
-    fig, ax = plt.subplots(figsize=(7, 3.4))
-    ax.barh(cat.index, cat.values, color="#2E7D6B")
-    ax.set_title("Average stock turnover ratio by category (period)")
-    ax.set_xlabel("Turnover ratio")
-    fig.tight_layout(); fig.savefig(IMG / "turnover_by_category.svg"); plt.close(fig)
+def inr(n):  # Indian digit grouping: 3,76,81,254
+    s = str(int(round(n))); 
+    if len(s) <= 3: return "₹" + s
+    head, tail = s[:-3], s[-3:]
+    parts = []
+    while len(head) > 2: parts.insert(0, head[-2:]); head = head[:-2]
+    if head: parts.insert(0, head)
+    return "₹" + ",".join(parts + [tail])
 
-    fig, ax = plt.subplots(figsize=(7, 3.4))
-    ax.bar(by_supplier["supplier"], by_supplier["lead_time_variance_days"], color="#C05621")
-    ax.axhline(0, color="#666666", linewidth=0.8)
-    ax.set_title("Lead time variance by supplier (actual - standard, days)")
-    ax.set_ylabel("Days")
-    plt.setp(ax.get_xticklabels(), rotation=12, ha="right")
-    fig.tight_layout(); fig.savefig(IMG / "lead_time_variance_by_supplier.svg"); plt.close(fig)
-
-    top = by_sku.nlargest(8, "units_lost_sales").sort_values("units_lost_sales")
-    fig, ax = plt.subplots(figsize=(7, 3.6))
-    ax.barh(top["sku"] + " - " + top["product_name"], top["units_lost_sales"], color="#9B2C2C")
-    ax.set_title("Bottleneck SKUs - units lost to stock-outs")
-    ax.set_xlabel("Units lost")
-    fig.tight_layout(); fig.savefig(IMG / "top_bottleneck_skus.svg"); plt.close(fig)
-
-    print(summary.to_string(index=False))
-    print("\nTop bottleneck SKUs:")
-    print(by_sku.nlargest(5, "units_lost_sales")[
-        ["sku", "product_name", "stockout_rate_pct", "units_lost_sales"]].to_string(index=False))
-    print("\nOutputs written to outputs/ and images/")
-
-
-if __name__ == "__main__":
-    main()
+print("SUMMARY:", {k: summary[k] for k in ("units_sold", "lost_units", "stockout_rate_pct",
+                                           "turnover_period", "orders_late_pct")})
+print(f"Avg inventory value: {inr(summary['avg_inventory_value_inr'])} | "
+      f"Carrying cost: {inr(summary['carrying_cost_inr'])}")
+print("\nBY WAREHOUSE:\n", wh.to_string())
+print("\nTOP BOTTLENECKS:\n", sku.nlargest(5, "lost_sales_value_inr")[
+    ["product_name", "warehouse_id", "stockout_rate_pct", "lost_units", "lost_sales_value_inr"]].to_string(index=False))
+print("\nSUPPLIER LEAD TIME:\n", lt.to_string(index=False))

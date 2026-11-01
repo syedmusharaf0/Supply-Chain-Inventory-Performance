@@ -1,25 +1,73 @@
-sku,product_name,category,supplier,units_sold,stockout_days,total_days,units_lost_sales,cogs_sar,avg_inventory_value_sar,stock_turnover_ratio,stockout_rate_pct,est_lost_sales_value_sar,avg_inventory_value_inr,est_lost_sales_value_inr
-SKU-007,Olive Oil 500ml,FMCG,National Distribution Co.,16776,6,543,133,469728,23252.99,20.2,1.1,3724,518541.68,83045.2
-SKU-011,Men's Cotton T-Shirt,Apparel,Arabian Supply Ltd.,7285,14,543,151,546375,27887.15,19.59,2.58,11325,621883.45,252547.5
-SKU-019,Car Battery 70Ah,Auto Parts,National Distribution Co.,6646,12,543,117,2791320,144489.28,19.32,2.21,49140,3222110.94,1095822.0
-SKU-009,Laundry Detergent 3kg,FMCG,Arabian Supply Ltd.,10023,9,543,171,541242,28341.05,19.1,1.66,9234,632005.42,205918.2
-SKU-024,Dates Premium 1kg,FMCG,Desert Logistics Supplies,9976,8,543,95,598560,31822.21,18.81,1.47,5700,709635.28,127110.0
-SKU-012,Running Shoes AirFlex,Apparel,Gulf Trading Co.,7694,11,543,142,2615960,140031.16,18.68,2.03,48280,3122694.87,1076644.0
-SKU-023,Smartphone Case Armor,Electronics,Arabian Supply Ltd.,21359,7,543,210,1174745,63033.95,18.64,1.29,11550,1405657.08,257565.0
-SKU-005,LED Desk Lamp,Electronics,Desert Logistics Supplies,1685,15,543,44,219050,11787.62,18.58,2.76,5720,262863.93,127556.0
-SKU-015,Air Fryer 5L Digital,Home Appliances,Gulf Trading Co.,4404,15,543,164,1717560,92671.33,18.53,2.76,63960,2066570.66,1426308.0
-SKU-021,Engine Oil Filter,Auto Parts,Arabian Supply Ltd.,28388,5,543,176,1135520,61411.93,18.49,0.92,7040,1369486.04,156992.0
-SKU-020,Brake Pads Set - Sedan,Auto Parts,National Distribution Co.,4486,2,543,9,807480,43862.32,18.41,0.37,1620,978129.74,36126.0
-SKU-003,USB-C Fast Charger 65W,Electronics,Arabian Supply Ltd.,20489,5,543,55,1741565,95126.27,18.31,0.92,4675,2121315.82,104252.5
-SKU-014,Kids School Backpack,Apparel,Arabian Supply Ltd.,7259,6,543,64,871080,47791.16,18.23,1.1,7680,1065742.87,171264.0
-SKU-017,Electric Kettle 1.8L,Home Appliances,Arabian Supply Ltd.,29621,9,543,346,2813995,154759.2,18.18,1.66,32870,3451130.16,733001.0
-SKU-010,Organic Honey 250g,FMCG,Desert Logistics Supplies,2156,26,543,111,146608,8151.36,17.99,4.79,7548,181775.33,168320.4
-SKU-004,Bluetooth Speaker Mini,Electronics,Gulf Trading Co.,6485,8,543,106,1361850,77628.07,17.54,1.47,22260,1731105.96,496398.0
-SKU-008,Basmati Rice 5kg,FMCG,National Distribution Co.,6497,7,543,94,292365,16762.13,17.44,1.29,4230,373795.5,94329.0
-SKU-002,Smart Watch Series 5,Electronics,Gulf Trading Co.,9771,6,543,71,6058020,348779.12,17.37,1.1,44020,7777774.38,981646.0
-SKU-013,Winter Jacket NorthPeak,Apparel,Desert Logistics Supplies,2029,28,543,117,973920,56191.82,17.33,5.16,56160,1253077.59,1252368.0
-SKU-001,Wireless Earbuds X2,Electronics,Gulf Trading Co.,15010,3,543,78,2176450,125672.54,17.32,0.55,11310,2802497.64,252213.0
-SKU-016,Vacuum Cleaner Cyclone,Home Appliances,Gulf Trading Co.,1055,22,543,47,569700,33071.27,17.23,4.05,25380,737489.32,565974.0
-SKU-006,Instant Coffee 200g,FMCG,National Distribution Co.,23233,5,543,168,743456,43375.38,17.14,0.92,5376,967270.97,119884.8
-SKU-022,LED Headlight Bulbs Pair,Auto Parts,Gulf Trading Co.,532,8,543,11,79800,5018.78,15.9,1.47,1650,111918.79,36795.0
-SKU-018,Ceramic Dinner Set 16pc,Home Appliances,Desert Logistics Supplies,476,23,543,32,123760,8824.2,14.03,4.24,8320,196779.66,185536.0
+sku,warehouse_id,units_sold,lost_units,demand,stockout_rate_pct,lost_sales_value_inr,product_name,category
+SKU-024,WH-MUM,4644,679,5323,12.76,10904740,Water Purifier 8L,Home & Living
+SKU-002,WH-MUM,4226,222,4448,4.99,7179480,Smart Watch Series 5,Electronics
+SKU-015,WH-MUM,3883,411,4294,9.57,7147290,LED Desk Lamp,Home & Living
+SKU-016,WH-MUM,3889,786,4675,16.81,6838200,Memory Foam Pillow,Home & Living
+SKU-021,WH-MUM,2705,513,3218,15.94,4062960,Dumbbell Set 10kg,Sports
+SKU-017,WH-MUM,2620,593,3213,18.46,3635090,Car Vacuum Cleaner,Automotive
+SKU-016,WH-DEL,3229,374,3603,10.38,3253800,Memory Foam Pillow,Home & Living
+SKU-022,WH-MUM,1977,275,2252,12.21,3036000,Cricket Bat English Willow,Sports
+SKU-013,WH-MUM,4014,303,4317,7.02,2839110,Vitamin D3 Supplements,FMCG
+SKU-005,WH-MUM,2546,229,2775,8.25,2757160,Laptop Stand Aluminium,Electronics
+SKU-006,WH-MUM,4186,916,5102,17.95,2555640,Cotton T-Shirt,Apparel
+SKU-024,WH-DEL,4136,153,4289,3.57,2457180,Water Purifier 8L,Home & Living
+SKU-015,WH-DEL,3416,140,3556,3.94,2434600,LED Desk Lamp,Home & Living
+SKU-003,WH-MUM,3515,339,3854,8.8,2420460,Bluetooth Speaker,Electronics
+SKU-014,WH-MUM,3828,694,4522,15.35,2324900,Ceramic Dinner Set 12pc,Home & Living
+SKU-004,WH-MUM,2294,434,2728,15.91,2031120,USB-C Fast Charger,Electronics
+SKU-002,WH-DEL,3642,58,3700,1.57,1875720,Smart Watch Series 5,Electronics
+SKU-011,WH-MUM,3075,63,3138,2.01,1615950,Cold-Pressed Olive Oil 1L,FMCG
+SKU-024,WH-BLR,3472,100,3572,2.8,1606000,Water Purifier 8L,Home & Living
+SKU-019,WH-MUM,4648,329,4977,6.61,1319290,Tyre Inflator Portable,Automotive
+SKU-012,WH-MUM,5415,229,5644,4.06,1225150,Protein Powder 1kg,FMCG
+SKU-003,WH-DEL,2851,158,3009,5.25,1128120,Bluetooth Speaker,Electronics
+SKU-016,WH-BLR,2670,122,2792,4.37,1061400,Memory Foam Pillow,Home & Living
+SKU-014,WH-DEL,3339,266,3605,7.38,891100,Ceramic Dinner Set 12pc,Home & Living
+SKU-006,WH-DEL,3621,299,3920,7.63,834210,Cotton T-Shirt,Apparel
+SKU-004,WH-DEL,2008,173,2181,7.93,809640,USB-C Fast Charger,Electronics
+SKU-022,WH-DEL,1786,72,1858,3.88,794880,Cricket Bat English Willow,Sports
+SKU-017,WH-DEL,2417,128,2545,5.03,784640,Car Vacuum Cleaner,Automotive
+SKU-021,WH-DEL,2466,96,2562,3.75,760320,Dumbbell Set 10kg,Sports
+SKU-020,WH-MUM,2556,114,2670,4.27,584820,Yoga Mat Pro 6mm,Sports
+SKU-011,WH-DEL,2428,21,2449,0.86,538650,Cold-Pressed Olive Oil 1L,FMCG
+SKU-008,WH-MUM,3833,225,4058,5.54,477000,Running Shoes,Apparel
+SKU-021,WH-BLR,1975,52,2027,2.57,411840,Dumbbell Set 10kg,Sports
+SKU-006,WH-BLR,3035,144,3179,4.53,401760,Cotton T-Shirt,Apparel
+SKU-005,WH-DEL,2038,30,2068,1.45,361200,Laptop Stand Aluminium,Electronics
+SKU-005,WH-BLR,1650,26,1676,1.55,313040,Laptop Stand Aluminium,Electronics
+SKU-008,WH-DEL,3197,97,3294,2.94,205640,Running Shoes,Apparel
+SKU-022,WH-BLR,1467,16,1483,1.08,176640,Cricket Bat English Willow,Sports
+SKU-014,WH-BLR,2877,38,2915,1.3,127300,Ceramic Dinner Set 12pc,Home & Living
+SKU-018,WH-MUM,1110,8,1118,0.72,108800,Car Battery 12V 70Ah,Automotive
+SKU-015,WH-BLR,2665,6,2671,0.22,104340,LED Desk Lamp,Home & Living
+SKU-020,WH-DEL,2264,19,2283,0.83,97470,Yoga Mat Pro 6mm,Sports
+SKU-004,WH-BLR,1760,18,1778,1.01,84240,USB-C Fast Charger,Electronics
+SKU-013,WH-BLR,2794,8,2802,0.29,74960,Vitamin D3 Supplements,FMCG
+SKU-009,WH-MUM,1338,18,1356,1.33,70200,Winter Jacket NorthPeak,Apparel
+SKU-003,WH-BLR,2375,7,2382,0.29,49980,Bluetooth Speaker,Electronics
+SKU-023,WH-MUM,1308,16,1324,1.21,31360,Air Fryer 5L,Electronics
+SKU-009,WH-BLR,872,8,880,0.91,31200,Winter Jacket NorthPeak,Apparel
+SKU-010,WH-MUM,988,2,990,0.2,30320,Organic Basmati Rice 5kg,FMCG
+SKU-019,WH-DEL,3968,7,3975,0.18,28070,Tyre Inflator Portable,Automotive
+SKU-023,WH-DEL,1090,2,1092,0.18,3920,Air Fryer 5L,Electronics
+SKU-023,WH-BLR,861,0,861,0.0,0,Air Fryer 5L,Electronics
+SKU-001,WH-BLR,599,0,599,0.0,0,Wireless Earbuds Pro,Electronics
+SKU-001,WH-DEL,739,0,739,0.0,0,Wireless Earbuds Pro,Electronics
+SKU-001,WH-MUM,888,0,888,0.0,0,Wireless Earbuds Pro,Electronics
+SKU-002,WH-BLR,2928,0,2928,0.0,0,Smart Watch Series 5,Electronics
+SKU-007,WH-MUM,884,0,884,0.0,0,Denim Jacket,Apparel
+SKU-007,WH-DEL,717,0,717,0.0,0,Denim Jacket,Apparel
+SKU-007,WH-BLR,641,0,641,0.0,0,Denim Jacket,Apparel
+SKU-011,WH-BLR,2038,0,2038,0.0,0,Cold-Pressed Olive Oil 1L,FMCG
+SKU-010,WH-BLR,592,0,592,0.0,0,Organic Basmati Rice 5kg,FMCG
+SKU-010,WH-DEL,739,0,739,0.0,0,Organic Basmati Rice 5kg,FMCG
+SKU-012,WH-BLR,3704,0,3704,0.0,0,Protein Powder 1kg,FMCG
+SKU-009,WH-DEL,1113,0,1113,0.0,0,Winter Jacket NorthPeak,Apparel
+SKU-012,WH-DEL,4462,0,4462,0.0,0,Protein Powder 1kg,FMCG
+SKU-013,WH-DEL,3467,0,3467,0.0,0,Vitamin D3 Supplements,FMCG
+SKU-019,WH-BLR,3325,0,3325,0.0,0,Tyre Inflator Portable,Automotive
+SKU-018,WH-BLR,737,0,737,0.0,0,Car Battery 12V 70Ah,Automotive
+SKU-008,WH-BLR,2646,0,2646,0.0,0,Running Shoes,Apparel
+SKU-018,WH-DEL,950,0,950,0.0,0,Car Battery 12V 70Ah,Automotive
+SKU-017,WH-BLR,1962,0,1962,0.0,0,Car Vacuum Cleaner,Automotive
+SKU-020,WH-BLR,1756,0,1756,0.0,0,Yoga Mat Pro 6mm,Sports

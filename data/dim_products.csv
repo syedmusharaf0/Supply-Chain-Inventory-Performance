@@ -1,25 +1,25 @@
-sku,product_name,category,unit_cost_sar,unit_cost_inr,supplier,standard_lead_time_days,reorder_point_units,base_daily_demand
-SKU-001,Wireless Earbuds X2,Electronics,145,3233.5,Gulf Trading Co.,7,270,27
-SKU-002,Smart Watch Series 5,Electronics,620,13826.0,Gulf Trading Co.,9,216,18
-SKU-003,USB-C Fast Charger 65W,Electronics,85,1895.5,Arabian Supply Ltd.,5,296,37
-SKU-004,Bluetooth Speaker Mini,Electronics,210,4683.0,Gulf Trading Co.,8,132,12
-SKU-005,LED Desk Lamp,Electronics,130,2899.0,Desert Logistics Supplies,10,39,3
-SKU-006,Instant Coffee 200g,FMCG,32,713.6,National Distribution Co.,4,294,42
-SKU-007,Olive Oil 500ml,FMCG,28,624.4,National Distribution Co.,4,210,30
-SKU-008,Basmati Rice 5kg,FMCG,45,1003.5,National Distribution Co.,6,108,12
-SKU-009,Laundry Detergent 3kg,FMCG,54,1204.2,Arabian Supply Ltd.,5,144,18
-SKU-010,Organic Honey 250g,FMCG,68,1516.4,Desert Logistics Supplies,12,60,4
-SKU-011,Men's Cotton T-Shirt,Apparel,75,1672.5,Arabian Supply Ltd.,8,143,13
-SKU-012,Running Shoes AirFlex,Apparel,340,7582.0,Gulf Trading Co.,11,196,14
-SKU-013,Winter Jacket NorthPeak,Apparel,480,10704.0,Desert Logistics Supplies,14,68,4
-SKU-014,Kids School Backpack,Apparel,120,2676.0,Arabian Supply Ltd.,7,130,13
-SKU-015,Air Fryer 5L Digital,Home Appliances,390,8697.0,Gulf Trading Co.,10,104,8
-SKU-016,Vacuum Cleaner Cyclone,Home Appliances,540,12042.0,Gulf Trading Co.,12,30,2
-SKU-017,Electric Kettle 1.8L,Home Appliances,95,2118.5,Arabian Supply Ltd.,6,486,54
-SKU-018,Ceramic Dinner Set 16pc,Home Appliances,260,5798.0,Desert Logistics Supplies,13,16,1
-SKU-019,Car Battery 70Ah,Auto Parts,420,9366.0,National Distribution Co.,8,132,12
-SKU-020,Brake Pads Set - Sedan,Auto Parts,180,4014.0,National Distribution Co.,7,80,8
-SKU-021,Engine Oil Filter,Auto Parts,40,892.0,Arabian Supply Ltd.,5,408,51
-SKU-022,LED Headlight Bulbs Pair,Auto Parts,150,3345.0,Gulf Trading Co.,9,12,1
-SKU-023,Smartphone Case Armor,Electronics,55,1226.5,Arabian Supply Ltd.,5,312,39
-SKU-024,Dates Premium 1kg,FMCG,60,1338.0,Desert Logistics Supplies,6,162,18
+sku,product_name,category,supplier,unit_cost_inr,reorder_point
+SKU-001,Wireless Earbuds Pro,Electronics,TechNova Supplies,19850,40
+SKU-002,Smart Watch Series 5,Electronics,TechNova Supplies,32340,111
+SKU-003,Bluetooth Speaker,Electronics,TechNova Supplies,7140,78
+SKU-004,USB-C Fast Charger,Electronics,VoltEdge Traders,4680,49
+SKU-005,Laptop Stand Aluminium,Electronics,VoltEdge Traders,12040,59
+SKU-006,Cotton T-Shirt,Apparel,UrbanThread Apparel,2790,81
+SKU-007,Denim Jacket,Apparel,UrbanThread Apparel,5800,40
+SKU-008,Running Shoes,Apparel,UrbanThread Apparel,2120,91
+SKU-009,Winter Jacket NorthPeak,Apparel,NorthPeak Clothing,3900,40
+SKU-010,Organic Basmati Rice 5kg,FMCG,FreshKart Distributors,15160,40
+SKU-011,Cold-Pressed Olive Oil 1L,FMCG,FreshKart Distributors,25650,83
+SKU-012,Protein Powder 1kg,FMCG,NutriCore India,5350,143
+SKU-013,Vitamin D3 Supplements,FMCG,NutriCore India,9370,103
+SKU-014,Ceramic Dinner Set 12pc,Home & Living,HomeNest Living,3350,80
+SKU-015,LED Desk Lamp,Home & Living,HomeNest Living,17390,89
+SKU-016,Memory Foam Pillow,Home & Living,HomeNest Living,8700,72
+SKU-017,Car Vacuum Cleaner,Automotive,AutoGrip Parts,6130,54
+SKU-018,Car Battery 12V 70Ah,Automotive,AutoGrip Parts,13600,40
+SKU-019,Tyre Inflator Portable,Automotive,AutoGrip Parts,4010,118
+SKU-020,Yoga Mat Pro 6mm,Sports,FlexFit Sports,5130,71
+SKU-021,Dumbbell Set 10kg,Sports,FlexFit Sports,7920,60
+SKU-022,Cricket Bat English Willow,Sports,FlexFit Sports,11040,44
+SKU-023,Air Fryer 5L,Electronics,TechNova Supplies,1960,40
+SKU-024,Water Purifier 8L,Home & Living,HomeNest Living,16060,95

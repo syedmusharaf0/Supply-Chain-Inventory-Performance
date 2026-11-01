@@ -1,122 +1,61 @@
-// ============================================================
-// Supply Chain & Inventory Performance - Power BI DAX measures
-// Model: dim_products (dimension) 1 -> * fact_daily_stock
-//        dim_products (dimension) 1 -> * fact_purchase_orders
-// Create a measures table in Power BI and paste each measure.
-// ============================================================
+// Supply Chain & Inventory Performance — Power BI DAX measures
+// Source tables: dim_products, fact_daily_stock, fact_purchase_orders
+// All monetary values in Indian Rupees (INR). Format currency measures as ₹.
 
-Total Units Sold =
-SUM ( fact_daily_stock[units_sold] )
+Total Units Sold = SUM ( fact_daily_stock[units_sold] )
 
-Total Units Lost Sales =
-SUM ( fact_daily_stock[units_lost_sales] )
+Lost Units = SUM ( fact_daily_stock[lost_sales_units] )
 
-Closing Stock Units =
-SUM ( fact_daily_stock[closing_stock] )
+Total Demand = [Total Units Sold] + [Lost Units]
 
-COGS (SAR) =
-SUMX (
-    fact_daily_stock,
-    fact_daily_stock[units_sold] * RELATED ( dim_products[unit_cost_sar] )
-)
+Stock-Out Rate % =
+DIVIDE ( [Lost Units], [Total Demand] ) * 100
 
--- Average inventory value: mean daily closing value per SKU/warehouse,
--- summed (matches the SQL/Python KPI definition)
-Avg Inventory Value (SAR) =
-SUMX (
-    VALUES ( fact_daily_stock[sku] ),
-    SUMX (
-        VALUES ( fact_daily_stock[warehouse] ),
-        AVERAGEX (
-            VALUES ( fact_daily_stock[date] ),
-            CALCULATE (
-                SUM ( fact_daily_stock[closing_stock] )
-                    * MAX ( dim_products[unit_cost_sar] )
-            )
-        )
-    )
-)
-
-Stock Turnover Ratio =
-DIVIDE ( [COGS (SAR)], [Avg Inventory Value (SAR)] )
-
--- Carrying cost: 20% of average inventory value per year,
--- pro-rated for the days in the current filter context
-Carrying Cost (SAR) =
-VAR DaysInPeriod =
-    DATEDIFF ( MIN ( fact_daily_stock[date] ), MAX ( fact_daily_stock[date] ), DAY ) + 1
-RETURN
-    [Avg Inventory Value (SAR)] * 0.20 * DaysInPeriod / 365
-
-Stock-out Days =
-CALCULATE ( COUNTROWS ( fact_daily_stock ), fact_daily_stock[stockout_day] = 1 )
-
-Stock-out Rate % =
-DIVIDE ( [Stock-out Days], COUNTROWS ( fact_daily_stock ) ) * 100
-
-Avg Lead Time Variance (Days) =
-AVERAGE ( fact_purchase_orders[actual_lead_time_days] )
-    - AVERAGE ( fact_purchase_orders[standard_lead_time_days] )
-
-% Orders Late =
-DIVIDE (
-    CALCULATE (
-        COUNTROWS ( fact_purchase_orders ),
-        FILTER (
-            fact_purchase_orders,
-            fact_purchase_orders[actual_lead_time_days]
-                > fact_purchase_orders[standard_lead_time_days]
-        )
-    ),
-    COUNTROWS ( fact_purchase_orders )
-) * 100
-
-Estimated Lost Sales Value (SAR) =
-SUMX (
-    fact_daily_stock,
-    fact_daily_stock[units_lost_sales] * RELATED ( dim_products[unit_cost_sar] )
-)
-
-Days of Cover =
-DIVIDE (
-    AVERAGE ( fact_daily_stock[closing_stock] ),
-    DIVIDE ( [Total Units Sold], COUNTROWS ( fact_daily_stock ) )
-)
-
-// ------------------------------------------------------------
-// Indian Rupee (INR) equivalents - unit_cost_inr in dim_products
-// holds the SAR cost converted at 1 SAR = 22.30 INR (approx.)
-// ------------------------------------------------------------
-
-COGS (INR) =
+Sales Value INR =
 SUMX (
     fact_daily_stock,
     fact_daily_stock[units_sold] * RELATED ( dim_products[unit_cost_inr] )
 )
 
-Avg Inventory Value (INR) =
-SUMX (
-    VALUES ( fact_daily_stock[sku] ),
-    SUMX (
-        VALUES ( fact_daily_stock[warehouse] ),
-        AVERAGEX (
-            VALUES ( fact_daily_stock[date] ),
-            CALCULATE (
-                SUM ( fact_daily_stock[closing_stock] )
-                    * MAX ( dim_products[unit_cost_inr] )
-            )
-        )
-    )
+Average Inventory Value INR =
+AVERAGEX (
+    VALUES ( fact_daily_stock[date] ),
+    CALCULATE ( SUMX ( fact_daily_stock, fact_daily_stock[closing_stock]
+        * RELATED ( dim_products[unit_cost_inr] ) ) )
 )
 
-Carrying Cost (INR) =
-VAR DaysInPeriod =
-    DATEDIFF ( MIN ( fact_daily_stock[date] ), MAX ( fact_daily_stock[date] ), DAY ) + 1
-RETURN
-    [Avg Inventory Value (INR)] * 0.20 * DaysInPeriod / 365
+Stock Turnover Ratio =
+DIVIDE ( [Sales Value INR], [Average Inventory Value INR] )
 
-Estimated Lost Sales Value (INR) =
+Carrying Cost INR =
+[Average Inventory Value INR] * 0.20 * DIVIDE ( 181, 365 )
+
+Lost Sales Value INR =
 SUMX (
     fact_daily_stock,
-    fact_daily_stock[units_lost_sales] * RELATED ( dim_products[unit_cost_inr] )
+    fact_daily_stock[lost_sales_units] * RELATED ( dim_products[unit_cost_inr] )
+)
+
+Orders Late % =
+DIVIDE (
+    COUNTROWS ( FILTER ( fact_purchase_orders,
+        fact_purchase_orders[actual_lead_time_days]
+            > fact_purchase_orders[promised_lead_time_days] ) ),
+    COUNTROWS ( fact_purchase_orders )
+) * 100
+
+Avg Lead Time Variance (days) =
+AVERAGEX (
+    fact_purchase_orders,
+    fact_purchase_orders[actual_lead_time_days]
+        - fact_purchase_orders[promised_lead_time_days]
+)
+
+SKUs Below Reorder Point =
+COUNTROWS (
+    FILTER (
+        SUMMARIZE ( fact_daily_stock, dim_products[sku] ),
+        CALCULATE ( SUM ( fact_daily_stock[closing_stock] ) )
+            < MAX ( dim_products[reorder_point] )
+    )
 )

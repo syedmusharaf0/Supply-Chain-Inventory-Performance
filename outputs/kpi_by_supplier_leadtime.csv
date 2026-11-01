@@ -1,5 +1,10 @@
-supplier,orders,avg_standard_lead_days,avg_actual_lead_days,lead_time_variance_days,pct_orders_late
-National Distribution Co.,216,5.82,5.87,0.05,38.89
-Arabian Supply Ltd.,304,5.94,5.96,0.03,38.16
-Desert Logistics Supplies,236,11.28,11.27,-0.01,39.41
-Gulf Trading Co.,323,9.54,9.46,-0.08,37.46
+supplier,orders,avg_variance_days,late_pct
+AutoGrip Parts,112,0.96,39.3
+FlexFit Sports,115,1.24,36.5
+FreshKart Distributors,73,0.88,34.2
+HomeNest Living,145,0.72,31.7
+NorthPeak Clothing,38,0.95,36.8
+NutriCore India,69,1.55,53.6
+TechNova Supplies,140,0.87,37.9
+UrbanThread Apparel,115,1.29,44.3
+VoltEdge Traders,71,1.31,42.3

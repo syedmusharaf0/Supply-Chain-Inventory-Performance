@@ -1,1080 +1,879 @@
-order_id,order_date,sku,warehouse,supplier,quantity_units,standard_lead_time_days,actual_lead_time_days,arrival_date
-PO-00001,2025-01-07,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,5,2025-01-12
-PO-00002,2025-01-18,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,6,2025-01-24
-PO-00003,2025-01-28,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,9,2025-02-06
-PO-00004,2025-02-09,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,4,2025-02-13
-PO-00005,2025-02-22,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,8,2025-03-02
-PO-00006,2025-03-07,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,7,2025-03-14
-PO-00007,2025-03-21,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,10,2025-03-31
-PO-00008,2025-04-02,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,6,2025-04-08
-PO-00009,2025-04-12,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,4,2025-04-16
-PO-00010,2025-04-23,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,7,2025-04-30
-PO-00011,2025-05-03,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,6,2025-05-09
-PO-00012,2025-05-17,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,7,2025-05-24
-PO-00013,2025-06-01,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,5,2025-06-06
-PO-00014,2025-06-13,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,4,2025-06-17
-PO-00015,2025-06-24,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,9,2025-07-03
-PO-00016,2025-06-25,SKU-001,Riyadh Central,Gulf Trading Co.,378,7,5,2025-06-30
-PO-00017,2025-01-07,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,5,2025-01-12
-PO-00018,2025-01-19,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,8,2025-01-27
-PO-00019,2025-02-01,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,6,2025-02-07
-PO-00020,2025-02-13,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,5,2025-02-18
-PO-00021,2025-03-02,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,5,2025-03-07
-PO-00022,2025-03-18,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,7,2025-03-25
-PO-00023,2025-03-31,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,7,2025-04-07
-PO-00024,2025-04-12,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,7,2025-04-19
-PO-00025,2025-04-24,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,3,2025-04-27
-PO-00026,2025-05-06,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,5,2025-05-11
-PO-00027,2025-05-21,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,3,2025-05-24
-PO-00028,2025-06-05,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,4,2025-06-09
-PO-00029,2025-06-19,SKU-001,Jeddah Hub,Gulf Trading Co.,378,7,7,2025-06-26
-PO-00030,2025-01-04,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,8,2025-01-12
-PO-00031,2025-01-19,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,7,2025-01-26
-PO-00032,2025-02-02,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,8,2025-02-10
-PO-00033,2025-02-19,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,5,2025-02-24
-PO-00034,2025-03-13,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,6,2025-03-19
-PO-00035,2025-03-31,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,5,2025-04-05
-PO-00036,2025-04-15,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,8,2025-04-23
-PO-00037,2025-04-30,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,10,2025-05-10
-PO-00038,2025-05-18,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,7,2025-05-25
-PO-00039,2025-06-07,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,8,2025-06-15
-PO-00040,2025-06-21,SKU-001,Dammam Hub,Gulf Trading Co.,378,7,6,2025-06-27
-PO-00041,2025-01-07,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,7,2025-01-14
-PO-00042,2025-01-17,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,8,2025-01-25
-PO-00043,2025-01-27,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,8,2025-02-04
-PO-00044,2025-02-06,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,11,2025-02-17
-PO-00045,2025-02-20,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,5,2025-02-25
-PO-00046,2025-03-06,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,8,2025-03-14
-PO-00047,2025-03-21,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,9,2025-03-30
-PO-00048,2025-04-02,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,9,2025-04-11
-PO-00049,2025-04-12,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,8,2025-04-20
-PO-00050,2025-04-23,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,11,2025-05-04
-PO-00051,2025-05-05,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,7,2025-05-12
-PO-00052,2025-05-19,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,8,2025-05-27
-PO-00053,2025-06-03,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,10,2025-06-13
-PO-00054,2025-06-16,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,10,2025-06-26
-PO-00055,2025-06-28,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,10,2025-07-08
-PO-00056,2025-06-29,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,11,2025-07-10
-PO-00057,2025-06-30,SKU-002,Riyadh Central,Gulf Trading Co.,252,9,9,2025-07-09
-PO-00058,2025-01-04,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,13,2025-01-17
-PO-00059,2025-01-18,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,8,2025-01-26
-PO-00060,2025-01-29,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,5,2025-02-03
-PO-00061,2025-02-11,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,9,2025-02-20
-PO-00062,2025-02-26,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,10,2025-03-08
-PO-00063,2025-03-13,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,10,2025-03-23
-PO-00064,2025-03-29,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,8,2025-04-06
-PO-00065,2025-04-10,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,11,2025-04-21
-PO-00066,2025-04-23,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,7,2025-04-30
-PO-00067,2025-05-07,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,9,2025-05-16
-PO-00068,2025-05-23,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,9,2025-06-01
-PO-00069,2025-06-08,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,8,2025-06-16
-PO-00070,2025-06-22,SKU-002,Jeddah Hub,Gulf Trading Co.,252,9,8,2025-06-30
-PO-00071,2025-01-03,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,11,2025-01-14
-PO-00072,2025-01-19,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,10,2025-01-29
-PO-00073,2025-02-01,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,6,2025-02-07
-PO-00074,2025-02-18,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,7,2025-02-25
-PO-00075,2025-03-08,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,9,2025-03-17
-PO-00076,2025-03-27,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,8,2025-04-04
-PO-00077,2025-04-10,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,7,2025-04-17
-PO-00078,2025-04-24,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,6,2025-04-30
-PO-00079,2025-05-10,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,10,2025-05-20
-PO-00080,2025-05-31,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,10,2025-06-10
-PO-00081,2025-06-20,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,11,2025-07-01
-PO-00082,2025-06-21,SKU-002,Dammam Hub,Gulf Trading Co.,252,9,8,2025-06-29
-PO-00083,2025-01-09,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,4,2025-01-13
-PO-00084,2025-01-20,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,7,2025-01-27
-PO-00085,2025-01-31,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,1,2025-02-01
-PO-00086,2025-02-10,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,3,2025-02-13
-PO-00087,2025-02-24,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,1,2025-02-25
-PO-00088,2025-03-09,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,4,2025-03-13
-PO-00089,2025-03-22,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,8,2025-03-30
-PO-00090,2025-04-03,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,4,2025-04-07
-PO-00091,2025-04-13,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,5,2025-04-18
-PO-00092,2025-04-24,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,7,2025-05-01
-PO-00093,2025-05-04,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,2,2025-05-06
-PO-00094,2025-05-18,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,5,2025-05-23
-PO-00095,2025-06-01,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,5,2025-06-06
-PO-00096,2025-06-14,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,6,2025-06-20
-PO-00097,2025-06-25,SKU-003,Riyadh Central,Arabian Supply Ltd.,518,5,5,2025-06-30
-PO-00098,2025-01-08,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,5,2025-01-13
-PO-00099,2025-01-21,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,7,2025-01-28
-PO-00100,2025-02-01,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,7,2025-02-08
-PO-00101,2025-02-13,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,5,2025-02-18
-PO-00102,2025-03-01,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,6,2025-03-07
-PO-00103,2025-03-15,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,5,2025-03-20
-PO-00104,2025-03-29,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,3,2025-04-01
-PO-00105,2025-04-09,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,4,2025-04-13
-PO-00106,2025-04-22,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,7,2025-04-29
-PO-00107,2025-05-03,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,7,2025-05-10
-PO-00108,2025-05-20,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,6,2025-05-26
-PO-00109,2025-06-05,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,7,2025-06-12
-PO-00110,2025-06-19,SKU-003,Jeddah Hub,Arabian Supply Ltd.,518,5,3,2025-06-22
-PO-00111,2025-01-06,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,3,2025-01-09
-PO-00112,2025-01-22,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,2,2025-01-24
-PO-00113,2025-02-04,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,7,2025-02-11
-PO-00114,2025-02-23,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,5,2025-02-28
-PO-00115,2025-03-15,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,6,2025-03-21
-PO-00116,2025-04-03,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,3,2025-04-06
-PO-00117,2025-04-18,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,5,2025-04-23
-PO-00118,2025-05-02,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,5,2025-05-07
-PO-00119,2025-05-21,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,5,2025-05-26
-PO-00120,2025-06-08,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,6,2025-06-14
-PO-00121,2025-06-25,SKU-003,Dammam Hub,Arabian Supply Ltd.,518,5,3,2025-06-28
-PO-00122,2025-01-08,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,8,2025-01-16
-PO-00123,2025-01-18,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,6,2025-01-24
-PO-00124,2025-01-28,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,10,2025-02-07
-PO-00125,2025-02-08,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,9,2025-02-17
-PO-00126,2025-02-21,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,6,2025-02-27
-PO-00127,2025-03-06,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,7,2025-03-13
-PO-00128,2025-03-20,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,8,2025-03-28
-PO-00129,2025-04-02,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,9,2025-04-11
-PO-00130,2025-04-13,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,7,2025-04-20
-PO-00131,2025-04-24,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,11,2025-05-05
-PO-00132,2025-05-07,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,9,2025-05-16
-PO-00133,2025-05-20,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,13,2025-06-02
-PO-00134,2025-06-03,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,9,2025-06-12
-PO-00135,2025-06-16,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,8,2025-06-24
-PO-00136,2025-06-27,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,9,2025-07-06
-PO-00137,2025-06-28,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,8,2025-07-06
-PO-00138,2025-06-29,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,2,2025-07-01
-PO-00139,2025-06-30,SKU-004,Riyadh Central,Gulf Trading Co.,168,8,9,2025-07-09
-PO-00140,2025-01-06,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,9,2025-01-15
-PO-00141,2025-01-19,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,8,2025-01-27
-PO-00142,2025-02-01,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,6,2025-02-07
-PO-00143,2025-02-14,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,3,2025-02-17
-PO-00144,2025-02-28,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,8,2025-03-08
-PO-00145,2025-03-15,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,9,2025-03-24
-PO-00146,2025-03-29,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,7,2025-04-05
-PO-00147,2025-04-11,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,6,2025-04-17
-PO-00148,2025-04-24,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,7,2025-05-01
-PO-00149,2025-05-08,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,9,2025-05-17
-PO-00150,2025-05-24,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,10,2025-06-03
-PO-00151,2025-06-09,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,5,2025-06-14
-PO-00152,2025-06-25,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,8,2025-07-03
-PO-00153,2025-06-26,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,8,2025-07-04
-PO-00154,2025-06-27,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,7,2025-07-04
-PO-00155,2025-06-28,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,7,2025-07-05
-PO-00156,2025-06-29,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,10,2025-07-09
-PO-00157,2025-06-30,SKU-004,Jeddah Hub,Gulf Trading Co.,168,8,8,2025-07-08
-PO-00158,2025-01-03,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,4,2025-01-07
-PO-00159,2025-01-20,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,5,2025-01-25
-PO-00160,2025-02-03,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,9,2025-02-12
-PO-00161,2025-02-20,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,8,2025-02-28
-PO-00162,2025-03-12,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,8,2025-03-20
-PO-00163,2025-03-29,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,7,2025-04-05
-PO-00164,2025-04-11,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,7,2025-04-18
-PO-00165,2025-04-27,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,10,2025-05-07
-PO-00166,2025-05-12,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,10,2025-05-22
-PO-00167,2025-06-04,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,9,2025-06-13
-PO-00168,2025-06-23,SKU-004,Dammam Hub,Gulf Trading Co.,168,8,7,2025-06-30
-PO-00169,2025-01-05,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,10,2025-01-15
-PO-00170,2025-01-16,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,8,2025-01-24
-PO-00171,2025-01-25,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,11,2025-02-05
-PO-00172,2025-02-07,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,11,2025-02-18
-PO-00173,2025-02-19,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,8,2025-02-27
-PO-00174,2025-03-11,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,10,2025-03-21
-PO-00175,2025-03-22,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,7,2025-03-29
-PO-00176,2025-04-04,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,11,2025-04-15
-PO-00177,2025-04-15,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,9,2025-04-24
-PO-00178,2025-04-26,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,6,2025-05-02
-PO-00179,2025-05-04,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,10,2025-05-14
-PO-00180,2025-05-16,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,10,2025-05-26
-PO-00181,2025-06-01,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,9,2025-06-10
-PO-00182,2025-06-12,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,10,2025-06-22
-PO-00183,2025-06-22,SKU-005,Riyadh Central,Desert Logistics Supplies,42,10,8,2025-06-30
-PO-00184,2025-01-07,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,14,2025-01-21
-PO-00185,2025-01-21,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,8,2025-01-29
-PO-00186,2025-02-01,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,10,2025-02-11
-PO-00187,2025-02-13,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,12,2025-02-25
-PO-00188,2025-03-03,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,10,2025-03-13
-PO-00189,2025-03-22,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,11,2025-04-02
-PO-00190,2025-04-05,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,8,2025-04-13
-PO-00191,2025-04-14,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,10,2025-04-24
-PO-00192,2025-04-24,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,8,2025-05-02
-PO-00193,2025-05-06,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,11,2025-05-17
-PO-00194,2025-05-19,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,10,2025-05-29
-PO-00195,2025-06-05,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,11,2025-06-16
-PO-00196,2025-06-18,SKU-005,Jeddah Hub,Desert Logistics Supplies,42,10,12,2025-06-30
-PO-00197,2025-01-01,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,12,2025-01-13
-PO-00198,2025-01-16,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,7,2025-01-23
-PO-00199,2025-01-30,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,8,2025-02-07
-PO-00200,2025-02-13,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,8,2025-02-21
-PO-00201,2025-03-03,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,11,2025-03-14
-PO-00202,2025-03-21,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,12,2025-04-02
-PO-00203,2025-04-07,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,12,2025-04-19
-PO-00204,2025-04-22,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,7,2025-04-29
-PO-00205,2025-05-06,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,9,2025-05-15
-PO-00206,2025-05-26,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,11,2025-06-06
-PO-00207,2025-06-11,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,10,2025-06-21
-PO-00208,2025-06-30,SKU-005,Dammam Hub,Desert Logistics Supplies,42,10,10,2025-07-10
-PO-00209,2025-01-11,SKU-006,Riyadh Central,National Distribution Co.,588,4,1,2025-01-12
-PO-00210,2025-01-21,SKU-006,Riyadh Central,National Distribution Co.,588,4,7,2025-01-28
-PO-00211,2025-02-02,SKU-006,Riyadh Central,National Distribution Co.,588,4,1,2025-02-03
-PO-00212,2025-02-12,SKU-006,Riyadh Central,National Distribution Co.,588,4,5,2025-02-17
-PO-00213,2025-02-26,SKU-006,Riyadh Central,National Distribution Co.,588,4,1,2025-02-27
-PO-00214,2025-03-11,SKU-006,Riyadh Central,National Distribution Co.,588,4,3,2025-03-14
-PO-00215,2025-03-25,SKU-006,Riyadh Central,National Distribution Co.,588,4,3,2025-03-28
-PO-00216,2025-04-04,SKU-006,Riyadh Central,National Distribution Co.,588,4,6,2025-04-10
-PO-00217,2025-04-15,SKU-006,Riyadh Central,National Distribution Co.,588,4,3,2025-04-18
-PO-00218,2025-04-25,SKU-006,Riyadh Central,National Distribution Co.,588,4,7,2025-05-02
-PO-00219,2025-05-07,SKU-006,Riyadh Central,National Distribution Co.,588,4,4,2025-05-11
-PO-00220,2025-05-21,SKU-006,Riyadh Central,National Distribution Co.,588,4,2,2025-05-23
-PO-00221,2025-06-03,SKU-006,Riyadh Central,National Distribution Co.,588,4,8,2025-06-11
-PO-00222,2025-06-17,SKU-006,Riyadh Central,National Distribution Co.,588,4,6,2025-06-23
-PO-00223,2025-06-28,SKU-006,Riyadh Central,National Distribution Co.,588,4,3,2025-07-01
-PO-00224,2025-06-29,SKU-006,Riyadh Central,National Distribution Co.,588,4,4,2025-07-03
-PO-00225,2025-06-30,SKU-006,Riyadh Central,National Distribution Co.,588,4,5,2025-07-05
-PO-00226,2025-01-09,SKU-006,Jeddah Hub,National Distribution Co.,588,4,4,2025-01-13
-PO-00227,2025-01-21,SKU-006,Jeddah Hub,National Distribution Co.,588,4,2,2025-01-23
-PO-00228,2025-02-02,SKU-006,Jeddah Hub,National Distribution Co.,588,4,4,2025-02-06
-PO-00229,2025-02-15,SKU-006,Jeddah Hub,National Distribution Co.,588,4,1,2025-02-16
-PO-00230,2025-03-02,SKU-006,Jeddah Hub,National Distribution Co.,588,4,3,2025-03-05
-PO-00231,2025-03-18,SKU-006,Jeddah Hub,National Distribution Co.,588,4,1,2025-03-19
-PO-00232,2025-04-01,SKU-006,Jeddah Hub,National Distribution Co.,588,4,2,2025-04-03
-PO-00233,2025-04-13,SKU-006,Jeddah Hub,National Distribution Co.,588,4,4,2025-04-17
-PO-00234,2025-04-24,SKU-006,Jeddah Hub,National Distribution Co.,588,4,6,2025-04-30
-PO-00235,2025-05-06,SKU-006,Jeddah Hub,National Distribution Co.,588,4,3,2025-05-09
-PO-00236,2025-05-22,SKU-006,Jeddah Hub,National Distribution Co.,588,4,4,2025-05-26
-PO-00237,2025-06-07,SKU-006,Jeddah Hub,National Distribution Co.,588,4,1,2025-06-08
-PO-00238,2025-06-20,SKU-006,Jeddah Hub,National Distribution Co.,588,4,1,2025-06-21
-PO-00239,2025-01-07,SKU-006,Dammam Hub,National Distribution Co.,588,4,1,2025-01-08
-PO-00240,2025-01-22,SKU-006,Dammam Hub,National Distribution Co.,588,4,3,2025-01-25
-PO-00241,2025-02-05,SKU-006,Dammam Hub,National Distribution Co.,588,4,2,2025-02-07
-PO-00242,2025-02-23,SKU-006,Dammam Hub,National Distribution Co.,588,4,3,2025-02-26
-PO-00243,2025-03-15,SKU-006,Dammam Hub,National Distribution Co.,588,4,4,2025-03-19
-PO-00244,2025-04-01,SKU-006,Dammam Hub,National Distribution Co.,588,4,1,2025-04-02
-PO-00245,2025-04-16,SKU-006,Dammam Hub,National Distribution Co.,588,4,1,2025-04-17
-PO-00246,2025-05-01,SKU-006,Dammam Hub,National Distribution Co.,588,4,5,2025-05-06
-PO-00247,2025-05-18,SKU-006,Dammam Hub,National Distribution Co.,588,4,3,2025-05-21
-PO-00248,2025-06-07,SKU-006,Dammam Hub,National Distribution Co.,588,4,3,2025-06-10
-PO-00249,2025-06-24,SKU-006,Dammam Hub,National Distribution Co.,588,4,2,2025-06-26
-PO-00250,2025-01-10,SKU-007,Riyadh Central,National Distribution Co.,420,4,4,2025-01-14
-PO-00251,2025-01-20,SKU-007,Riyadh Central,National Distribution Co.,420,4,6,2025-01-26
-PO-00252,2025-01-31,SKU-007,Riyadh Central,National Distribution Co.,420,4,1,2025-02-01
-PO-00253,2025-02-09,SKU-007,Riyadh Central,National Distribution Co.,420,4,7,2025-02-16
-PO-00254,2025-02-23,SKU-007,Riyadh Central,National Distribution Co.,420,4,6,2025-03-01
-PO-00255,2025-03-09,SKU-007,Riyadh Central,National Distribution Co.,420,4,5,2025-03-14
-PO-00256,2025-03-23,SKU-007,Riyadh Central,National Distribution Co.,420,4,6,2025-03-29
-PO-00257,2025-04-02,SKU-007,Riyadh Central,National Distribution Co.,420,4,6,2025-04-08
-PO-00258,2025-04-13,SKU-007,Riyadh Central,National Distribution Co.,420,4,3,2025-04-16
-PO-00259,2025-04-24,SKU-007,Riyadh Central,National Distribution Co.,420,4,4,2025-04-28
-PO-00260,2025-05-04,SKU-007,Riyadh Central,National Distribution Co.,420,4,4,2025-05-08
-PO-00261,2025-05-19,SKU-007,Riyadh Central,National Distribution Co.,420,4,8,2025-05-27
-PO-00262,2025-06-02,SKU-007,Riyadh Central,National Distribution Co.,420,4,6,2025-06-08
-PO-00263,2025-06-14,SKU-007,Riyadh Central,National Distribution Co.,420,4,3,2025-06-17
-PO-00264,2025-06-26,SKU-007,Riyadh Central,National Distribution Co.,420,4,5,2025-07-01
-PO-00265,2025-06-27,SKU-007,Riyadh Central,National Distribution Co.,420,4,1,2025-06-28
-PO-00266,2025-01-09,SKU-007,Jeddah Hub,National Distribution Co.,420,4,1,2025-01-10
-PO-00267,2025-01-21,SKU-007,Jeddah Hub,National Distribution Co.,420,4,3,2025-01-24
-PO-00268,2025-02-01,SKU-007,Jeddah Hub,National Distribution Co.,420,4,3,2025-02-04
-PO-00269,2025-02-13,SKU-007,Jeddah Hub,National Distribution Co.,420,4,4,2025-02-17
-PO-00270,2025-02-28,SKU-007,Jeddah Hub,National Distribution Co.,420,4,7,2025-03-07
-PO-00271,2025-03-15,SKU-007,Jeddah Hub,National Distribution Co.,420,4,7,2025-03-22
-PO-00272,2025-03-29,SKU-007,Jeddah Hub,National Distribution Co.,420,4,1,2025-03-30
-PO-00273,2025-04-09,SKU-007,Jeddah Hub,National Distribution Co.,420,4,5,2025-04-14
-PO-00274,2025-04-21,SKU-007,Jeddah Hub,National Distribution Co.,420,4,3,2025-04-24
-PO-00275,2025-05-03,SKU-007,Jeddah Hub,National Distribution Co.,420,4,7,2025-05-10
-PO-00276,2025-05-17,SKU-007,Jeddah Hub,National Distribution Co.,420,4,6,2025-05-23
-PO-00277,2025-06-02,SKU-007,Jeddah Hub,National Distribution Co.,420,4,5,2025-06-07
-PO-00278,2025-06-17,SKU-007,Jeddah Hub,National Distribution Co.,420,4,8,2025-06-25
-PO-00279,2025-06-30,SKU-007,Jeddah Hub,National Distribution Co.,420,4,3,2025-07-03
-PO-00280,2025-01-08,SKU-007,Dammam Hub,National Distribution Co.,420,4,5,2025-01-13
-PO-00281,2025-01-22,SKU-007,Dammam Hub,National Distribution Co.,420,4,2,2025-01-24
-PO-00282,2025-02-05,SKU-007,Dammam Hub,National Distribution Co.,420,4,5,2025-02-10
-PO-00283,2025-02-22,SKU-007,Dammam Hub,National Distribution Co.,420,4,3,2025-02-25
-PO-00284,2025-03-14,SKU-007,Dammam Hub,National Distribution Co.,420,4,9,2025-03-23
-PO-00285,2025-04-02,SKU-007,Dammam Hub,National Distribution Co.,420,4,6,2025-04-08
-PO-00286,2025-04-15,SKU-007,Dammam Hub,National Distribution Co.,420,4,7,2025-04-22
-PO-00287,2025-04-30,SKU-007,Dammam Hub,National Distribution Co.,420,4,1,2025-05-01
-PO-00288,2025-05-19,SKU-007,Dammam Hub,National Distribution Co.,420,4,4,2025-05-23
-PO-00289,2025-06-09,SKU-007,Dammam Hub,National Distribution Co.,420,4,6,2025-06-15
-PO-00290,2025-06-26,SKU-007,Dammam Hub,National Distribution Co.,420,4,8,2025-07-04
-PO-00291,2025-06-27,SKU-007,Dammam Hub,National Distribution Co.,420,4,4,2025-07-01
-PO-00292,2025-06-28,SKU-007,Dammam Hub,National Distribution Co.,420,4,5,2025-07-03
-PO-00293,2025-06-29,SKU-007,Dammam Hub,National Distribution Co.,420,4,4,2025-07-03
-PO-00294,2025-06-30,SKU-007,Dammam Hub,National Distribution Co.,420,4,6,2025-07-06
-PO-00295,2025-01-10,SKU-008,Riyadh Central,National Distribution Co.,168,6,3,2025-01-13
-PO-00296,2025-01-20,SKU-008,Riyadh Central,National Distribution Co.,168,6,12,2025-02-01
-PO-00297,2025-02-03,SKU-008,Riyadh Central,National Distribution Co.,168,6,5,2025-02-08
-PO-00298,2025-02-14,SKU-008,Riyadh Central,National Distribution Co.,168,6,7,2025-02-21
-PO-00299,2025-02-27,SKU-008,Riyadh Central,National Distribution Co.,168,6,6,2025-03-05
-PO-00300,2025-03-12,SKU-008,Riyadh Central,National Distribution Co.,168,6,6,2025-03-18
-PO-00301,2025-03-27,SKU-008,Riyadh Central,National Distribution Co.,168,6,7,2025-04-03
-PO-00302,2025-04-07,SKU-008,Riyadh Central,National Distribution Co.,168,6,3,2025-04-10
-PO-00303,2025-04-18,SKU-008,Riyadh Central,National Distribution Co.,168,6,3,2025-04-21
-PO-00304,2025-04-29,SKU-008,Riyadh Central,National Distribution Co.,168,6,4,2025-05-03
-PO-00305,2025-05-09,SKU-008,Riyadh Central,National Distribution Co.,168,6,4,2025-05-13
-PO-00306,2025-05-24,SKU-008,Riyadh Central,National Distribution Co.,168,6,4,2025-05-28
-PO-00307,2025-06-07,SKU-008,Riyadh Central,National Distribution Co.,168,6,6,2025-06-13
-PO-00308,2025-06-18,SKU-008,Riyadh Central,National Distribution Co.,168,6,4,2025-06-22
-PO-00309,2025-06-30,SKU-008,Riyadh Central,National Distribution Co.,168,6,7,2025-07-07
-PO-00310,2025-01-08,SKU-008,Jeddah Hub,National Distribution Co.,168,6,8,2025-01-16
-PO-00311,2025-01-20,SKU-008,Jeddah Hub,National Distribution Co.,168,6,6,2025-01-26
-PO-00312,2025-02-02,SKU-008,Jeddah Hub,National Distribution Co.,168,6,7,2025-02-09
-PO-00313,2025-02-15,SKU-008,Jeddah Hub,National Distribution Co.,168,6,6,2025-02-21
-PO-00314,2025-03-03,SKU-008,Jeddah Hub,National Distribution Co.,168,6,9,2025-03-12
-PO-00315,2025-03-19,SKU-008,Jeddah Hub,National Distribution Co.,168,6,5,2025-03-24
-PO-00316,2025-04-02,SKU-008,Jeddah Hub,National Distribution Co.,168,6,6,2025-04-08
-PO-00317,2025-04-12,SKU-008,Jeddah Hub,National Distribution Co.,168,6,10,2025-04-22
-PO-00318,2025-04-27,SKU-008,Jeddah Hub,National Distribution Co.,168,6,4,2025-05-01
-PO-00319,2025-05-10,SKU-008,Jeddah Hub,National Distribution Co.,168,6,4,2025-05-14
-PO-00320,2025-05-24,SKU-008,Jeddah Hub,National Distribution Co.,168,6,2,2025-05-26
-PO-00321,2025-06-08,SKU-008,Jeddah Hub,National Distribution Co.,168,6,4,2025-06-12
-PO-00322,2025-06-21,SKU-008,Jeddah Hub,National Distribution Co.,168,6,3,2025-06-24
-PO-00323,2025-01-06,SKU-008,Dammam Hub,National Distribution Co.,168,6,7,2025-01-13
-PO-00324,2025-01-21,SKU-008,Dammam Hub,National Distribution Co.,168,6,8,2025-01-29
-PO-00325,2025-02-06,SKU-008,Dammam Hub,National Distribution Co.,168,6,10,2025-02-16
-PO-00326,2025-02-22,SKU-008,Dammam Hub,National Distribution Co.,168,6,8,2025-03-02
-PO-00327,2025-03-16,SKU-008,Dammam Hub,National Distribution Co.,168,6,4,2025-03-20
-PO-00328,2025-04-02,SKU-008,Dammam Hub,National Distribution Co.,168,6,4,2025-04-06
-PO-00329,2025-04-17,SKU-008,Dammam Hub,National Distribution Co.,168,6,7,2025-04-24
-PO-00330,2025-05-03,SKU-008,Dammam Hub,National Distribution Co.,168,6,6,2025-05-09
-PO-00331,2025-05-23,SKU-008,Dammam Hub,National Distribution Co.,168,6,6,2025-05-29
-PO-00332,2025-06-13,SKU-008,Dammam Hub,National Distribution Co.,168,6,8,2025-06-21
-PO-00333,2025-06-29,SKU-008,Dammam Hub,National Distribution Co.,168,6,6,2025-07-05
-PO-00334,2025-06-30,SKU-008,Dammam Hub,National Distribution Co.,168,6,7,2025-07-07
-PO-00335,2025-01-09,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,4,2025-01-13
-PO-00336,2025-01-20,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,6,2025-01-26
-PO-00337,2025-01-31,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,5,2025-02-05
-PO-00338,2025-02-11,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,4,2025-02-15
-PO-00339,2025-02-25,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,7,2025-03-04
-PO-00340,2025-03-11,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,6,2025-03-17
-PO-00341,2025-03-24,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,5,2025-03-29
-PO-00342,2025-04-03,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,6,2025-04-09
-PO-00343,2025-04-12,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,3,2025-04-15
-PO-00344,2025-04-23,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,5,2025-04-28
-PO-00345,2025-05-05,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,4,2025-05-09
-PO-00346,2025-05-18,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,5,2025-05-23
-PO-00347,2025-06-01,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,7,2025-06-08
-PO-00348,2025-06-12,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,5,2025-06-17
-PO-00349,2025-06-23,SKU-009,Riyadh Central,Arabian Supply Ltd.,252,5,7,2025-06-30
-PO-00350,2025-01-09,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,3,2025-01-12
-PO-00351,2025-01-21,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,3,2025-01-24
-PO-00352,2025-02-01,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,5,2025-02-06
-PO-00353,2025-02-15,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,6,2025-02-21
-PO-00354,2025-03-01,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,8,2025-03-09
-PO-00355,2025-03-17,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,4,2025-03-21
-PO-00356,2025-03-30,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,9,2025-04-08
-PO-00357,2025-04-14,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,4,2025-04-18
-PO-00358,2025-04-25,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,1,2025-04-26
-PO-00359,2025-05-09,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,5,2025-05-14
-PO-00360,2025-05-25,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,6,2025-05-31
-PO-00361,2025-06-08,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,5,2025-06-13
-PO-00362,2025-06-22,SKU-009,Jeddah Hub,Arabian Supply Ltd.,252,5,5,2025-06-27
-PO-00363,2025-01-06,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,5,2025-01-11
-PO-00364,2025-01-20,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,4,2025-01-24
-PO-00365,2025-02-04,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,4,2025-02-08
-PO-00366,2025-02-22,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,9,2025-03-03
-PO-00367,2025-03-13,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,4,2025-03-17
-PO-00368,2025-03-30,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,10,2025-04-09
-PO-00369,2025-04-14,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,6,2025-04-20
-PO-00370,2025-04-29,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,8,2025-05-07
-PO-00371,2025-05-17,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,2,2025-05-19
-PO-00372,2025-06-06,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,4,2025-06-10
-PO-00373,2025-06-24,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,7,2025-07-01
-PO-00374,2025-06-25,SKU-009,Dammam Hub,Arabian Supply Ltd.,252,5,4,2025-06-29
-PO-00375,2025-01-04,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,16,2025-01-20
-PO-00376,2025-01-20,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-01-30
-PO-00377,2025-01-30,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,13,2025-02-12
-PO-00378,2025-02-12,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,11,2025-02-23
-PO-00379,2025-02-26,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-03-08
-PO-00380,2025-03-13,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,9,2025-03-22
-PO-00381,2025-03-25,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,15,2025-04-09
-PO-00382,2025-04-09,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,9,2025-04-18
-PO-00383,2025-04-18,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-04-28
-PO-00384,2025-04-29,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,12,2025-05-11
-PO-00385,2025-05-11,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-05-21
-PO-00386,2025-05-25,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,13,2025-06-07
-PO-00387,2025-06-07,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,11,2025-06-18
-PO-00388,2025-06-19,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,16,2025-07-05
-PO-00389,2025-06-20,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,11,2025-07-01
-PO-00390,2025-06-21,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-07-01
-PO-00391,2025-06-22,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,13,2025-07-05
-PO-00392,2025-06-23,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,14,2025-07-07
-PO-00393,2025-06-24,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-07-04
-PO-00394,2025-06-25,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,16,2025-07-11
-PO-00395,2025-06-26,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,12,2025-07-08
-PO-00396,2025-06-27,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,13,2025-07-10
-PO-00397,2025-06-28,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,14,2025-07-12
-PO-00398,2025-06-29,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,10,2025-07-09
-PO-00399,2025-06-30,SKU-010,Riyadh Central,Desert Logistics Supplies,56,12,13,2025-07-13
-PO-00400,2025-01-02,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,10,2025-01-12
-PO-00401,2025-01-16,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,13,2025-01-29
-PO-00402,2025-01-29,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,8,2025-02-06
-PO-00403,2025-02-09,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,10,2025-02-19
-PO-00404,2025-02-24,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,13,2025-03-09
-PO-00405,2025-03-09,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,17,2025-03-26
-PO-00406,2025-03-26,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,14,2025-04-09
-PO-00407,2025-04-09,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,11,2025-04-20
-PO-00408,2025-04-21,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,17,2025-05-08
-PO-00409,2025-05-08,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,10,2025-05-18
-PO-00410,2025-05-20,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,11,2025-05-31
-PO-00411,2025-06-05,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,14,2025-06-19
-PO-00412,2025-06-19,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,12,2025-07-01
-PO-00413,2025-06-20,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,13,2025-07-03
-PO-00414,2025-06-21,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,10,2025-07-01
-PO-00415,2025-06-22,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,11,2025-07-03
-PO-00416,2025-06-23,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,10,2025-07-03
-PO-00417,2025-06-24,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,13,2025-07-07
-PO-00418,2025-06-25,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,11,2025-07-06
-PO-00419,2025-06-26,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,11,2025-07-07
-PO-00420,2025-06-27,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,13,2025-07-10
-PO-00421,2025-06-28,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,13,2025-07-11
-PO-00422,2025-06-29,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,10,2025-07-09
-PO-00423,2025-06-30,SKU-010,Jeddah Hub,Desert Logistics Supplies,56,12,8,2025-07-08
-PO-00424,2025-01-01,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,11,2025-01-12
-PO-00425,2025-01-16,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,13,2025-01-29
-PO-00426,2025-01-31,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,12,2025-02-12
-PO-00427,2025-02-15,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,10,2025-02-25
-PO-00428,2025-03-09,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,15,2025-03-24
-PO-00429,2025-03-28,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,12,2025-04-09
-PO-00430,2025-04-14,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,12,2025-04-26
-PO-00431,2025-04-30,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,15,2025-05-15
-PO-00432,2025-05-18,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,11,2025-05-29
-PO-00433,2025-06-06,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,10,2025-06-16
-PO-00434,2025-06-22,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,11,2025-07-03
-PO-00435,2025-06-23,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,14,2025-07-07
-PO-00436,2025-06-24,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,14,2025-07-08
-PO-00437,2025-06-25,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,13,2025-07-08
-PO-00438,2025-06-26,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,14,2025-07-10
-PO-00439,2025-06-27,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,13,2025-07-10
-PO-00440,2025-06-28,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,10,2025-07-08
-PO-00441,2025-06-29,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,13,2025-07-12
-PO-00442,2025-06-30,SKU-010,Dammam Hub,Desert Logistics Supplies,56,12,15,2025-07-15
-PO-00443,2025-01-07,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,5,2025-01-12
-PO-00444,2025-01-18,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,7,2025-01-25
-PO-00445,2025-01-29,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,4,2025-02-02
-PO-00446,2025-02-07,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,9,2025-02-16
-PO-00447,2025-02-19,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,10,2025-03-01
-PO-00448,2025-03-03,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,8,2025-03-11
-PO-00449,2025-03-15,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,10,2025-03-25
-PO-00450,2025-03-27,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,8,2025-04-04
-PO-00451,2025-04-06,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,10,2025-04-16
-PO-00452,2025-04-17,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,8,2025-04-25
-PO-00453,2025-04-29,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,9,2025-05-08
-PO-00454,2025-05-10,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,8,2025-05-18
-PO-00455,2025-05-23,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,4,2025-05-27
-PO-00456,2025-06-04,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,11,2025-06-15
-PO-00457,2025-06-17,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,5,2025-06-22
-PO-00458,2025-06-27,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,9,2025-07-06
-PO-00459,2025-06-28,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,6,2025-07-04
-PO-00460,2025-06-29,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,8,2025-07-07
-PO-00461,2025-06-30,SKU-011,Riyadh Central,Arabian Supply Ltd.,182,8,7,2025-07-07
-PO-00462,2025-01-06,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,11,2025-01-17
-PO-00463,2025-01-19,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,10,2025-01-29
-PO-00464,2025-01-31,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,12,2025-02-12
-PO-00465,2025-02-14,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,6,2025-02-20
-PO-00466,2025-03-01,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,9,2025-03-10
-PO-00467,2025-03-15,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,8,2025-03-23
-PO-00468,2025-03-28,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,8,2025-04-05
-PO-00469,2025-04-08,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,10,2025-04-18
-PO-00470,2025-04-22,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,13,2025-05-05
-PO-00471,2025-05-07,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,7,2025-05-14
-PO-00472,2025-05-21,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,7,2025-05-28
-PO-00473,2025-06-06,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,9,2025-06-15
-PO-00474,2025-06-20,SKU-011,Jeddah Hub,Arabian Supply Ltd.,182,8,8,2025-06-28
-PO-00475,2025-01-04,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,6,2025-01-10
-PO-00476,2025-01-18,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,6,2025-01-24
-PO-00477,2025-02-02,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,9,2025-02-11
-PO-00478,2025-02-22,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,8,2025-03-02
-PO-00479,2025-03-15,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,9,2025-03-24
-PO-00480,2025-04-01,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,10,2025-04-11
-PO-00481,2025-04-15,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,8,2025-04-23
-PO-00482,2025-05-01,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,10,2025-05-11
-PO-00483,2025-05-17,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,6,2025-05-23
-PO-00484,2025-06-05,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,11,2025-06-16
-PO-00485,2025-06-23,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,9,2025-07-02
-PO-00486,2025-06-24,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,8,2025-07-02
-PO-00487,2025-06-25,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,9,2025-07-04
-PO-00488,2025-06-26,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,12,2025-07-08
-PO-00489,2025-06-27,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,8,2025-07-05
-PO-00490,2025-06-28,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,9,2025-07-07
-PO-00491,2025-06-29,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,9,2025-07-08
-PO-00492,2025-06-30,SKU-011,Dammam Hub,Arabian Supply Ltd.,182,8,3,2025-07-03
-PO-00493,2025-01-04,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,10,2025-01-14
-PO-00494,2025-01-16,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,12,2025-01-28
-PO-00495,2025-01-28,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,13,2025-02-10
-PO-00496,2025-02-10,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,9,2025-02-19
-PO-00497,2025-02-23,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,7,2025-03-02
-PO-00498,2025-03-09,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,9,2025-03-18
-PO-00499,2025-03-22,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,11,2025-04-02
-PO-00500,2025-04-02,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,11,2025-04-13
-PO-00501,2025-04-13,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,11,2025-04-24
-PO-00502,2025-04-24,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,14,2025-05-08
-PO-00503,2025-05-08,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,10,2025-05-18
-PO-00504,2025-05-21,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,11,2025-06-01
-PO-00505,2025-06-03,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,10,2025-06-13
-PO-00506,2025-06-16,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,9,2025-06-25
-PO-00507,2025-06-25,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,13,2025-07-08
-PO-00508,2025-06-26,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,14,2025-07-10
-PO-00509,2025-06-27,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,10,2025-07-07
-PO-00510,2025-06-28,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,14,2025-07-12
-PO-00511,2025-06-29,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,11,2025-07-10
-PO-00512,2025-06-30,SKU-012,Riyadh Central,Gulf Trading Co.,196,11,12,2025-07-12
-PO-00513,2025-01-03,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,13,2025-01-16
-PO-00514,2025-01-16,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,13,2025-01-29
-PO-00515,2025-01-29,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,8,2025-02-06
-PO-00516,2025-02-10,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,12,2025-02-22
-PO-00517,2025-02-23,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,9,2025-03-04
-PO-00518,2025-03-10,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,9,2025-03-19
-PO-00519,2025-03-24,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,10,2025-04-03
-PO-00520,2025-04-03,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,8,2025-04-11
-PO-00521,2025-04-16,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,13,2025-04-29
-PO-00522,2025-05-01,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,12,2025-05-13
-PO-00523,2025-05-13,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,9,2025-05-22
-PO-00524,2025-05-30,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,14,2025-06-13
-PO-00525,2025-06-14,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,11,2025-06-25
-PO-00526,2025-06-26,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,15,2025-07-11
-PO-00527,2025-06-27,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,11,2025-07-08
-PO-00528,2025-06-28,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,9,2025-07-07
-PO-00529,2025-06-29,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,12,2025-07-11
-PO-00530,2025-06-30,SKU-012,Jeddah Hub,Gulf Trading Co.,196,11,11,2025-07-11
-PO-00531,2025-01-01,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,12,2025-01-13
-PO-00532,2025-01-18,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,12,2025-01-30
-PO-00533,2025-02-02,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,13,2025-02-15
-PO-00534,2025-02-20,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,16,2025-03-08
-PO-00535,2025-03-09,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,10,2025-03-19
-PO-00536,2025-03-27,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,10,2025-04-06
-PO-00537,2025-04-11,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,12,2025-04-23
-PO-00538,2025-04-27,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,10,2025-05-07
-PO-00539,2025-05-11,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,11,2025-05-22
-PO-00540,2025-05-29,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,11,2025-06-09
-PO-00541,2025-06-16,SKU-012,Dammam Hub,Gulf Trading Co.,196,11,12,2025-06-28
-PO-00542,2025-01-04,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,13,2025-01-17
-PO-00543,2025-01-17,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,14,2025-01-31
-PO-00544,2025-01-31,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,14,2025-02-14
-PO-00545,2025-02-14,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,13,2025-02-27
-PO-00546,2025-02-28,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,12,2025-03-12
-PO-00547,2025-03-13,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,15,2025-03-28
-PO-00548,2025-03-28,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,11,2025-04-08
-PO-00549,2025-04-08,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,12,2025-04-20
-PO-00550,2025-04-20,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,16,2025-05-06
-PO-00551,2025-05-06,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,14,2025-05-20
-PO-00552,2025-05-20,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,15,2025-06-04
-PO-00553,2025-06-04,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,14,2025-06-18
-PO-00554,2025-06-18,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,15,2025-07-03
-PO-00555,2025-06-19,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,15,2025-07-04
-PO-00556,2025-06-20,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,11,2025-07-01
-PO-00557,2025-06-21,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,13,2025-07-04
-PO-00558,2025-06-22,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,12,2025-07-04
-PO-00559,2025-06-23,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,9,2025-07-02
-PO-00560,2025-06-24,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,15,2025-07-09
-PO-00561,2025-06-25,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,16,2025-07-11
-PO-00562,2025-06-26,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,16,2025-07-12
-PO-00563,2025-06-27,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,13,2025-07-10
-PO-00564,2025-06-28,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,13,2025-07-11
-PO-00565,2025-06-29,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,14,2025-07-13
-PO-00566,2025-06-30,SKU-013,Riyadh Central,Desert Logistics Supplies,56,14,15,2025-07-15
-PO-00567,2025-01-02,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,14,2025-01-16
-PO-00568,2025-01-16,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-01-29
-PO-00569,2025-01-29,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-02-11
-PO-00570,2025-02-11,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,15,2025-02-26
-PO-00571,2025-02-27,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,12,2025-03-11
-PO-00572,2025-03-14,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-03-27
-PO-00573,2025-03-29,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-04-11
-PO-00574,2025-04-11,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,12,2025-04-23
-PO-00575,2025-04-23,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,14,2025-05-07
-PO-00576,2025-05-07,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,12,2025-05-19
-PO-00577,2025-05-22,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-06-04
-PO-00578,2025-06-10,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-06-23
-PO-00579,2025-06-24,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,15,2025-07-09
-PO-00580,2025-06-25,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-07-08
-PO-00581,2025-06-26,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,12,2025-07-08
-PO-00582,2025-06-27,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,12,2025-07-09
-PO-00583,2025-06-28,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,13,2025-07-11
-PO-00584,2025-06-29,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,17,2025-07-16
-PO-00585,2025-06-30,SKU-013,Jeddah Hub,Desert Logistics Supplies,56,14,14,2025-07-14
-PO-00586,2025-01-01,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,18,2025-01-19
-PO-00587,2025-01-19,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,19,2025-02-07
-PO-00588,2025-02-07,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,15,2025-02-22
-PO-00589,2025-02-24,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,11,2025-03-07
-PO-00590,2025-03-13,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,15,2025-03-28
-PO-00591,2025-03-30,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,16,2025-04-15
-PO-00592,2025-04-15,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,13,2025-04-28
-PO-00593,2025-05-03,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,10,2025-05-13
-PO-00594,2025-05-26,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,13,2025-06-08
-PO-00595,2025-06-14,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,14,2025-06-28
-PO-00596,2025-06-30,SKU-013,Dammam Hub,Desert Logistics Supplies,56,14,14,2025-07-14
-PO-00597,2025-01-09,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,4,2025-01-13
-PO-00598,2025-01-18,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,8,2025-01-26
-PO-00599,2025-01-28,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,4,2025-02-01
-PO-00600,2025-02-07,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,10,2025-02-17
-PO-00601,2025-02-20,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,9,2025-03-01
-PO-00602,2025-03-04,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,8,2025-03-12
-PO-00603,2025-03-18,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,7,2025-03-25
-PO-00604,2025-04-01,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,7,2025-04-08
-PO-00605,2025-04-11,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,8,2025-04-19
-PO-00606,2025-04-21,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,6,2025-04-27
-PO-00607,2025-05-02,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,3,2025-05-05
-PO-00608,2025-05-15,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,8,2025-05-23
-PO-00609,2025-05-31,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,7,2025-06-07
-PO-00610,2025-06-12,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,7,2025-06-19
-PO-00611,2025-06-23,SKU-014,Riyadh Central,Arabian Supply Ltd.,182,7,6,2025-06-29
-PO-00612,2025-01-07,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,7,2025-01-14
-PO-00613,2025-01-20,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,6,2025-01-26
-PO-00614,2025-01-31,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,9,2025-02-09
-PO-00615,2025-02-12,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,4,2025-02-16
-PO-00616,2025-02-27,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,7,2025-03-06
-PO-00617,2025-03-14,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,9,2025-03-23
-PO-00618,2025-03-28,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,2,2025-03-30
-PO-00619,2025-04-09,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,8,2025-04-17
-PO-00620,2025-04-21,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,7,2025-04-28
-PO-00621,2025-05-02,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,5,2025-05-07
-PO-00622,2025-05-16,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,7,2025-05-23
-PO-00623,2025-06-02,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,6,2025-06-08
-PO-00624,2025-06-15,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,9,2025-06-24
-PO-00625,2025-06-28,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,8,2025-07-06
-PO-00626,2025-06-29,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,8,2025-07-07
-PO-00627,2025-06-30,SKU-014,Jeddah Hub,Arabian Supply Ltd.,182,7,11,2025-07-11
-PO-00628,2025-01-04,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,8,2025-01-12
-PO-00629,2025-01-20,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,6,2025-01-26
-PO-00630,2025-02-02,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,4,2025-02-06
-PO-00631,2025-02-22,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,10,2025-03-04
-PO-00632,2025-03-14,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,3,2025-03-17
-PO-00633,2025-04-01,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,5,2025-04-06
-PO-00634,2025-04-16,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,7,2025-04-23
-PO-00635,2025-05-01,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,7,2025-05-08
-PO-00636,2025-05-19,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,9,2025-05-28
-PO-00637,2025-06-08,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,9,2025-06-17
-PO-00638,2025-06-24,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,9,2025-07-03
-PO-00639,2025-06-25,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,7,2025-07-02
-PO-00640,2025-06-26,SKU-014,Dammam Hub,Arabian Supply Ltd.,182,7,4,2025-06-30
-PO-00641,2025-01-07,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,10,2025-01-17
-PO-00642,2025-01-18,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,13,2025-01-31
-PO-00643,2025-02-01,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,6,2025-02-07
-PO-00644,2025-02-11,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,6,2025-02-17
-PO-00645,2025-02-23,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,10,2025-03-05
-PO-00646,2025-03-07,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,12,2025-03-19
-PO-00647,2025-03-22,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,12,2025-04-03
-PO-00648,2025-04-03,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,11,2025-04-14
-PO-00649,2025-04-14,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,10,2025-04-24
-PO-00650,2025-04-25,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,12,2025-05-07
-PO-00651,2025-05-07,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,10,2025-05-17
-PO-00652,2025-05-21,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,8,2025-05-29
-PO-00653,2025-06-04,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,11,2025-06-15
-PO-00654,2025-06-16,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,8,2025-06-24
-PO-00655,2025-06-26,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,11,2025-07-07
-PO-00656,2025-06-27,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,14,2025-07-11
-PO-00657,2025-06-28,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,8,2025-07-06
-PO-00658,2025-06-29,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,10,2025-07-09
-PO-00659,2025-06-30,SKU-015,Riyadh Central,Gulf Trading Co.,112,10,12,2025-07-12
-PO-00660,2025-01-05,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,6,2025-01-11
-PO-00661,2025-01-17,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,13,2025-01-30
-PO-00662,2025-01-30,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,11,2025-02-10
-PO-00663,2025-02-11,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,7,2025-02-18
-PO-00664,2025-02-27,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,9,2025-03-08
-PO-00665,2025-03-15,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,9,2025-03-24
-PO-00666,2025-03-29,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,11,2025-04-09
-PO-00667,2025-04-10,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,9,2025-04-19
-PO-00668,2025-04-22,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,9,2025-05-01
-PO-00669,2025-05-03,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,10,2025-05-13
-PO-00670,2025-05-20,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,10,2025-05-30
-PO-00671,2025-06-05,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,8,2025-06-13
-PO-00672,2025-06-20,SKU-015,Jeddah Hub,Gulf Trading Co.,112,10,10,2025-06-30
-PO-00673,2025-01-02,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,13,2025-01-15
-PO-00674,2025-01-17,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,10,2025-01-27
-PO-00675,2025-02-01,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,8,2025-02-09
-PO-00676,2025-02-15,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,10,2025-02-25
-PO-00677,2025-03-04,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,13,2025-03-17
-PO-00678,2025-03-23,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,10,2025-04-02
-PO-00679,2025-04-07,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,12,2025-04-19
-PO-00680,2025-04-23,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,13,2025-05-06
-PO-00681,2025-05-11,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,7,2025-05-18
-PO-00682,2025-06-01,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,11,2025-06-12
-PO-00683,2025-06-17,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,11,2025-06-28
-PO-00684,2025-06-30,SKU-015,Dammam Hub,Gulf Trading Co.,112,10,7,2025-07-07
-PO-00685,2025-01-06,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,13,2025-01-19
-PO-00686,2025-01-19,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,10,2025-01-29
-PO-00687,2025-01-29,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,12,2025-02-10
-PO-00688,2025-02-10,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,15,2025-02-25
-PO-00689,2025-02-25,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,12,2025-03-09
-PO-00690,2025-03-09,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,9,2025-03-18
-PO-00691,2025-03-21,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,10,2025-03-31
-PO-00692,2025-03-31,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,10,2025-04-10
-PO-00693,2025-04-10,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,12,2025-04-22
-PO-00694,2025-04-22,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,11,2025-05-03
-PO-00695,2025-05-03,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,12,2025-05-15
-PO-00696,2025-05-15,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,12,2025-05-27
-PO-00697,2025-05-30,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,12,2025-06-11
-PO-00698,2025-06-16,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,11,2025-06-27
-PO-00699,2025-06-27,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,11,2025-07-08
-PO-00700,2025-06-28,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,14,2025-07-12
-PO-00701,2025-06-29,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,9,2025-07-08
-PO-00702,2025-06-30,SKU-016,Riyadh Central,Gulf Trading Co.,28,12,13,2025-07-13
-PO-00703,2025-01-05,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,14,2025-01-19
-PO-00704,2025-01-19,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,13,2025-02-01
-PO-00705,2025-02-01,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,14,2025-02-15
-PO-00706,2025-02-15,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,11,2025-02-26
-PO-00707,2025-02-28,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,11,2025-03-11
-PO-00708,2025-03-11,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,13,2025-03-24
-PO-00709,2025-03-25,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,12,2025-04-06
-PO-00710,2025-04-06,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,15,2025-04-21
-PO-00711,2025-04-24,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,14,2025-05-08
-PO-00712,2025-05-14,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,14,2025-05-28
-PO-00713,2025-06-01,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,12,2025-06-13
-PO-00714,2025-06-15,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,12,2025-06-27
-PO-00715,2025-06-27,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,11,2025-07-08
-PO-00716,2025-06-28,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,14,2025-07-12
-PO-00717,2025-06-29,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,11,2025-07-10
-PO-00718,2025-06-30,SKU-016,Jeddah Hub,Gulf Trading Co.,28,12,12,2025-07-12
-PO-00719,2025-01-05,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,13,2025-01-18
-PO-00720,2025-01-24,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,11,2025-02-04
-PO-00721,2025-02-08,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,10,2025-02-18
-PO-00722,2025-02-27,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,10,2025-03-09
-PO-00723,2025-03-17,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,10,2025-03-27
-PO-00724,2025-04-06,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,10,2025-04-16
-PO-00725,2025-04-24,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,12,2025-05-06
-PO-00726,2025-05-07,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,10,2025-05-17
-PO-00727,2025-05-30,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,11,2025-06-10
-PO-00728,2025-06-21,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,13,2025-07-04
-PO-00729,2025-06-22,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,11,2025-07-03
-PO-00730,2025-06-23,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,13,2025-07-06
-PO-00731,2025-06-24,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,13,2025-07-07
-PO-00732,2025-06-25,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,10,2025-07-05
-PO-00733,2025-06-26,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,12,2025-07-08
-PO-00734,2025-06-27,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,15,2025-07-12
-PO-00735,2025-06-28,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,13,2025-07-11
-PO-00736,2025-06-29,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,11,2025-07-10
-PO-00737,2025-06-30,SKU-016,Dammam Hub,Gulf Trading Co.,28,12,16,2025-07-16
-PO-00738,2025-01-09,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,9,2025-01-18
-PO-00739,2025-01-21,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,4,2025-01-25
-PO-00740,2025-01-31,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,7,2025-02-07
-PO-00741,2025-02-12,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,5,2025-02-17
-PO-00742,2025-02-25,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,5,2025-03-02
-PO-00743,2025-03-11,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,4,2025-03-15
-PO-00744,2025-03-24,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,5,2025-03-29
-PO-00745,2025-04-04,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,7,2025-04-11
-PO-00746,2025-04-14,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,5,2025-04-19
-PO-00747,2025-04-25,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,6,2025-05-01
-PO-00748,2025-05-06,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,5,2025-05-11
-PO-00749,2025-05-19,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,6,2025-05-25
-PO-00750,2025-06-02,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,8,2025-06-10
-PO-00751,2025-06-14,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,8,2025-06-22
-PO-00752,2025-06-25,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,8,2025-07-03
-PO-00753,2025-06-26,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,11,2025-07-07
-PO-00754,2025-06-27,SKU-017,Riyadh Central,Arabian Supply Ltd.,756,6,3,2025-06-30
-PO-00755,2025-01-07,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,5,2025-01-12
-PO-00756,2025-01-19,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,10,2025-01-29
-PO-00757,2025-02-02,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,2,2025-02-04
-PO-00758,2025-02-16,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,2,2025-02-18
-PO-00759,2025-03-03,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,3,2025-03-06
-PO-00760,2025-03-19,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,6,2025-03-25
-PO-00761,2025-04-01,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,3,2025-04-04
-PO-00762,2025-04-13,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,9,2025-04-22
-PO-00763,2025-04-26,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,4,2025-04-30
-PO-00764,2025-05-09,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,4,2025-05-13
-PO-00765,2025-05-26,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,6,2025-06-01
-PO-00766,2025-06-11,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,4,2025-06-15
-PO-00767,2025-06-24,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,9,2025-07-03
-PO-00768,2025-06-25,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,6,2025-07-01
-PO-00769,2025-06-26,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,5,2025-07-01
-PO-00770,2025-06-27,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,5,2025-07-02
-PO-00771,2025-06-28,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,9,2025-07-07
-PO-00772,2025-06-29,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,2,2025-07-01
-PO-00773,2025-06-30,SKU-017,Jeddah Hub,Arabian Supply Ltd.,756,6,4,2025-07-04
-PO-00774,2025-01-05,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,10,2025-01-15
-PO-00775,2025-01-21,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,9,2025-01-30
-PO-00776,2025-02-04,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,6,2025-02-10
-PO-00777,2025-02-23,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,5,2025-02-28
-PO-00778,2025-03-15,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,4,2025-03-19
-PO-00779,2025-03-31,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,5,2025-04-05
-PO-00780,2025-04-15,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,10,2025-04-25
-PO-00781,2025-04-30,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,3,2025-05-03
-PO-00782,2025-05-18,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,7,2025-05-25
-PO-00783,2025-06-05,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,7,2025-06-12
-PO-00784,2025-06-22,SKU-017,Dammam Hub,Arabian Supply Ltd.,756,6,6,2025-06-28
-PO-00785,2025-01-14,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,13,2025-01-27
-PO-00786,2025-01-27,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,13,2025-02-09
-PO-00787,2025-02-09,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,13,2025-02-22
-PO-00788,2025-02-22,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,12,2025-03-06
-PO-00789,2025-03-06,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,12,2025-03-18
-PO-00790,2025-03-19,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,10,2025-03-29
-PO-00791,2025-04-02,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,13,2025-04-15
-PO-00792,2025-04-19,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,13,2025-05-02
-PO-00793,2025-05-02,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,16,2025-05-18
-PO-00794,2025-05-18,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,13,2025-05-31
-PO-00795,2025-05-31,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,16,2025-06-16
-PO-00796,2025-06-16,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,14,2025-06-30
-PO-00797,2025-06-30,SKU-018,Riyadh Central,Desert Logistics Supplies,14,13,12,2025-07-12
-PO-00798,2025-01-10,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,15,2025-01-25
-PO-00799,2025-01-26,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,12,2025-02-07
-PO-00800,2025-02-18,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,15,2025-03-05
-PO-00801,2025-03-07,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,16,2025-03-23
-PO-00802,2025-03-23,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,14,2025-04-06
-PO-00803,2025-04-07,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,12,2025-04-19
-PO-00804,2025-04-26,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,12,2025-05-08
-PO-00805,2025-05-08,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,13,2025-05-21
-PO-00806,2025-05-28,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,18,2025-06-15
-PO-00807,2025-06-15,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,15,2025-06-30
-PO-00808,2025-06-30,SKU-018,Jeddah Hub,Desert Logistics Supplies,14,13,15,2025-07-15
-PO-00809,2025-01-05,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,15,2025-01-20
-PO-00810,2025-01-20,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,12,2025-02-01
-PO-00811,2025-02-03,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,13,2025-02-16
-PO-00812,2025-02-21,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,13,2025-03-06
-PO-00813,2025-03-11,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,14,2025-03-25
-PO-00814,2025-03-27,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,13,2025-04-09
-PO-00815,2025-04-13,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,11,2025-04-24
-PO-00816,2025-05-12,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,14,2025-05-26
-PO-00817,2025-05-31,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,14,2025-06-14
-PO-00818,2025-06-17,SKU-018,Dammam Hub,Desert Logistics Supplies,14,13,10,2025-06-27
-PO-00819,2025-01-07,SKU-019,Riyadh Central,National Distribution Co.,168,8,7,2025-01-14
-PO-00820,2025-01-18,SKU-019,Riyadh Central,National Distribution Co.,168,8,7,2025-01-25
-PO-00821,2025-01-27,SKU-019,Riyadh Central,National Distribution Co.,168,8,9,2025-02-05
-PO-00822,2025-02-07,SKU-019,Riyadh Central,National Distribution Co.,168,8,14,2025-02-21
-PO-00823,2025-02-24,SKU-019,Riyadh Central,National Distribution Co.,168,8,9,2025-03-05
-PO-00824,2025-03-10,SKU-019,Riyadh Central,National Distribution Co.,168,8,11,2025-03-21
-PO-00825,2025-03-23,SKU-019,Riyadh Central,National Distribution Co.,168,8,7,2025-03-30
-PO-00826,2025-04-03,SKU-019,Riyadh Central,National Distribution Co.,168,8,7,2025-04-10
-PO-00827,2025-04-13,SKU-019,Riyadh Central,National Distribution Co.,168,8,8,2025-04-21
-PO-00828,2025-04-24,SKU-019,Riyadh Central,National Distribution Co.,168,8,8,2025-05-02
-PO-00829,2025-05-04,SKU-019,Riyadh Central,National Distribution Co.,168,8,5,2025-05-09
-PO-00830,2025-05-18,SKU-019,Riyadh Central,National Distribution Co.,168,8,8,2025-05-26
-PO-00831,2025-06-01,SKU-019,Riyadh Central,National Distribution Co.,168,8,5,2025-06-06
-PO-00832,2025-06-14,SKU-019,Riyadh Central,National Distribution Co.,168,8,9,2025-06-23
-PO-00833,2025-06-25,SKU-019,Riyadh Central,National Distribution Co.,168,8,8,2025-07-03
-PO-00834,2025-06-26,SKU-019,Riyadh Central,National Distribution Co.,168,8,10,2025-07-06
-PO-00835,2025-06-27,SKU-019,Riyadh Central,National Distribution Co.,168,8,11,2025-07-08
-PO-00836,2025-06-28,SKU-019,Riyadh Central,National Distribution Co.,168,8,8,2025-07-06
-PO-00837,2025-06-29,SKU-019,Riyadh Central,National Distribution Co.,168,8,10,2025-07-09
-PO-00838,2025-06-30,SKU-019,Riyadh Central,National Distribution Co.,168,8,10,2025-07-10
-PO-00839,2025-01-06,SKU-019,Jeddah Hub,National Distribution Co.,168,8,12,2025-01-18
-PO-00840,2025-01-21,SKU-019,Jeddah Hub,National Distribution Co.,168,8,11,2025-02-01
-PO-00841,2025-02-02,SKU-019,Jeddah Hub,National Distribution Co.,168,8,9,2025-02-11
-PO-00842,2025-02-16,SKU-019,Jeddah Hub,National Distribution Co.,168,8,5,2025-02-21
-PO-00843,2025-03-04,SKU-019,Jeddah Hub,National Distribution Co.,168,8,11,2025-03-15
-PO-00844,2025-03-20,SKU-019,Jeddah Hub,National Distribution Co.,168,8,9,2025-03-29
-PO-00845,2025-04-01,SKU-019,Jeddah Hub,National Distribution Co.,168,8,7,2025-04-08
-PO-00846,2025-04-15,SKU-019,Jeddah Hub,National Distribution Co.,168,8,8,2025-04-23
-PO-00847,2025-04-28,SKU-019,Jeddah Hub,National Distribution Co.,168,8,9,2025-05-07
-PO-00848,2025-05-09,SKU-019,Jeddah Hub,National Distribution Co.,168,8,8,2025-05-17
-PO-00849,2025-05-22,SKU-019,Jeddah Hub,National Distribution Co.,168,8,7,2025-05-29
-PO-00850,2025-06-08,SKU-019,Jeddah Hub,National Distribution Co.,168,8,7,2025-06-15
-PO-00851,2025-06-22,SKU-019,Jeddah Hub,National Distribution Co.,168,8,5,2025-06-27
-PO-00852,2025-01-04,SKU-019,Dammam Hub,National Distribution Co.,168,8,6,2025-01-10
-PO-00853,2025-01-19,SKU-019,Dammam Hub,National Distribution Co.,168,8,7,2025-01-26
-PO-00854,2025-02-02,SKU-019,Dammam Hub,National Distribution Co.,168,8,11,2025-02-13
-PO-00855,2025-02-19,SKU-019,Dammam Hub,National Distribution Co.,168,8,8,2025-02-27
-PO-00856,2025-03-09,SKU-019,Dammam Hub,National Distribution Co.,168,8,6,2025-03-15
-PO-00857,2025-03-26,SKU-019,Dammam Hub,National Distribution Co.,168,8,10,2025-04-05
-PO-00858,2025-04-10,SKU-019,Dammam Hub,National Distribution Co.,168,8,9,2025-04-19
-PO-00859,2025-04-25,SKU-019,Dammam Hub,National Distribution Co.,168,8,10,2025-05-05
-PO-00860,2025-05-12,SKU-019,Dammam Hub,National Distribution Co.,168,8,12,2025-05-24
-PO-00861,2025-05-31,SKU-019,Dammam Hub,National Distribution Co.,168,8,8,2025-06-08
-PO-00862,2025-06-17,SKU-019,Dammam Hub,National Distribution Co.,168,8,9,2025-06-26
-PO-00863,2025-01-09,SKU-020,Riyadh Central,National Distribution Co.,112,7,9,2025-01-18
-PO-00864,2025-01-20,SKU-020,Riyadh Central,National Distribution Co.,112,7,8,2025-01-28
-PO-00865,2025-02-01,SKU-020,Riyadh Central,National Distribution Co.,112,7,6,2025-02-07
-PO-00866,2025-02-10,SKU-020,Riyadh Central,National Distribution Co.,112,7,9,2025-02-19
-PO-00867,2025-02-24,SKU-020,Riyadh Central,National Distribution Co.,112,7,6,2025-03-02
-PO-00868,2025-03-08,SKU-020,Riyadh Central,National Distribution Co.,112,7,7,2025-03-15
-PO-00869,2025-03-21,SKU-020,Riyadh Central,National Distribution Co.,112,7,6,2025-03-27
-PO-00870,2025-04-02,SKU-020,Riyadh Central,National Distribution Co.,112,7,6,2025-04-08
-PO-00871,2025-04-12,SKU-020,Riyadh Central,National Distribution Co.,112,7,6,2025-04-18
-PO-00872,2025-04-22,SKU-020,Riyadh Central,National Distribution Co.,112,7,10,2025-05-02
-PO-00873,2025-05-03,SKU-020,Riyadh Central,National Distribution Co.,112,7,5,2025-05-08
-PO-00874,2025-05-16,SKU-020,Riyadh Central,National Distribution Co.,112,7,7,2025-05-23
-PO-00875,2025-05-31,SKU-020,Riyadh Central,National Distribution Co.,112,7,11,2025-06-11
-PO-00876,2025-06-14,SKU-020,Riyadh Central,National Distribution Co.,112,7,6,2025-06-20
-PO-00877,2025-06-24,SKU-020,Riyadh Central,National Distribution Co.,112,7,7,2025-07-01
-PO-00878,2025-06-25,SKU-020,Riyadh Central,National Distribution Co.,112,7,7,2025-07-02
-PO-00879,2025-06-26,SKU-020,Riyadh Central,National Distribution Co.,112,7,7,2025-07-03
-PO-00880,2025-06-27,SKU-020,Riyadh Central,National Distribution Co.,112,7,8,2025-07-05
-PO-00881,2025-06-28,SKU-020,Riyadh Central,National Distribution Co.,112,7,7,2025-07-05
-PO-00882,2025-06-29,SKU-020,Riyadh Central,National Distribution Co.,112,7,8,2025-07-07
-PO-00883,2025-06-30,SKU-020,Riyadh Central,National Distribution Co.,112,7,5,2025-07-05
-PO-00884,2025-01-08,SKU-020,Jeddah Hub,National Distribution Co.,112,7,6,2025-01-14
-PO-00885,2025-01-22,SKU-020,Jeddah Hub,National Distribution Co.,112,7,7,2025-01-29
-PO-00886,2025-02-01,SKU-020,Jeddah Hub,National Distribution Co.,112,7,6,2025-02-07
-PO-00887,2025-02-14,SKU-020,Jeddah Hub,National Distribution Co.,112,7,10,2025-02-24
-PO-00888,2025-03-02,SKU-020,Jeddah Hub,National Distribution Co.,112,7,5,2025-03-07
-PO-00889,2025-03-18,SKU-020,Jeddah Hub,National Distribution Co.,112,7,7,2025-03-25
-PO-00890,2025-04-01,SKU-020,Jeddah Hub,National Distribution Co.,112,7,4,2025-04-05
-PO-00891,2025-04-12,SKU-020,Jeddah Hub,National Distribution Co.,112,7,6,2025-04-18
-PO-00892,2025-04-24,SKU-020,Jeddah Hub,National Distribution Co.,112,7,1,2025-04-25
-PO-00893,2025-05-06,SKU-020,Jeddah Hub,National Distribution Co.,112,7,7,2025-05-13
-PO-00894,2025-05-21,SKU-020,Jeddah Hub,National Distribution Co.,112,7,6,2025-05-27
-PO-00895,2025-06-07,SKU-020,Jeddah Hub,National Distribution Co.,112,7,6,2025-06-13
-PO-00896,2025-06-21,SKU-020,Jeddah Hub,National Distribution Co.,112,7,5,2025-06-26
-PO-00897,2025-06-30,SKU-020,Jeddah Hub,National Distribution Co.,112,7,8,2025-07-08
-PO-00898,2025-01-05,SKU-020,Dammam Hub,National Distribution Co.,112,7,10,2025-01-15
-PO-00899,2025-01-20,SKU-020,Dammam Hub,National Distribution Co.,112,7,3,2025-01-23
-PO-00900,2025-02-03,SKU-020,Dammam Hub,National Distribution Co.,112,7,6,2025-02-09
-PO-00901,2025-02-21,SKU-020,Dammam Hub,National Distribution Co.,112,7,7,2025-02-28
-PO-00902,2025-03-11,SKU-020,Dammam Hub,National Distribution Co.,112,7,8,2025-03-19
-PO-00903,2025-03-30,SKU-020,Dammam Hub,National Distribution Co.,112,7,8,2025-04-07
-PO-00904,2025-04-14,SKU-020,Dammam Hub,National Distribution Co.,112,7,7,2025-04-21
-PO-00905,2025-04-26,SKU-020,Dammam Hub,National Distribution Co.,112,7,9,2025-05-05
-PO-00906,2025-05-12,SKU-020,Dammam Hub,National Distribution Co.,112,7,4,2025-05-16
-PO-00907,2025-06-01,SKU-020,Dammam Hub,National Distribution Co.,112,7,6,2025-06-07
-PO-00908,2025-06-18,SKU-020,Dammam Hub,National Distribution Co.,112,7,8,2025-06-26
-PO-00909,2025-01-10,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,5,2025-01-15
-PO-00910,2025-01-20,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,3,2025-01-23
-PO-00911,2025-01-30,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,5,2025-02-04
-PO-00912,2025-02-09,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,4,2025-02-13
-PO-00913,2025-02-22,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,7,2025-03-01
-PO-00914,2025-03-08,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,6,2025-03-14
-PO-00915,2025-03-21,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,8,2025-03-29
-PO-00916,2025-04-02,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,5,2025-04-07
-PO-00917,2025-04-11,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,1,2025-04-12
-PO-00918,2025-04-21,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,4,2025-04-25
-PO-00919,2025-05-01,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,4,2025-05-05
-PO-00920,2025-05-13,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,7,2025-05-20
-PO-00921,2025-05-28,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,5,2025-06-02
-PO-00922,2025-06-10,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,6,2025-06-16
-PO-00923,2025-06-22,SKU-021,Riyadh Central,Arabian Supply Ltd.,714,5,4,2025-06-26
-PO-00924,2025-01-08,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,3,2025-01-11
-PO-00925,2025-01-21,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,8,2025-01-29
-PO-00926,2025-02-02,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,6,2025-02-08
-PO-00927,2025-02-15,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,4,2025-02-19
-PO-00928,2025-03-02,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,5,2025-03-07
-PO-00929,2025-03-17,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,5,2025-03-22
-PO-00930,2025-03-31,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,3,2025-04-03
-PO-00931,2025-04-12,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,4,2025-04-16
-PO-00932,2025-04-24,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,4,2025-04-28
-PO-00933,2025-05-06,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,7,2025-05-13
-PO-00934,2025-05-23,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,5,2025-05-28
-PO-00935,2025-06-06,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,5,2025-06-11
-PO-00936,2025-06-20,SKU-021,Jeddah Hub,Arabian Supply Ltd.,714,5,1,2025-06-21
-PO-00937,2025-01-06,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,5,2025-01-11
-PO-00938,2025-01-21,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,10,2025-01-31
-PO-00939,2025-02-06,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,2,2025-02-08
-PO-00940,2025-02-24,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,7,2025-03-03
-PO-00941,2025-03-14,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,4,2025-03-18
-PO-00942,2025-03-31,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,3,2025-04-03
-PO-00943,2025-04-15,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,6,2025-04-21
-PO-00944,2025-05-01,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,8,2025-05-09
-PO-00945,2025-05-20,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,5,2025-05-25
-PO-00946,2025-06-08,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,3,2025-06-11
-PO-00947,2025-06-26,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,7,2025-07-03
-PO-00948,2025-06-27,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,4,2025-07-01
-PO-00949,2025-06-28,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,4,2025-07-02
-PO-00950,2025-06-29,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,6,2025-07-05
-PO-00951,2025-06-30,SKU-021,Dammam Hub,Arabian Supply Ltd.,714,5,2,2025-07-02
-PO-00952,2025-01-08,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,9,2025-01-17
-PO-00953,2025-01-20,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,9,2025-01-29
-PO-00954,2025-02-04,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,6,2025-02-10
-PO-00955,2025-02-14,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,9,2025-02-23
-PO-00956,2025-02-25,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,8,2025-03-05
-PO-00957,2025-03-08,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,7,2025-03-15
-PO-00958,2025-03-20,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,7,2025-03-27
-PO-00959,2025-03-31,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,10,2025-04-10
-PO-00960,2025-04-10,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,9,2025-04-19
-PO-00961,2025-04-19,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,14,2025-05-03
-PO-00962,2025-05-03,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,6,2025-05-09
-PO-00963,2025-05-19,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,7,2025-05-26
-PO-00964,2025-05-31,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,10,2025-06-10
-PO-00965,2025-06-11,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,13,2025-06-24
-PO-00966,2025-06-27,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,11,2025-07-08
-PO-00967,2025-06-28,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,8,2025-07-06
-PO-00968,2025-06-29,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,8,2025-07-07
-PO-00969,2025-06-30,SKU-022,Riyadh Central,Gulf Trading Co.,14,9,9,2025-07-09
-PO-00970,2025-01-12,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,7,2025-01-19
-PO-00971,2025-01-23,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,6,2025-01-29
-PO-00972,2025-01-30,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,12,2025-02-11
-PO-00973,2025-02-15,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,9,2025-02-24
-PO-00974,2025-03-02,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,9,2025-03-11
-PO-00975,2025-03-22,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,9,2025-03-31
-PO-00976,2025-04-03,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,11,2025-04-14
-PO-00977,2025-04-19,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,10,2025-04-29
-PO-00978,2025-04-29,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,10,2025-05-09
-PO-00979,2025-05-20,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,10,2025-05-30
-PO-00980,2025-06-02,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,7,2025-06-09
-PO-00981,2025-06-25,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,8,2025-07-03
-PO-00982,2025-06-26,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,8,2025-07-04
-PO-00983,2025-06-27,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,12,2025-07-09
-PO-00984,2025-06-28,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,10,2025-07-08
-PO-00985,2025-06-29,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,8,2025-07-07
-PO-00986,2025-06-30,SKU-022,Jeddah Hub,Gulf Trading Co.,14,9,15,2025-07-15
-PO-00987,2025-01-11,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,11,2025-01-22
-PO-00988,2025-01-29,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,6,2025-02-04
-PO-00989,2025-02-15,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,13,2025-02-28
-PO-00990,2025-03-14,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,11,2025-03-25
-PO-00991,2025-03-30,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,9,2025-04-08
-PO-00992,2025-04-16,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,11,2025-04-27
-PO-00993,2025-04-28,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,10,2025-05-08
-PO-00994,2025-05-18,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,9,2025-05-27
-PO-00995,2025-06-07,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,11,2025-06-18
-PO-00996,2025-06-27,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,12,2025-07-09
-PO-00997,2025-06-28,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,5,2025-07-03
-PO-00998,2025-06-29,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,9,2025-07-08
-PO-00999,2025-06-30,SKU-022,Dammam Hub,Gulf Trading Co.,14,9,7,2025-07-07
-PO-01000,2025-01-10,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,5,2025-01-15
-PO-01001,2025-01-20,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,2,2025-01-22
-PO-01002,2025-01-31,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,9,2025-02-09
-PO-01003,2025-02-14,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,7,2025-02-21
-PO-01004,2025-03-01,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,4,2025-03-05
-PO-01005,2025-03-15,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,3,2025-03-18
-PO-01006,2025-03-27,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,5,2025-04-01
-PO-01007,2025-04-06,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,4,2025-04-10
-PO-01008,2025-04-17,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,5,2025-04-22
-PO-01009,2025-04-27,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,6,2025-05-03
-PO-01010,2025-05-08,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,7,2025-05-15
-PO-01011,2025-05-21,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,5,2025-05-26
-PO-01012,2025-06-04,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,6,2025-06-10
-PO-01013,2025-06-16,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,6,2025-06-22
-PO-01014,2025-06-28,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,5,2025-07-03
-PO-01015,2025-06-29,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,7,2025-07-06
-PO-01016,2025-06-30,SKU-023,Riyadh Central,Arabian Supply Ltd.,546,5,2,2025-07-02
-PO-01017,2025-01-08,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,5,2025-01-13
-PO-01018,2025-01-21,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,3,2025-01-24
-PO-01019,2025-02-01,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,3,2025-02-04
-PO-01020,2025-02-14,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,3,2025-02-17
-PO-01021,2025-03-02,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,5,2025-03-07
-PO-01022,2025-03-18,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,9,2025-03-27
-PO-01023,2025-04-01,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,5,2025-04-06
-PO-01024,2025-04-13,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,6,2025-04-19
-PO-01025,2025-04-26,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,6,2025-05-02
-PO-01026,2025-05-09,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,8,2025-05-17
-PO-01027,2025-05-25,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,4,2025-05-29
-PO-01028,2025-06-09,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,6,2025-06-15
-PO-01029,2025-06-23,SKU-023,Jeddah Hub,Arabian Supply Ltd.,546,5,5,2025-06-28
-PO-01030,2025-01-06,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,5,2025-01-11
-PO-01031,2025-01-21,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,3,2025-01-24
-PO-01032,2025-02-04,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,4,2025-02-08
-PO-01033,2025-02-23,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,8,2025-03-03
-PO-01034,2025-03-14,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,5,2025-03-19
-PO-01035,2025-04-01,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,10,2025-04-11
-PO-01036,2025-04-17,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,3,2025-04-20
-PO-01037,2025-05-02,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,7,2025-05-09
-PO-01038,2025-05-19,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,4,2025-05-23
-PO-01039,2025-06-07,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,4,2025-06-11
-PO-01040,2025-06-24,SKU-023,Dammam Hub,Arabian Supply Ltd.,546,5,2,2025-06-26
-PO-01041,2025-01-09,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,7,2025-01-16
-PO-01042,2025-01-19,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,6,2025-01-25
-PO-01043,2025-01-30,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,6,2025-02-05
-PO-01044,2025-02-08,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,5,2025-02-13
-PO-01045,2025-02-21,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,5,2025-02-26
-PO-01046,2025-03-06,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,6,2025-03-12
-PO-01047,2025-03-21,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,9,2025-03-30
-PO-01048,2025-04-02,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,4,2025-04-06
-PO-01049,2025-04-13,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,5,2025-04-18
-PO-01050,2025-04-23,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,6,2025-04-29
-PO-01051,2025-05-04,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,7,2025-05-11
-PO-01052,2025-05-16,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,6,2025-05-22
-PO-01053,2025-05-30,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,8,2025-06-07
-PO-01054,2025-06-12,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,7,2025-06-19
-PO-01055,2025-06-23,SKU-024,Riyadh Central,Desert Logistics Supplies,252,6,7,2025-06-30
-PO-01056,2025-01-07,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,7,2025-01-14
-PO-01057,2025-01-19,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,5,2025-01-24
-PO-01058,2025-01-31,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,7,2025-02-07
-PO-01059,2025-02-12,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,9,2025-02-21
-PO-01060,2025-02-27,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,5,2025-03-04
-PO-01061,2025-03-14,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,5,2025-03-19
-PO-01062,2025-03-29,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,3,2025-04-01
-PO-01063,2025-04-11,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,8,2025-04-19
-PO-01064,2025-04-23,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,4,2025-04-27
-PO-01065,2025-05-06,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,3,2025-05-09
-PO-01066,2025-05-23,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,4,2025-05-27
-PO-01067,2025-06-08,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,12,2025-06-20
-PO-01068,2025-06-24,SKU-024,Jeddah Hub,Desert Logistics Supplies,252,6,4,2025-06-28
-PO-01069,2025-01-06,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,11,2025-01-17
-PO-01070,2025-01-20,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,7,2025-01-27
-PO-01071,2025-02-04,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,6,2025-02-10
-PO-01072,2025-02-22,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,3,2025-02-25
-PO-01073,2025-03-12,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,8,2025-03-20
-PO-01074,2025-03-31,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,1,2025-04-01
-PO-01075,2025-04-14,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,5,2025-04-19
-PO-01076,2025-04-29,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,7,2025-05-06
-PO-01077,2025-05-14,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,6,2025-05-20
-PO-01078,2025-06-03,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,9,2025-06-12
-PO-01079,2025-06-20,SKU-024,Dammam Hub,Desert Logistics Supplies,252,6,8,2025-06-28
+po_number,order_date,sku,warehouse_id,quantity_ordered,promised_lead_time_days,actual_lead_time_days,delivery_date
+PO-1001,2025-03-25,SKU-001,WH-MUM,127,8,11,2025-04-05
+PO-1002,2025-03-22,SKU-001,WH-MUM,158,7,7,2025-03-29
+PO-1003,2025-01-04,SKU-001,WH-MUM,178,8,10,2025-01-14
+PO-1004,2025-05-14,SKU-001,WH-MUM,318,6,8,2025-05-22
+PO-1005,2025-01-09,SKU-001,WH-MUM,352,6,6,2025-01-15
+PO-1006,2025-05-18,SKU-001,WH-MUM,140,8,8,2025-05-26
+PO-1007,2025-01-01,SKU-001,WH-MUM,133,8,10,2025-01-11
+PO-1008,2025-01-27,SKU-001,WH-MUM,259,7,7,2025-02-03
+PO-1009,2025-02-13,SKU-001,WH-MUM,306,6,6,2025-02-19
+PO-1010,2025-04-27,SKU-001,WH-MUM,183,8,10,2025-05-07
+PO-1011,2025-03-22,SKU-001,WH-MUM,211,6,6,2025-03-28
+PO-1012,2025-02-19,SKU-001,WH-MUM,328,8,13,2025-03-04
+PO-1013,2025-02-22,SKU-001,WH-DEL,269,7,7,2025-03-01
+PO-1014,2025-02-25,SKU-001,WH-DEL,157,6,6,2025-03-03
+PO-1015,2025-01-17,SKU-001,WH-DEL,377,7,8,2025-01-25
+PO-1016,2025-03-31,SKU-001,WH-DEL,315,8,11,2025-04-11
+PO-1017,2025-05-07,SKU-001,WH-DEL,200,7,7,2025-05-14
+PO-1018,2025-04-28,SKU-001,WH-DEL,118,6,6,2025-05-04
+PO-1019,2025-01-30,SKU-001,WH-DEL,86,6,7,2025-02-06
+PO-1020,2025-02-19,SKU-001,WH-DEL,214,7,7,2025-02-26
+PO-1021,2025-03-21,SKU-001,WH-DEL,176,7,7,2025-03-28
+PO-1022,2025-04-02,SKU-001,WH-DEL,403,7,10,2025-04-12
+PO-1023,2025-05-04,SKU-001,WH-DEL,396,8,8,2025-05-12
+PO-1024,2025-02-04,SKU-001,WH-DEL,382,8,10,2025-02-14
+PO-1025,2025-06-05,SKU-001,WH-DEL,177,8,10,2025-06-15
+PO-1026,2025-01-04,SKU-001,WH-DEL,378,7,7,2025-01-11
+PO-1027,2025-03-18,SKU-001,WH-DEL,227,6,9,2025-03-27
+PO-1028,2025-06-05,SKU-001,WH-BLR,305,6,6,2025-06-11
+PO-1029,2025-06-03,SKU-001,WH-BLR,415,7,7,2025-06-10
+PO-1030,2025-04-21,SKU-001,WH-BLR,103,7,8,2025-04-29
+PO-1031,2025-01-21,SKU-001,WH-BLR,242,7,7,2025-01-28
+PO-1032,2025-01-11,SKU-001,WH-BLR,98,6,9,2025-01-20
+PO-1033,2025-01-27,SKU-001,WH-BLR,235,7,7,2025-02-03
+PO-1034,2025-01-03,SKU-001,WH-BLR,342,8,8,2025-01-11
+PO-1035,2025-01-19,SKU-001,WH-BLR,295,7,8,2025-01-27
+PO-1036,2025-01-23,SKU-001,WH-BLR,350,7,10,2025-02-02
+PO-1037,2025-02-19,SKU-001,WH-BLR,175,7,7,2025-02-26
+PO-1038,2025-05-25,SKU-002,WH-MUM,214,8,8,2025-06-02
+PO-1039,2025-05-14,SKU-002,WH-MUM,329,6,6,2025-05-20
+PO-1040,2025-06-05,SKU-002,WH-MUM,204,6,6,2025-06-11
+PO-1041,2025-02-26,SKU-002,WH-MUM,405,7,8,2025-03-06
+PO-1042,2025-04-21,SKU-002,WH-MUM,204,7,7,2025-04-28
+PO-1043,2025-03-02,SKU-002,WH-MUM,238,8,15,2025-03-17
+PO-1044,2025-04-23,SKU-002,WH-MUM,321,8,8,2025-05-01
+PO-1045,2025-06-13,SKU-002,WH-MUM,171,8,9,2025-06-22
+PO-1046,2025-01-09,SKU-002,WH-MUM,195,8,9,2025-01-18
+PO-1047,2025-06-02,SKU-002,WH-MUM,368,7,7,2025-06-09
+PO-1048,2025-03-11,SKU-002,WH-MUM,304,8,10,2025-03-21
+PO-1049,2025-01-28,SKU-002,WH-DEL,92,8,10,2025-02-07
+PO-1050,2025-03-02,SKU-002,WH-DEL,155,8,8,2025-03-10
+PO-1051,2025-04-23,SKU-002,WH-DEL,383,6,6,2025-04-29
+PO-1052,2025-04-17,SKU-002,WH-DEL,130,7,7,2025-04-24
+PO-1053,2025-06-03,SKU-002,WH-DEL,392,6,11,2025-06-14
+PO-1054,2025-05-22,SKU-002,WH-DEL,119,6,6,2025-05-28
+PO-1055,2025-02-21,SKU-002,WH-DEL,327,8,8,2025-03-01
+PO-1056,2025-05-15,SKU-002,WH-DEL,97,7,7,2025-05-22
+PO-1057,2025-02-01,SKU-002,WH-DEL,209,7,7,2025-02-08
+PO-1058,2025-05-11,SKU-002,WH-DEL,413,6,6,2025-05-17
+PO-1059,2025-04-08,SKU-002,WH-DEL,384,7,8,2025-04-16
+PO-1060,2025-05-05,SKU-002,WH-DEL,100,8,8,2025-05-13
+PO-1061,2025-03-24,SKU-002,WH-BLR,184,6,8,2025-04-01
+PO-1062,2025-04-03,SKU-002,WH-BLR,242,8,11,2025-04-14
+PO-1063,2025-04-15,SKU-002,WH-BLR,350,8,8,2025-04-23
+PO-1064,2025-01-28,SKU-002,WH-BLR,306,6,6,2025-02-03
+PO-1065,2025-03-09,SKU-002,WH-BLR,379,7,9,2025-03-18
+PO-1066,2025-01-18,SKU-002,WH-BLR,92,7,7,2025-01-25
+PO-1067,2025-02-15,SKU-002,WH-BLR,202,8,9,2025-02-24
+PO-1068,2025-05-25,SKU-002,WH-BLR,341,8,8,2025-06-02
+PO-1069,2025-05-10,SKU-002,WH-BLR,327,8,8,2025-05-18
+PO-1070,2025-03-19,SKU-002,WH-BLR,300,6,6,2025-03-25
+PO-1071,2025-04-13,SKU-002,WH-BLR,368,8,9,2025-04-22
+PO-1072,2025-05-08,SKU-003,WH-MUM,250,7,7,2025-05-15
+PO-1073,2025-02-12,SKU-003,WH-MUM,108,6,8,2025-02-20
+PO-1074,2025-03-20,SKU-003,WH-MUM,377,8,8,2025-03-28
+PO-1075,2025-02-25,SKU-003,WH-MUM,310,6,7,2025-03-04
+PO-1076,2025-04-10,SKU-003,WH-MUM,319,7,7,2025-04-17
+PO-1077,2025-06-08,SKU-003,WH-MUM,414,6,6,2025-06-14
+PO-1078,2025-04-01,SKU-003,WH-MUM,111,6,6,2025-04-07
+PO-1079,2025-05-06,SKU-003,WH-MUM,122,7,7,2025-05-13
+PO-1080,2025-01-31,SKU-003,WH-MUM,395,6,6,2025-02-06
+PO-1081,2025-02-05,SKU-003,WH-MUM,413,6,6,2025-02-11
+PO-1082,2025-02-16,SKU-003,WH-MUM,313,8,8,2025-02-24
+PO-1083,2025-01-07,SKU-003,WH-DEL,149,8,8,2025-01-15
+PO-1084,2025-02-27,SKU-003,WH-DEL,345,7,7,2025-03-06
+PO-1085,2025-02-23,SKU-003,WH-DEL,364,6,6,2025-03-01
+PO-1086,2025-04-10,SKU-003,WH-DEL,344,6,6,2025-04-16
+PO-1087,2025-01-19,SKU-003,WH-DEL,100,8,8,2025-01-27
+PO-1088,2025-01-12,SKU-003,WH-DEL,181,6,6,2025-01-18
+PO-1089,2025-02-19,SKU-003,WH-DEL,244,6,6,2025-02-25
+PO-1090,2025-01-24,SKU-003,WH-DEL,198,6,9,2025-02-02
+PO-1091,2025-04-18,SKU-003,WH-DEL,320,6,6,2025-04-24
+PO-1092,2025-02-14,SKU-003,WH-DEL,147,7,8,2025-02-22
+PO-1093,2025-02-28,SKU-003,WH-DEL,362,8,10,2025-03-10
+PO-1094,2025-01-14,SKU-003,WH-DEL,245,6,6,2025-01-20
+PO-1095,2025-01-31,SKU-003,WH-DEL,250,8,10,2025-02-10
+PO-1096,2025-04-04,SKU-003,WH-BLR,200,7,7,2025-04-11
+PO-1097,2025-01-12,SKU-003,WH-BLR,381,8,8,2025-01-20
+PO-1098,2025-04-02,SKU-003,WH-BLR,287,7,9,2025-04-11
+PO-1099,2025-04-05,SKU-003,WH-BLR,319,7,8,2025-04-13
+PO-1100,2025-04-20,SKU-003,WH-BLR,394,8,10,2025-04-30
+PO-1101,2025-04-18,SKU-003,WH-BLR,390,7,10,2025-04-28
+PO-1102,2025-05-29,SKU-003,WH-BLR,199,6,8,2025-06-06
+PO-1103,2025-04-24,SKU-003,WH-BLR,180,8,8,2025-05-02
+PO-1104,2025-03-07,SKU-003,WH-BLR,221,8,9,2025-03-16
+PO-1105,2025-03-02,SKU-003,WH-BLR,212,8,8,2025-03-10
+PO-1106,2025-05-05,SKU-003,WH-BLR,344,6,7,2025-05-12
+PO-1107,2025-04-08,SKU-004,WH-MUM,274,4,4,2025-04-12
+PO-1108,2025-06-01,SKU-004,WH-MUM,318,4,4,2025-06-05
+PO-1109,2025-02-07,SKU-004,WH-MUM,301,5,8,2025-02-15
+PO-1110,2025-05-30,SKU-004,WH-MUM,258,4,5,2025-06-04
+PO-1111,2025-01-21,SKU-004,WH-MUM,209,5,5,2025-01-26
+PO-1112,2025-01-15,SKU-004,WH-MUM,177,4,7,2025-01-22
+PO-1113,2025-03-11,SKU-004,WH-MUM,116,6,6,2025-03-17
+PO-1114,2025-03-27,SKU-004,WH-MUM,109,6,6,2025-04-02
+PO-1115,2025-06-04,SKU-004,WH-MUM,270,5,5,2025-06-09
+PO-1116,2025-01-17,SKU-004,WH-MUM,225,5,7,2025-01-24
+PO-1117,2025-05-18,SKU-004,WH-MUM,123,5,5,2025-05-23
+PO-1118,2025-04-27,SKU-004,WH-MUM,89,4,7,2025-05-04
+PO-1119,2025-05-02,SKU-004,WH-MUM,179,6,6,2025-05-08
+PO-1120,2025-03-15,SKU-004,WH-MUM,400,5,10,2025-03-25
+PO-1121,2025-04-25,SKU-004,WH-DEL,305,4,6,2025-05-01
+PO-1122,2025-01-16,SKU-004,WH-DEL,294,5,5,2025-01-21
+PO-1123,2025-05-06,SKU-004,WH-DEL,351,6,6,2025-05-12
+PO-1124,2025-01-29,SKU-004,WH-DEL,383,6,11,2025-02-09
+PO-1125,2025-04-30,SKU-004,WH-DEL,165,5,6,2025-05-06
+PO-1126,2025-04-02,SKU-004,WH-DEL,261,5,5,2025-04-07
+PO-1127,2025-04-29,SKU-004,WH-DEL,255,5,5,2025-05-04
+PO-1128,2025-05-12,SKU-004,WH-DEL,368,4,4,2025-05-16
+PO-1129,2025-01-23,SKU-004,WH-DEL,416,6,6,2025-01-29
+PO-1130,2025-01-02,SKU-004,WH-DEL,84,5,5,2025-01-07
+PO-1131,2025-04-13,SKU-004,WH-DEL,293,6,6,2025-04-19
+PO-1132,2025-06-02,SKU-004,WH-DEL,223,4,4,2025-06-06
+PO-1133,2025-03-17,SKU-004,WH-BLR,293,4,4,2025-03-21
+PO-1134,2025-02-08,SKU-004,WH-BLR,191,5,5,2025-02-13
+PO-1135,2025-04-26,SKU-004,WH-BLR,199,5,12,2025-05-08
+PO-1136,2025-05-14,SKU-004,WH-BLR,327,5,5,2025-05-19
+PO-1137,2025-05-22,SKU-004,WH-BLR,150,6,6,2025-05-28
+PO-1138,2025-01-02,SKU-004,WH-BLR,251,6,6,2025-01-08
+PO-1139,2025-03-10,SKU-004,WH-BLR,233,4,6,2025-03-16
+PO-1140,2025-06-04,SKU-004,WH-BLR,245,5,7,2025-06-11
+PO-1141,2025-06-12,SKU-004,WH-BLR,321,4,4,2025-06-16
+PO-1142,2025-03-13,SKU-004,WH-BLR,210,6,9,2025-03-22
+PO-1143,2025-03-13,SKU-004,WH-BLR,304,5,5,2025-03-18
+PO-1144,2025-01-22,SKU-005,WH-MUM,327,4,4,2025-01-26
+PO-1145,2025-03-30,SKU-005,WH-MUM,197,5,5,2025-04-04
+PO-1146,2025-04-07,SKU-005,WH-MUM,337,5,10,2025-04-17
+PO-1147,2025-06-14,SKU-005,WH-MUM,364,6,13,2025-06-27
+PO-1148,2025-01-26,SKU-005,WH-MUM,132,6,8,2025-02-03
+PO-1149,2025-03-31,SKU-005,WH-MUM,198,5,8,2025-04-08
+PO-1150,2025-04-23,SKU-005,WH-MUM,84,6,7,2025-04-30
+PO-1151,2025-02-02,SKU-005,WH-MUM,99,4,4,2025-02-06
+PO-1152,2025-04-25,SKU-005,WH-MUM,303,4,4,2025-04-29
+PO-1153,2025-02-27,SKU-005,WH-MUM,291,6,11,2025-03-10
+PO-1154,2025-02-28,SKU-005,WH-DEL,342,4,4,2025-03-04
+PO-1155,2025-03-17,SKU-005,WH-DEL,181,5,5,2025-03-22
+PO-1156,2025-03-13,SKU-005,WH-DEL,251,4,4,2025-03-17
+PO-1157,2025-02-27,SKU-005,WH-DEL,397,4,4,2025-03-03
+PO-1158,2025-02-07,SKU-005,WH-DEL,154,4,4,2025-02-11
+PO-1159,2025-06-04,SKU-005,WH-DEL,225,6,8,2025-06-12
+PO-1160,2025-04-10,SKU-005,WH-DEL,266,4,4,2025-04-14
+PO-1161,2025-03-23,SKU-005,WH-DEL,318,5,8,2025-03-31
+PO-1162,2025-02-20,SKU-005,WH-DEL,363,4,11,2025-03-03
+PO-1163,2025-03-22,SKU-005,WH-DEL,250,5,8,2025-03-30
+PO-1164,2025-01-24,SKU-005,WH-DEL,112,5,7,2025-01-31
+PO-1165,2025-05-08,SKU-005,WH-BLR,369,4,4,2025-05-12
+PO-1166,2025-06-04,SKU-005,WH-BLR,374,5,12,2025-06-16
+PO-1167,2025-01-18,SKU-005,WH-BLR,248,6,7,2025-01-25
+PO-1168,2025-02-04,SKU-005,WH-BLR,298,4,4,2025-02-08
+PO-1169,2025-01-07,SKU-005,WH-BLR,338,5,6,2025-01-13
+PO-1170,2025-01-15,SKU-005,WH-BLR,251,5,7,2025-01-22
+PO-1171,2025-01-17,SKU-005,WH-BLR,164,6,6,2025-01-23
+PO-1172,2025-02-28,SKU-005,WH-BLR,274,5,5,2025-03-05
+PO-1173,2025-04-24,SKU-005,WH-BLR,152,4,6,2025-04-30
+PO-1174,2025-01-21,SKU-005,WH-BLR,221,5,5,2025-01-26
+PO-1175,2025-05-21,SKU-005,WH-BLR,313,6,7,2025-05-28
+PO-1176,2025-05-07,SKU-005,WH-BLR,307,6,6,2025-05-13
+PO-1177,2025-01-22,SKU-005,WH-BLR,95,5,5,2025-01-27
+PO-1178,2025-05-16,SKU-006,WH-MUM,243,9,14,2025-05-30
+PO-1179,2025-02-02,SKU-006,WH-MUM,152,11,11,2025-02-13
+PO-1180,2025-01-03,SKU-006,WH-MUM,255,9,9,2025-01-12
+PO-1181,2025-06-12,SKU-006,WH-MUM,175,9,11,2025-06-23
+PO-1182,2025-03-22,SKU-006,WH-MUM,359,11,11,2025-04-02
+PO-1183,2025-02-15,SKU-006,WH-MUM,261,11,14,2025-03-01
+PO-1184,2025-05-30,SKU-006,WH-MUM,325,11,11,2025-06-10
+PO-1185,2025-01-08,SKU-006,WH-MUM,286,9,9,2025-01-17
+PO-1186,2025-06-05,SKU-006,WH-MUM,330,10,11,2025-06-16
+PO-1187,2025-06-07,SKU-006,WH-MUM,387,9,10,2025-06-17
+PO-1188,2025-01-14,SKU-006,WH-MUM,386,11,11,2025-01-25
+PO-1189,2025-01-17,SKU-006,WH-MUM,233,10,11,2025-01-28
+PO-1190,2025-01-09,SKU-006,WH-MUM,219,11,16,2025-01-25
+PO-1191,2025-03-06,SKU-006,WH-DEL,387,10,10,2025-03-16
+PO-1192,2025-04-11,SKU-006,WH-DEL,315,10,11,2025-04-22
+PO-1193,2025-01-28,SKU-006,WH-DEL,140,9,9,2025-02-06
+PO-1194,2025-01-13,SKU-006,WH-DEL,256,10,10,2025-01-23
+PO-1195,2025-05-03,SKU-006,WH-DEL,160,11,13,2025-05-16
+PO-1196,2025-05-01,SKU-006,WH-DEL,118,10,10,2025-05-11
+PO-1197,2025-02-16,SKU-006,WH-DEL,404,9,9,2025-02-25
+PO-1198,2025-03-08,SKU-006,WH-DEL,186,9,14,2025-03-22
+PO-1199,2025-02-14,SKU-006,WH-DEL,290,11,16,2025-03-02
+PO-1200,2025-01-03,SKU-006,WH-DEL,256,9,9,2025-01-12
+PO-1201,2025-04-07,SKU-006,WH-DEL,221,10,10,2025-04-17
+PO-1202,2025-03-13,SKU-006,WH-DEL,97,11,11,2025-03-24
+PO-1203,2025-04-28,SKU-006,WH-DEL,414,9,9,2025-05-07
+PO-1204,2025-03-09,SKU-006,WH-BLR,148,11,11,2025-03-20
+PO-1205,2025-02-05,SKU-006,WH-BLR,391,9,12,2025-02-17
+PO-1206,2025-04-01,SKU-006,WH-BLR,327,10,12,2025-04-13
+PO-1207,2025-01-26,SKU-006,WH-BLR,297,11,14,2025-02-09
+PO-1208,2025-02-14,SKU-006,WH-BLR,253,10,10,2025-02-24
+PO-1209,2025-04-06,SKU-006,WH-BLR,334,9,12,2025-04-18
+PO-1210,2025-05-02,SKU-006,WH-BLR,282,10,10,2025-05-12
+PO-1211,2025-04-24,SKU-006,WH-BLR,164,9,9,2025-05-03
+PO-1212,2025-04-26,SKU-006,WH-BLR,182,9,9,2025-05-05
+PO-1213,2025-03-14,SKU-006,WH-BLR,326,10,10,2025-03-24
+PO-1214,2025-05-25,SKU-006,WH-BLR,104,10,11,2025-06-05
+PO-1215,2025-05-18,SKU-007,WH-MUM,271,11,14,2025-06-01
+PO-1216,2025-02-05,SKU-007,WH-MUM,388,9,12,2025-02-17
+PO-1217,2025-05-11,SKU-007,WH-MUM,370,10,12,2025-05-23
+PO-1218,2025-03-27,SKU-007,WH-MUM,355,9,11,2025-04-07
+PO-1219,2025-03-28,SKU-007,WH-MUM,186,11,11,2025-04-08
+PO-1220,2025-05-02,SKU-007,WH-MUM,84,9,14,2025-05-16
+PO-1221,2025-05-25,SKU-007,WH-MUM,394,9,9,2025-06-03
+PO-1222,2025-05-20,SKU-007,WH-MUM,242,11,12,2025-06-01
+PO-1223,2025-05-29,SKU-007,WH-MUM,161,10,10,2025-06-08
+PO-1224,2025-05-20,SKU-007,WH-MUM,383,10,10,2025-05-30
+PO-1225,2025-03-16,SKU-007,WH-MUM,373,11,11,2025-03-27
+PO-1226,2025-06-05,SKU-007,WH-MUM,327,9,9,2025-06-14
+PO-1227,2025-02-08,SKU-007,WH-MUM,187,10,10,2025-02-18
+PO-1228,2025-04-20,SKU-007,WH-DEL,324,9,9,2025-04-29
+PO-1229,2025-03-16,SKU-007,WH-DEL,326,11,12,2025-03-28
+PO-1230,2025-04-19,SKU-007,WH-DEL,331,9,9,2025-04-28
+PO-1231,2025-02-08,SKU-007,WH-DEL,285,10,15,2025-02-23
+PO-1232,2025-01-07,SKU-007,WH-DEL,246,11,11,2025-01-18
+PO-1233,2025-03-04,SKU-007,WH-DEL,214,11,13,2025-03-17
+PO-1234,2025-04-18,SKU-007,WH-DEL,103,10,10,2025-04-28
+PO-1235,2025-01-13,SKU-007,WH-DEL,243,9,9,2025-01-22
+PO-1236,2025-05-25,SKU-007,WH-DEL,333,11,11,2025-06-05
+PO-1237,2025-05-14,SKU-007,WH-DEL,384,11,11,2025-05-25
+PO-1238,2025-04-08,SKU-007,WH-DEL,153,9,9,2025-04-17
+PO-1239,2025-04-20,SKU-007,WH-DEL,103,10,13,2025-05-03
+PO-1240,2025-01-07,SKU-007,WH-DEL,407,11,13,2025-01-20
+PO-1241,2025-05-03,SKU-007,WH-DEL,123,10,12,2025-05-15
+PO-1242,2025-03-15,SKU-007,WH-DEL,166,10,10,2025-03-25
+PO-1243,2025-04-13,SKU-007,WH-BLR,382,10,10,2025-04-23
+PO-1244,2025-01-30,SKU-007,WH-BLR,259,9,14,2025-02-13
+PO-1245,2025-02-24,SKU-007,WH-BLR,203,10,10,2025-03-06
+PO-1246,2025-03-19,SKU-007,WH-BLR,233,9,14,2025-04-02
+PO-1247,2025-03-05,SKU-007,WH-BLR,273,10,10,2025-03-15
+PO-1248,2025-02-07,SKU-007,WH-BLR,91,10,12,2025-02-19
+PO-1249,2025-04-25,SKU-007,WH-BLR,413,9,11,2025-05-06
+PO-1250,2025-04-01,SKU-007,WH-BLR,321,11,11,2025-04-12
+PO-1251,2025-04-04,SKU-007,WH-BLR,397,9,9,2025-04-13
+PO-1252,2025-02-28,SKU-007,WH-BLR,252,9,11,2025-03-11
+PO-1253,2025-01-01,SKU-007,WH-BLR,372,11,11,2025-01-12
+PO-1254,2025-03-08,SKU-008,WH-MUM,387,9,14,2025-03-22
+PO-1255,2025-02-04,SKU-008,WH-MUM,112,9,14,2025-02-18
+PO-1256,2025-02-01,SKU-008,WH-MUM,322,9,11,2025-02-12
+PO-1257,2025-01-25,SKU-008,WH-MUM,306,9,9,2025-02-03
+PO-1258,2025-03-16,SKU-008,WH-MUM,91,11,11,2025-03-27
+PO-1259,2025-02-20,SKU-008,WH-MUM,346,11,11,2025-03-03
+PO-1260,2025-03-19,SKU-008,WH-MUM,414,10,10,2025-03-29
+PO-1261,2025-03-24,SKU-008,WH-MUM,418,10,11,2025-04-04
+PO-1262,2025-02-11,SKU-008,WH-MUM,264,10,10,2025-02-21
+PO-1263,2025-03-25,SKU-008,WH-MUM,393,10,10,2025-04-04
+PO-1264,2025-04-05,SKU-008,WH-MUM,257,10,10,2025-04-15
+PO-1265,2025-04-04,SKU-008,WH-DEL,186,11,12,2025-04-16
+PO-1266,2025-05-14,SKU-008,WH-DEL,342,11,18,2025-06-01
+PO-1267,2025-04-02,SKU-008,WH-DEL,364,10,10,2025-04-12
+PO-1268,2025-03-30,SKU-008,WH-DEL,342,11,11,2025-04-10
+PO-1269,2025-03-03,SKU-008,WH-DEL,385,10,12,2025-03-15
+PO-1270,2025-01-03,SKU-008,WH-DEL,303,11,12,2025-01-15
+PO-1271,2025-01-04,SKU-008,WH-DEL,192,11,13,2025-01-17
+PO-1272,2025-01-22,SKU-008,WH-DEL,249,9,9,2025-01-31
+PO-1273,2025-05-01,SKU-008,WH-DEL,194,10,12,2025-05-13
+PO-1274,2025-04-06,SKU-008,WH-DEL,328,10,12,2025-04-18
+PO-1275,2025-05-29,SKU-008,WH-DEL,312,11,13,2025-06-11
+PO-1276,2025-02-06,SKU-008,WH-DEL,113,9,9,2025-02-15
+PO-1277,2025-01-15,SKU-008,WH-DEL,155,11,16,2025-01-31
+PO-1278,2025-04-19,SKU-008,WH-BLR,394,9,16,2025-05-05
+PO-1279,2025-05-27,SKU-008,WH-BLR,147,9,9,2025-06-05
+PO-1280,2025-05-09,SKU-008,WH-BLR,368,11,11,2025-05-20
+PO-1281,2025-06-07,SKU-008,WH-BLR,264,10,10,2025-06-17
+PO-1282,2025-05-06,SKU-008,WH-BLR,166,9,9,2025-05-15
+PO-1283,2025-04-27,SKU-008,WH-BLR,191,11,11,2025-05-08
+PO-1284,2025-02-13,SKU-008,WH-BLR,155,11,11,2025-02-24
+PO-1285,2025-03-03,SKU-008,WH-BLR,389,9,14,2025-03-17
+PO-1286,2025-02-09,SKU-008,WH-BLR,198,11,11,2025-02-20
+PO-1287,2025-01-21,SKU-008,WH-BLR,348,11,14,2025-02-04
+PO-1288,2025-04-13,SKU-008,WH-BLR,302,11,11,2025-04-24
+PO-1289,2025-04-18,SKU-008,WH-BLR,318,11,14,2025-05-02
+PO-1290,2025-05-15,SKU-008,WH-BLR,172,9,9,2025-05-24
+PO-1291,2025-03-08,SKU-008,WH-BLR,355,9,12,2025-03-20
+PO-1292,2025-01-10,SKU-008,WH-BLR,380,9,9,2025-01-19
+PO-1293,2025-03-29,SKU-009,WH-MUM,275,13,15,2025-04-13
+PO-1294,2025-03-19,SKU-009,WH-MUM,384,14,14,2025-04-02
+PO-1295,2025-03-27,SKU-009,WH-MUM,405,15,15,2025-04-11
+PO-1296,2025-03-14,SKU-009,WH-MUM,222,14,14,2025-03-28
+PO-1297,2025-04-22,SKU-009,WH-MUM,181,14,16,2025-05-08
+PO-1298,2025-03-23,SKU-009,WH-MUM,362,14,14,2025-04-06
+PO-1299,2025-02-02,SKU-009,WH-MUM,335,13,13,2025-02-15
+PO-1300,2025-05-10,SKU-009,WH-MUM,130,15,15,2025-05-25
+PO-1301,2025-05-18,SKU-009,WH-MUM,402,13,13,2025-05-31
+PO-1302,2025-03-14,SKU-009,WH-MUM,233,14,16,2025-03-30
+PO-1303,2025-06-08,SKU-009,WH-MUM,290,14,14,2025-06-22
+PO-1304,2025-04-11,SKU-009,WH-MUM,138,13,13,2025-04-24
+PO-1305,2025-03-25,SKU-009,WH-MUM,292,15,15,2025-04-09
+PO-1306,2025-05-30,SKU-009,WH-DEL,401,14,17,2025-06-16
+PO-1307,2025-03-01,SKU-009,WH-DEL,301,14,14,2025-03-15
+PO-1308,2025-05-04,SKU-009,WH-DEL,367,15,15,2025-05-19
+PO-1309,2025-04-09,SKU-009,WH-DEL,263,13,13,2025-04-22
+PO-1310,2025-03-17,SKU-009,WH-DEL,154,13,18,2025-04-04
+PO-1311,2025-04-16,SKU-009,WH-DEL,288,14,16,2025-05-02
+PO-1312,2025-05-06,SKU-009,WH-DEL,296,13,13,2025-05-19
+PO-1313,2025-04-18,SKU-009,WH-DEL,324,14,15,2025-05-03
+PO-1314,2025-03-03,SKU-009,WH-DEL,189,14,14,2025-03-17
+PO-1315,2025-04-26,SKU-009,WH-DEL,218,14,14,2025-05-10
+PO-1316,2025-04-22,SKU-009,WH-DEL,158,13,13,2025-05-05
+PO-1317,2025-05-08,SKU-009,WH-DEL,209,13,15,2025-05-23
+PO-1318,2025-05-28,SKU-009,WH-DEL,87,15,15,2025-06-12
+PO-1319,2025-05-08,SKU-009,WH-DEL,122,13,13,2025-05-21
+PO-1320,2025-03-09,SKU-009,WH-BLR,302,13,13,2025-03-22
+PO-1321,2025-04-05,SKU-009,WH-BLR,277,13,16,2025-04-21
+PO-1322,2025-05-29,SKU-009,WH-BLR,390,14,14,2025-06-12
+PO-1323,2025-01-21,SKU-009,WH-BLR,227,15,17,2025-02-07
+PO-1324,2025-02-12,SKU-009,WH-BLR,157,13,13,2025-02-25
+PO-1325,2025-02-01,SKU-009,WH-BLR,181,15,16,2025-02-17
+PO-1326,2025-01-03,SKU-009,WH-BLR,156,14,17,2025-01-20
+PO-1327,2025-05-26,SKU-009,WH-BLR,367,14,17,2025-06-12
+PO-1328,2025-01-25,SKU-009,WH-BLR,403,14,14,2025-02-08
+PO-1329,2025-04-14,SKU-009,WH-BLR,346,13,18,2025-05-02
+PO-1330,2025-02-21,SKU-009,WH-BLR,282,14,14,2025-03-07
+PO-1331,2025-05-03,SKU-010,WH-MUM,185,4,4,2025-05-07
+PO-1332,2025-01-16,SKU-010,WH-MUM,353,3,8,2025-01-24
+PO-1333,2025-05-30,SKU-010,WH-MUM,353,5,8,2025-06-07
+PO-1334,2025-03-15,SKU-010,WH-MUM,166,4,4,2025-03-19
+PO-1335,2025-01-12,SKU-010,WH-MUM,347,4,4,2025-01-16
+PO-1336,2025-02-08,SKU-010,WH-MUM,230,3,3,2025-02-11
+PO-1337,2025-06-12,SKU-010,WH-MUM,112,4,4,2025-06-16
+PO-1338,2025-04-26,SKU-010,WH-MUM,160,5,6,2025-05-02
+PO-1339,2025-01-21,SKU-010,WH-MUM,290,3,3,2025-01-24
+PO-1340,2025-05-02,SKU-010,WH-MUM,139,3,4,2025-05-06
+PO-1341,2025-05-29,SKU-010,WH-MUM,335,5,5,2025-06-03
+PO-1342,2025-06-09,SKU-010,WH-MUM,307,3,3,2025-06-12
+PO-1343,2025-01-04,SKU-010,WH-MUM,87,3,3,2025-01-07
+PO-1344,2025-01-18,SKU-010,WH-DEL,265,3,3,2025-01-21
+PO-1345,2025-05-19,SKU-010,WH-DEL,218,3,3,2025-05-22
+PO-1346,2025-03-29,SKU-010,WH-DEL,199,3,3,2025-04-01
+PO-1347,2025-04-18,SKU-010,WH-DEL,91,4,4,2025-04-22
+PO-1348,2025-05-17,SKU-010,WH-DEL,203,3,4,2025-05-21
+PO-1349,2025-04-28,SKU-010,WH-DEL,165,5,5,2025-05-03
+PO-1350,2025-04-08,SKU-010,WH-DEL,225,3,3,2025-04-11
+PO-1351,2025-04-09,SKU-010,WH-DEL,120,3,3,2025-04-12
+PO-1352,2025-02-27,SKU-010,WH-DEL,237,5,5,2025-03-04
+PO-1353,2025-06-10,SKU-010,WH-DEL,298,5,5,2025-06-15
+PO-1354,2025-02-06,SKU-010,WH-DEL,311,4,7,2025-02-13
+PO-1355,2025-03-20,SKU-010,WH-BLR,280,5,5,2025-03-25
+PO-1356,2025-04-15,SKU-010,WH-BLR,218,5,6,2025-04-21
+PO-1357,2025-01-22,SKU-010,WH-BLR,330,4,4,2025-01-26
+PO-1358,2025-02-08,SKU-010,WH-BLR,390,4,4,2025-02-12
+PO-1359,2025-04-30,SKU-010,WH-BLR,418,5,5,2025-05-05
+PO-1360,2025-02-03,SKU-010,WH-BLR,211,5,6,2025-02-09
+PO-1361,2025-01-31,SKU-010,WH-BLR,298,3,6,2025-02-06
+PO-1362,2025-06-11,SKU-010,WH-BLR,213,4,4,2025-06-15
+PO-1363,2025-04-17,SKU-010,WH-BLR,354,3,3,2025-04-20
+PO-1364,2025-01-01,SKU-010,WH-BLR,306,3,4,2025-01-05
+PO-1365,2025-01-06,SKU-010,WH-BLR,360,3,3,2025-01-09
+PO-1366,2025-01-14,SKU-010,WH-BLR,175,3,5,2025-01-19
+PO-1367,2025-02-06,SKU-010,WH-BLR,216,3,3,2025-02-09
+PO-1368,2025-05-08,SKU-010,WH-BLR,415,5,5,2025-05-13
+PO-1369,2025-04-15,SKU-010,WH-BLR,419,5,5,2025-04-20
+PO-1370,2025-01-24,SKU-011,WH-MUM,176,5,5,2025-01-29
+PO-1371,2025-05-26,SKU-011,WH-MUM,299,3,3,2025-05-29
+PO-1372,2025-03-31,SKU-011,WH-MUM,330,5,6,2025-04-06
+PO-1373,2025-03-02,SKU-011,WH-MUM,156,5,5,2025-03-07
+PO-1374,2025-03-11,SKU-011,WH-MUM,360,4,6,2025-03-17
+PO-1375,2025-01-25,SKU-011,WH-MUM,129,3,3,2025-01-28
+PO-1376,2025-04-18,SKU-011,WH-MUM,230,4,4,2025-04-22
+PO-1377,2025-01-02,SKU-011,WH-MUM,380,3,3,2025-01-05
+PO-1378,2025-01-30,SKU-011,WH-MUM,91,5,5,2025-02-04
+PO-1379,2025-04-16,SKU-011,WH-MUM,227,5,8,2025-04-24
+PO-1380,2025-02-09,SKU-011,WH-MUM,173,4,4,2025-02-13
+PO-1381,2025-05-07,SKU-011,WH-MUM,353,5,5,2025-05-12
+PO-1382,2025-06-04,SKU-011,WH-MUM,298,3,5,2025-06-09
+PO-1383,2025-03-27,SKU-011,WH-MUM,167,3,4,2025-03-31
+PO-1384,2025-03-29,SKU-011,WH-DEL,216,4,5,2025-04-03
+PO-1385,2025-05-16,SKU-011,WH-DEL,299,4,11,2025-05-27
+PO-1386,2025-03-15,SKU-011,WH-DEL,336,4,4,2025-03-19
+PO-1387,2025-01-13,SKU-011,WH-DEL,116,5,5,2025-01-18
+PO-1388,2025-06-03,SKU-011,WH-DEL,86,3,3,2025-06-06
+PO-1389,2025-02-12,SKU-011,WH-DEL,174,3,4,2025-02-16
+PO-1390,2025-01-29,SKU-011,WH-DEL,230,4,9,2025-02-07
+PO-1391,2025-02-26,SKU-011,WH-DEL,101,3,6,2025-03-04
+PO-1392,2025-03-05,SKU-011,WH-DEL,294,5,5,2025-03-10
+PO-1393,2025-01-12,SKU-011,WH-DEL,379,4,9,2025-01-21
+PO-1394,2025-06-14,SKU-011,WH-BLR,212,5,5,2025-06-19
+PO-1395,2025-01-26,SKU-011,WH-BLR,387,4,4,2025-01-30
+PO-1396,2025-01-08,SKU-011,WH-BLR,173,5,10,2025-01-18
+PO-1397,2025-05-02,SKU-011,WH-BLR,166,3,3,2025-05-05
+PO-1398,2025-04-06,SKU-011,WH-BLR,405,4,9,2025-04-15
+PO-1399,2025-03-13,SKU-011,WH-BLR,385,3,4,2025-03-17
+PO-1400,2025-06-09,SKU-011,WH-BLR,294,4,4,2025-06-13
+PO-1401,2025-04-09,SKU-011,WH-BLR,275,5,5,2025-04-14
+PO-1402,2025-03-23,SKU-011,WH-BLR,246,3,3,2025-03-26
+PO-1403,2025-03-19,SKU-011,WH-BLR,273,5,5,2025-03-24
+PO-1404,2025-02-16,SKU-012,WH-MUM,333,6,7,2025-02-23
+PO-1405,2025-04-02,SKU-012,WH-MUM,358,5,8,2025-04-10
+PO-1406,2025-02-15,SKU-012,WH-MUM,364,6,6,2025-02-21
+PO-1407,2025-04-04,SKU-012,WH-MUM,213,7,7,2025-04-11
+PO-1408,2025-05-18,SKU-012,WH-MUM,169,6,8,2025-05-26
+PO-1409,2025-05-04,SKU-012,WH-MUM,146,7,14,2025-05-18
+PO-1410,2025-06-10,SKU-012,WH-MUM,270,7,7,2025-06-17
+PO-1411,2025-06-14,SKU-012,WH-MUM,258,7,7,2025-06-21
+PO-1412,2025-02-27,SKU-012,WH-MUM,220,7,7,2025-03-06
+PO-1413,2025-04-24,SKU-012,WH-MUM,363,6,6,2025-04-30
+PO-1414,2025-05-07,SKU-012,WH-MUM,419,6,6,2025-05-13
+PO-1415,2025-06-07,SKU-012,WH-DEL,146,6,8,2025-06-15
+PO-1416,2025-05-27,SKU-012,WH-DEL,266,7,7,2025-06-03
+PO-1417,2025-05-08,SKU-012,WH-DEL,331,6,6,2025-05-14
+PO-1418,2025-01-24,SKU-012,WH-DEL,238,6,6,2025-01-30
+PO-1419,2025-05-05,SKU-012,WH-DEL,392,6,6,2025-05-11
+PO-1420,2025-03-12,SKU-012,WH-DEL,339,6,8,2025-03-20
+PO-1421,2025-05-17,SKU-012,WH-DEL,334,6,9,2025-05-26
+PO-1422,2025-05-05,SKU-012,WH-DEL,351,7,9,2025-05-14
+PO-1423,2025-03-08,SKU-012,WH-DEL,247,7,10,2025-03-18
+PO-1424,2025-01-16,SKU-012,WH-DEL,251,7,10,2025-01-26
+PO-1425,2025-01-09,SKU-012,WH-DEL,171,5,5,2025-01-14
+PO-1426,2025-03-08,SKU-012,WH-DEL,271,7,9,2025-03-17
+PO-1427,2025-04-03,SKU-012,WH-BLR,153,6,9,2025-04-12
+PO-1428,2025-05-11,SKU-012,WH-BLR,294,5,8,2025-05-19
+PO-1429,2025-03-23,SKU-012,WH-BLR,93,7,7,2025-03-30
+PO-1430,2025-03-22,SKU-012,WH-BLR,108,6,9,2025-03-31
+PO-1431,2025-04-07,SKU-012,WH-BLR,417,6,6,2025-04-13
+PO-1432,2025-03-11,SKU-012,WH-BLR,87,5,5,2025-03-16
+PO-1433,2025-04-19,SKU-012,WH-BLR,112,7,7,2025-04-26
+PO-1434,2025-03-20,SKU-012,WH-BLR,95,6,6,2025-03-26
+PO-1435,2025-05-10,SKU-012,WH-BLR,169,6,6,2025-05-16
+PO-1436,2025-04-09,SKU-012,WH-BLR,393,6,11,2025-04-20
+PO-1437,2025-01-02,SKU-012,WH-BLR,153,6,6,2025-01-08
+PO-1438,2025-06-13,SKU-013,WH-MUM,124,7,10,2025-06-23
+PO-1439,2025-04-11,SKU-013,WH-MUM,363,6,8,2025-04-19
+PO-1440,2025-02-19,SKU-013,WH-MUM,241,7,14,2025-03-05
+PO-1441,2025-02-02,SKU-013,WH-MUM,293,5,6,2025-02-08
+PO-1442,2025-06-08,SKU-013,WH-MUM,123,6,9,2025-06-17
+PO-1443,2025-01-02,SKU-013,WH-MUM,245,5,5,2025-01-07
+PO-1444,2025-01-28,SKU-013,WH-MUM,330,5,5,2025-02-02
+PO-1445,2025-03-30,SKU-013,WH-MUM,296,6,7,2025-04-06
+PO-1446,2025-01-24,SKU-013,WH-MUM,156,7,7,2025-01-31
+PO-1447,2025-04-10,SKU-013,WH-MUM,113,5,5,2025-04-15
+PO-1448,2025-03-23,SKU-013,WH-MUM,401,6,8,2025-03-31
+PO-1449,2025-02-13,SKU-013,WH-MUM,152,7,9,2025-02-22
+PO-1450,2025-06-11,SKU-013,WH-MUM,164,6,6,2025-06-17
+PO-1451,2025-03-06,SKU-013,WH-DEL,247,7,10,2025-03-16
+PO-1452,2025-06-05,SKU-013,WH-DEL,311,6,11,2025-06-16
+PO-1453,2025-02-17,SKU-013,WH-DEL,276,6,7,2025-02-24
+PO-1454,2025-03-13,SKU-013,WH-DEL,419,5,7,2025-03-20
+PO-1455,2025-04-16,SKU-013,WH-DEL,145,7,7,2025-04-23
+PO-1456,2025-04-26,SKU-013,WH-DEL,299,6,8,2025-05-04
+PO-1457,2025-03-10,SKU-013,WH-DEL,325,7,7,2025-03-17
+PO-1458,2025-02-14,SKU-013,WH-DEL,168,5,5,2025-02-19
+PO-1459,2025-03-22,SKU-013,WH-DEL,144,5,6,2025-03-28
+PO-1460,2025-02-25,SKU-013,WH-DEL,271,7,14,2025-03-11
+PO-1461,2025-03-03,SKU-013,WH-DEL,329,5,12,2025-03-15
+PO-1462,2025-06-09,SKU-013,WH-DEL,104,6,6,2025-06-15
+PO-1463,2025-03-10,SKU-013,WH-BLR,139,5,8,2025-03-18
+PO-1464,2025-02-12,SKU-013,WH-BLR,172,7,9,2025-02-21
+PO-1465,2025-03-08,SKU-013,WH-BLR,132,7,7,2025-03-15
+PO-1466,2025-04-24,SKU-013,WH-BLR,231,6,6,2025-04-30
+PO-1467,2025-06-14,SKU-013,WH-BLR,286,6,8,2025-06-22
+PO-1468,2025-01-17,SKU-013,WH-BLR,104,7,12,2025-01-29
+PO-1469,2025-03-29,SKU-013,WH-BLR,260,7,7,2025-04-05
+PO-1470,2025-01-24,SKU-013,WH-BLR,106,5,5,2025-01-29
+PO-1471,2025-04-16,SKU-013,WH-BLR,376,5,6,2025-04-22
+PO-1472,2025-01-19,SKU-013,WH-BLR,126,6,7,2025-01-26
+PO-1473,2025-02-12,SKU-014,WH-MUM,153,9,9,2025-02-21
+PO-1474,2025-05-29,SKU-014,WH-MUM,242,8,9,2025-06-07
+PO-1475,2025-01-04,SKU-014,WH-MUM,159,10,10,2025-01-14
+PO-1476,2025-02-01,SKU-014,WH-MUM,392,9,9,2025-02-10
+PO-1477,2025-05-26,SKU-014,WH-MUM,392,8,8,2025-06-03
+PO-1478,2025-04-04,SKU-014,WH-MUM,285,8,8,2025-04-12
+PO-1479,2025-06-04,SKU-014,WH-MUM,125,8,8,2025-06-12
+PO-1480,2025-05-03,SKU-014,WH-MUM,361,8,8,2025-05-11
+PO-1481,2025-01-01,SKU-014,WH-MUM,150,10,12,2025-01-13
+PO-1482,2025-06-03,SKU-014,WH-MUM,89,8,10,2025-06-13
+PO-1483,2025-02-11,SKU-014,WH-DEL,377,8,11,2025-02-22
+PO-1484,2025-04-15,SKU-014,WH-DEL,288,10,10,2025-04-25
+PO-1485,2025-05-27,SKU-014,WH-DEL,259,9,11,2025-06-07
+PO-1486,2025-06-14,SKU-014,WH-DEL,308,9,9,2025-06-23
+PO-1487,2025-06-03,SKU-014,WH-DEL,111,10,10,2025-06-13
+PO-1488,2025-03-11,SKU-014,WH-DEL,328,10,10,2025-03-21
+PO-1489,2025-01-08,SKU-014,WH-DEL,401,8,8,2025-01-16
+PO-1490,2025-01-28,SKU-014,WH-DEL,362,8,10,2025-02-07
+PO-1491,2025-03-18,SKU-014,WH-DEL,328,10,15,2025-04-02
+PO-1492,2025-02-19,SKU-014,WH-DEL,332,9,9,2025-02-28
+PO-1493,2025-06-11,SKU-014,WH-DEL,272,10,11,2025-06-22
+PO-1494,2025-06-13,SKU-014,WH-DEL,337,8,8,2025-06-21
+PO-1495,2025-04-26,SKU-014,WH-BLR,114,10,10,2025-05-06
+PO-1496,2025-04-17,SKU-014,WH-BLR,216,8,8,2025-04-25
+PO-1497,2025-05-11,SKU-014,WH-BLR,178,9,9,2025-05-20
+PO-1498,2025-05-20,SKU-014,WH-BLR,206,8,8,2025-05-28
+PO-1499,2025-01-31,SKU-014,WH-BLR,317,8,9,2025-02-09
+PO-1500,2025-02-06,SKU-014,WH-BLR,409,9,9,2025-02-15
+PO-1501,2025-03-29,SKU-014,WH-BLR,402,8,8,2025-04-06
+PO-1502,2025-02-09,SKU-014,WH-BLR,139,9,9,2025-02-18
+PO-1503,2025-01-30,SKU-014,WH-BLR,163,10,11,2025-02-10
+PO-1504,2025-01-26,SKU-014,WH-BLR,367,8,9,2025-02-04
+PO-1505,2025-03-05,SKU-014,WH-BLR,184,8,8,2025-03-13
+PO-1506,2025-04-13,SKU-014,WH-BLR,381,8,8,2025-04-21
+PO-1507,2025-03-28,SKU-014,WH-BLR,303,8,11,2025-04-08
+PO-1508,2025-05-17,SKU-015,WH-MUM,249,10,10,2025-05-27
+PO-1509,2025-02-22,SKU-015,WH-MUM,322,8,8,2025-03-02
+PO-1510,2025-01-31,SKU-015,WH-MUM,90,8,9,2025-02-09
+PO-1511,2025-05-28,SKU-015,WH-MUM,87,9,9,2025-06-06
+PO-1512,2025-04-12,SKU-015,WH-MUM,356,9,9,2025-04-21
+PO-1513,2025-04-17,SKU-015,WH-MUM,230,8,8,2025-04-25
+PO-1514,2025-01-07,SKU-015,WH-MUM,87,8,8,2025-01-15
+PO-1515,2025-03-22,SKU-015,WH-MUM,379,9,11,2025-04-02
+PO-1516,2025-01-13,SKU-015,WH-MUM,385,8,8,2025-01-21
+PO-1517,2025-01-05,SKU-015,WH-MUM,232,8,8,2025-01-13
+PO-1518,2025-02-10,SKU-015,WH-MUM,357,10,10,2025-02-20
+PO-1519,2025-02-13,SKU-015,WH-MUM,197,8,9,2025-02-22
+PO-1520,2025-05-18,SKU-015,WH-DEL,337,9,12,2025-05-30
+PO-1521,2025-01-12,SKU-015,WH-DEL,82,8,8,2025-01-20
+PO-1522,2025-06-03,SKU-015,WH-DEL,81,10,15,2025-06-18
+PO-1523,2025-05-13,SKU-015,WH-DEL,300,10,10,2025-05-23
+PO-1524,2025-05-11,SKU-015,WH-DEL,241,10,12,2025-05-23
+PO-1525,2025-01-31,SKU-015,WH-DEL,323,8,10,2025-02-10
+PO-1526,2025-06-10,SKU-015,WH-DEL,155,10,12,2025-06-22
+PO-1527,2025-05-01,SKU-015,WH-DEL,386,9,9,2025-05-10
+PO-1528,2025-04-13,SKU-015,WH-DEL,169,9,12,2025-04-25
+PO-1529,2025-04-15,SKU-015,WH-DEL,396,10,10,2025-04-25
+PO-1530,2025-02-05,SKU-015,WH-BLR,155,8,8,2025-02-13
+PO-1531,2025-05-07,SKU-015,WH-BLR,364,9,9,2025-05-16
+PO-1532,2025-02-10,SKU-015,WH-BLR,327,8,9,2025-02-19
+PO-1533,2025-02-01,SKU-015,WH-BLR,367,8,8,2025-02-09
+PO-1534,2025-04-29,SKU-015,WH-BLR,115,9,11,2025-05-10
+PO-1535,2025-02-19,SKU-015,WH-BLR,364,9,10,2025-03-01
+PO-1536,2025-02-11,SKU-015,WH-BLR,334,10,10,2025-02-21
+PO-1537,2025-03-05,SKU-015,WH-BLR,177,10,10,2025-03-15
+PO-1538,2025-02-14,SKU-015,WH-BLR,308,9,9,2025-02-23
+PO-1539,2025-03-22,SKU-015,WH-BLR,209,8,8,2025-03-30
+PO-1540,2025-05-16,SKU-015,WH-BLR,236,9,9,2025-05-25
+PO-1541,2025-03-11,SKU-015,WH-BLR,85,8,8,2025-03-19
+PO-1542,2025-03-01,SKU-016,WH-MUM,145,8,8,2025-03-09
+PO-1543,2025-04-12,SKU-016,WH-MUM,176,9,16,2025-04-28
+PO-1544,2025-01-16,SKU-016,WH-MUM,203,8,8,2025-01-24
+PO-1545,2025-01-08,SKU-016,WH-MUM,313,10,10,2025-01-18
+PO-1546,2025-04-28,SKU-016,WH-MUM,373,8,8,2025-05-06
+PO-1547,2025-01-09,SKU-016,WH-MUM,158,8,8,2025-01-17
+PO-1548,2025-04-25,SKU-016,WH-MUM,188,9,9,2025-05-04
+PO-1549,2025-03-02,SKU-016,WH-MUM,417,10,11,2025-03-13
+PO-1550,2025-02-15,SKU-016,WH-MUM,111,10,10,2025-02-25
+PO-1551,2025-03-08,SKU-016,WH-MUM,158,9,14,2025-03-22
+PO-1552,2025-04-24,SKU-016,WH-MUM,296,10,10,2025-05-04
+PO-1553,2025-02-20,SKU-016,WH-MUM,265,9,12,2025-03-04
+PO-1554,2025-06-03,SKU-016,WH-MUM,220,9,11,2025-06-14
+PO-1555,2025-04-21,SKU-016,WH-DEL,268,8,10,2025-05-01
+PO-1556,2025-02-04,SKU-016,WH-DEL,375,10,10,2025-02-14
+PO-1557,2025-02-01,SKU-016,WH-DEL,86,9,9,2025-02-10
+PO-1558,2025-01-02,SKU-016,WH-DEL,345,8,9,2025-01-11
+PO-1559,2025-05-30,SKU-016,WH-DEL,327,10,10,2025-06-09
+PO-1560,2025-02-01,SKU-016,WH-DEL,138,10,10,2025-02-11
+PO-1561,2025-03-05,SKU-016,WH-DEL,168,8,8,2025-03-13
+PO-1562,2025-02-07,SKU-016,WH-DEL,416,9,9,2025-02-16
+PO-1563,2025-01-12,SKU-016,WH-DEL,206,10,10,2025-01-22
+PO-1564,2025-04-02,SKU-016,WH-DEL,288,9,14,2025-04-16
+PO-1565,2025-05-18,SKU-016,WH-DEL,373,10,10,2025-05-28
+PO-1566,2025-02-14,SKU-016,WH-DEL,361,8,8,2025-02-22
+PO-1567,2025-04-14,SKU-016,WH-DEL,347,10,10,2025-04-24
+PO-1568,2025-05-02,SKU-016,WH-DEL,224,9,9,2025-05-11
+PO-1569,2025-06-03,SKU-016,WH-BLR,248,8,8,2025-06-11
+PO-1570,2025-06-13,SKU-016,WH-BLR,185,9,9,2025-06-22
+PO-1571,2025-02-16,SKU-016,WH-BLR,285,8,8,2025-02-24
+PO-1572,2025-05-17,SKU-016,WH-BLR,364,9,9,2025-05-26
+PO-1573,2025-02-07,SKU-016,WH-BLR,154,8,9,2025-02-16
+PO-1574,2025-02-21,SKU-016,WH-BLR,414,10,10,2025-03-03
+PO-1575,2025-02-04,SKU-016,WH-BLR,414,8,11,2025-02-15
+PO-1576,2025-05-22,SKU-016,WH-BLR,265,10,10,2025-06-01
+PO-1577,2025-06-04,SKU-016,WH-BLR,365,10,10,2025-06-14
+PO-1578,2025-05-08,SKU-016,WH-BLR,116,9,9,2025-05-17
+PO-1579,2025-03-10,SKU-016,WH-BLR,284,8,8,2025-03-18
+PO-1580,2025-06-09,SKU-017,WH-MUM,395,7,10,2025-06-19
+PO-1581,2025-05-31,SKU-017,WH-MUM,294,7,8,2025-06-08
+PO-1582,2025-05-27,SKU-017,WH-MUM,126,7,8,2025-06-04
+PO-1583,2025-06-01,SKU-017,WH-MUM,337,7,8,2025-06-09
+PO-1584,2025-04-17,SKU-017,WH-MUM,376,7,7,2025-04-24
+PO-1585,2025-01-04,SKU-017,WH-MUM,106,9,9,2025-01-13
+PO-1586,2025-04-17,SKU-017,WH-MUM,378,8,10,2025-04-27
+PO-1587,2025-05-20,SKU-017,WH-MUM,197,9,10,2025-05-30
+PO-1588,2025-04-01,SKU-017,WH-MUM,391,9,9,2025-04-10
+PO-1589,2025-02-01,SKU-017,WH-MUM,170,9,10,2025-02-11
+PO-1590,2025-04-21,SKU-017,WH-DEL,263,8,8,2025-04-29
+PO-1591,2025-01-06,SKU-017,WH-DEL,396,8,8,2025-01-14
+PO-1592,2025-04-17,SKU-017,WH-DEL,385,8,8,2025-04-25
+PO-1593,2025-04-12,SKU-017,WH-DEL,197,9,9,2025-04-21
+PO-1594,2025-05-23,SKU-017,WH-DEL,341,9,10,2025-06-02
+PO-1595,2025-01-06,SKU-017,WH-DEL,354,8,8,2025-01-14
+PO-1596,2025-06-05,SKU-017,WH-DEL,167,7,7,2025-06-12
+PO-1597,2025-05-14,SKU-017,WH-DEL,398,9,11,2025-05-25
+PO-1598,2025-05-07,SKU-017,WH-DEL,320,9,9,2025-05-16
+PO-1599,2025-03-10,SKU-017,WH-DEL,358,9,9,2025-03-19
+PO-1600,2025-03-30,SKU-017,WH-DEL,278,9,10,2025-04-09
+PO-1601,2025-01-26,SKU-017,WH-DEL,184,8,8,2025-02-03
+PO-1602,2025-06-07,SKU-017,WH-DEL,291,7,7,2025-06-14
+PO-1603,2025-02-02,SKU-017,WH-DEL,104,9,9,2025-02-11
+PO-1604,2025-04-13,SKU-017,WH-BLR,354,9,9,2025-04-22
+PO-1605,2025-01-29,SKU-017,WH-BLR,343,8,9,2025-02-07
+PO-1606,2025-04-18,SKU-017,WH-BLR,415,7,8,2025-04-26
+PO-1607,2025-04-24,SKU-017,WH-BLR,303,8,11,2025-05-05
+PO-1608,2025-04-13,SKU-017,WH-BLR,235,8,10,2025-04-23
+PO-1609,2025-01-22,SKU-017,WH-BLR,91,7,8,2025-01-30
+PO-1610,2025-05-07,SKU-017,WH-BLR,297,7,7,2025-05-14
+PO-1611,2025-03-07,SKU-017,WH-BLR,404,8,10,2025-03-17
+PO-1612,2025-03-08,SKU-017,WH-BLR,395,8,8,2025-03-16
+PO-1613,2025-02-21,SKU-017,WH-BLR,153,8,8,2025-03-01
+PO-1614,2025-04-18,SKU-017,WH-BLR,402,7,7,2025-04-25
+PO-1615,2025-03-14,SKU-018,WH-MUM,371,8,8,2025-03-22
+PO-1616,2025-04-16,SKU-018,WH-MUM,149,8,8,2025-04-24
+PO-1617,2025-04-01,SKU-018,WH-MUM,323,9,9,2025-04-10
+PO-1618,2025-02-28,SKU-018,WH-MUM,389,7,7,2025-03-07
+PO-1619,2025-02-05,SKU-018,WH-MUM,369,9,14,2025-02-19
+PO-1620,2025-03-24,SKU-018,WH-MUM,277,8,11,2025-04-04
+PO-1621,2025-01-08,SKU-018,WH-MUM,370,8,8,2025-01-16
+PO-1622,2025-02-14,SKU-018,WH-MUM,278,7,7,2025-02-21
+PO-1623,2025-03-24,SKU-018,WH-MUM,279,8,8,2025-04-01
+PO-1624,2025-02-20,SKU-018,WH-MUM,410,8,9,2025-03-01
+PO-1625,2025-05-04,SKU-018,WH-MUM,159,8,8,2025-05-12
+PO-1626,2025-04-03,SKU-018,WH-MUM,205,9,10,2025-04-13
+PO-1627,2025-02-09,SKU-018,WH-DEL,231,8,8,2025-02-17
+PO-1628,2025-03-09,SKU-018,WH-DEL,347,9,12,2025-03-21
+PO-1629,2025-04-19,SKU-018,WH-DEL,181,8,8,2025-04-27
+PO-1630,2025-06-10,SKU-018,WH-DEL,109,9,14,2025-06-24
+PO-1631,2025-02-04,SKU-018,WH-DEL,372,8,9,2025-02-13
+PO-1632,2025-03-11,SKU-018,WH-DEL,201,7,7,2025-03-18
+PO-1633,2025-03-05,SKU-018,WH-DEL,88,7,7,2025-03-12
+PO-1634,2025-02-11,SKU-018,WH-DEL,261,7,10,2025-02-21
+PO-1635,2025-04-13,SKU-018,WH-DEL,334,7,9,2025-04-22
+PO-1636,2025-02-14,SKU-018,WH-DEL,297,9,10,2025-02-24
+PO-1637,2025-01-04,SKU-018,WH-DEL,292,9,9,2025-01-13
+PO-1638,2025-01-01,SKU-018,WH-DEL,137,7,14,2025-01-15
+PO-1639,2025-02-26,SKU-018,WH-BLR,292,8,8,2025-03-06
+PO-1640,2025-02-11,SKU-018,WH-BLR,89,8,8,2025-02-19
+PO-1641,2025-02-01,SKU-018,WH-BLR,201,9,9,2025-02-10
+PO-1642,2025-05-25,SKU-018,WH-BLR,354,7,7,2025-06-01
+PO-1643,2025-05-12,SKU-018,WH-BLR,146,7,7,2025-05-19
+PO-1644,2025-03-24,SKU-018,WH-BLR,196,7,9,2025-04-02
+PO-1645,2025-02-10,SKU-018,WH-BLR,358,7,7,2025-02-17
+PO-1646,2025-05-17,SKU-018,WH-BLR,93,7,7,2025-05-24
+PO-1647,2025-03-15,SKU-018,WH-BLR,222,9,9,2025-03-24
+PO-1648,2025-05-16,SKU-018,WH-BLR,287,9,10,2025-05-26
+PO-1649,2025-05-26,SKU-018,WH-BLR,383,9,9,2025-06-04
+PO-1650,2025-03-24,SKU-018,WH-BLR,261,9,9,2025-04-02
+PO-1651,2025-04-10,SKU-019,WH-MUM,121,9,9,2025-04-19
+PO-1652,2025-03-25,SKU-019,WH-MUM,84,8,15,2025-04-09
+PO-1653,2025-04-01,SKU-019,WH-MUM,292,7,7,2025-04-08
+PO-1654,2025-01-08,SKU-019,WH-MUM,292,9,9,2025-01-17
+PO-1655,2025-05-28,SKU-019,WH-MUM,208,9,9,2025-06-06
+PO-1656,2025-05-09,SKU-019,WH-MUM,129,8,8,2025-05-17
+PO-1657,2025-03-13,SKU-019,WH-MUM,235,8,8,2025-03-21
+PO-1658,2025-03-05,SKU-019,WH-MUM,336,9,10,2025-03-15
+PO-1659,2025-04-10,SKU-019,WH-MUM,165,9,9,2025-04-19
+PO-1660,2025-02-04,SKU-019,WH-MUM,378,8,15,2025-02-19
+PO-1661,2025-06-11,SKU-019,WH-MUM,134,8,8,2025-06-19
+PO-1662,2025-02-11,SKU-019,WH-MUM,335,7,7,2025-02-18
+PO-1663,2025-04-23,SKU-019,WH-MUM,131,7,7,2025-04-30
+PO-1664,2025-02-20,SKU-019,WH-DEL,142,8,8,2025-02-28
+PO-1665,2025-04-21,SKU-019,WH-DEL,346,7,7,2025-04-28
+PO-1666,2025-02-28,SKU-019,WH-DEL,252,7,7,2025-03-07
+PO-1667,2025-01-27,SKU-019,WH-DEL,118,9,9,2025-02-05
+PO-1668,2025-02-25,SKU-019,WH-DEL,300,7,9,2025-03-06
+PO-1669,2025-01-01,SKU-019,WH-DEL,404,9,9,2025-01-10
+PO-1670,2025-03-25,SKU-019,WH-DEL,381,7,9,2025-04-03
+PO-1671,2025-05-24,SKU-019,WH-DEL,109,9,11,2025-06-04
+PO-1672,2025-04-29,SKU-019,WH-DEL,298,9,9,2025-05-08
+PO-1673,2025-04-14,SKU-019,WH-DEL,204,9,9,2025-04-23
+PO-1674,2025-05-06,SKU-019,WH-DEL,153,7,7,2025-05-13
+PO-1675,2025-03-28,SKU-019,WH-DEL,83,9,9,2025-04-06
+PO-1676,2025-01-29,SKU-019,WH-DEL,174,7,8,2025-02-06
+PO-1677,2025-04-21,SKU-019,WH-DEL,336,8,15,2025-05-06
+PO-1678,2025-06-11,SKU-019,WH-BLR,150,9,9,2025-06-20
+PO-1679,2025-04-11,SKU-019,WH-BLR,232,8,8,2025-04-19
+PO-1680,2025-02-01,SKU-019,WH-BLR,370,9,9,2025-02-10
+PO-1681,2025-04-15,SKU-019,WH-BLR,388,8,10,2025-04-25
+PO-1682,2025-05-14,SKU-019,WH-BLR,374,8,11,2025-05-25
+PO-1683,2025-05-17,SKU-019,WH-BLR,356,7,8,2025-05-25
+PO-1684,2025-01-19,SKU-019,WH-BLR,409,7,7,2025-01-26
+PO-1685,2025-06-14,SKU-019,WH-BLR,370,8,13,2025-06-27
+PO-1686,2025-04-14,SKU-019,WH-BLR,178,8,8,2025-04-22
+PO-1687,2025-01-03,SKU-019,WH-BLR,253,8,8,2025-01-11
+PO-1688,2025-04-21,SKU-019,WH-BLR,135,7,8,2025-04-29
+PO-1689,2025-05-31,SKU-019,WH-BLR,158,8,13,2025-06-13
+PO-1690,2025-04-18,SKU-019,WH-BLR,392,9,9,2025-04-27
+PO-1691,2025-03-11,SKU-019,WH-BLR,363,9,12,2025-03-23
+PO-1692,2025-05-24,SKU-020,WH-MUM,231,12,14,2025-06-07
+PO-1693,2025-06-14,SKU-020,WH-MUM,337,11,16,2025-06-30
+PO-1694,2025-05-26,SKU-020,WH-MUM,160,10,10,2025-06-05
+PO-1695,2025-03-25,SKU-020,WH-MUM,327,10,10,2025-04-04
+PO-1696,2025-02-24,SKU-020,WH-MUM,402,11,11,2025-03-07
+PO-1697,2025-06-02,SKU-020,WH-MUM,333,11,11,2025-06-13
+PO-1698,2025-05-27,SKU-020,WH-MUM,349,10,17,2025-06-13
+PO-1699,2025-03-07,SKU-020,WH-MUM,284,11,16,2025-03-23
+PO-1700,2025-01-08,SKU-020,WH-MUM,272,12,12,2025-01-20
+PO-1701,2025-04-15,SKU-020,WH-MUM,417,12,12,2025-04-27
+PO-1702,2025-05-13,SKU-020,WH-MUM,108,11,13,2025-05-26
+PO-1703,2025-01-13,SKU-020,WH-MUM,211,11,11,2025-01-24
+PO-1704,2025-03-22,SKU-020,WH-MUM,306,10,10,2025-04-01
+PO-1705,2025-01-26,SKU-020,WH-DEL,228,11,16,2025-02-11
+PO-1706,2025-06-04,SKU-020,WH-DEL,376,11,13,2025-06-17
+PO-1707,2025-02-06,SKU-020,WH-DEL,124,10,10,2025-02-16
+PO-1708,2025-05-09,SKU-020,WH-DEL,408,10,10,2025-05-19
+PO-1709,2025-05-03,SKU-020,WH-DEL,183,12,19,2025-05-22
+PO-1710,2025-04-13,SKU-020,WH-DEL,344,12,19,2025-05-02
+PO-1711,2025-02-09,SKU-020,WH-DEL,262,12,12,2025-02-21
+PO-1712,2025-06-11,SKU-020,WH-DEL,353,10,10,2025-06-21
+PO-1713,2025-04-27,SKU-020,WH-DEL,168,12,12,2025-05-09
+PO-1714,2025-06-05,SKU-020,WH-DEL,365,12,12,2025-06-17
+PO-1715,2025-04-12,SKU-020,WH-DEL,321,12,12,2025-04-24
+PO-1716,2025-06-07,SKU-020,WH-DEL,285,10,10,2025-06-17
+PO-1717,2025-06-13,SKU-020,WH-BLR,88,11,11,2025-06-24
+PO-1718,2025-02-14,SKU-020,WH-BLR,344,12,12,2025-02-26
+PO-1719,2025-01-03,SKU-020,WH-BLR,289,12,12,2025-01-15
+PO-1720,2025-02-06,SKU-020,WH-BLR,231,11,12,2025-02-18
+PO-1721,2025-03-05,SKU-020,WH-BLR,152,12,12,2025-03-17
+PO-1722,2025-02-04,SKU-020,WH-BLR,164,10,11,2025-02-15
+PO-1723,2025-01-23,SKU-020,WH-BLR,410,11,11,2025-02-03
+PO-1724,2025-01-03,SKU-020,WH-BLR,130,10,12,2025-01-15
+PO-1725,2025-01-15,SKU-020,WH-BLR,279,10,10,2025-01-25
+PO-1726,2025-03-24,SKU-020,WH-BLR,178,12,12,2025-04-05
+PO-1727,2025-01-12,SKU-020,WH-BLR,288,10,10,2025-01-22
+PO-1728,2025-01-04,SKU-020,WH-BLR,329,12,17,2025-01-21
+PO-1729,2025-05-12,SKU-020,WH-BLR,123,11,12,2025-05-24
+PO-1730,2025-04-07,SKU-020,WH-BLR,240,10,10,2025-04-17
+PO-1731,2025-01-29,SKU-021,WH-MUM,401,11,11,2025-02-09
+PO-1732,2025-05-09,SKU-021,WH-MUM,257,10,10,2025-05-19
+PO-1733,2025-03-17,SKU-021,WH-MUM,330,10,10,2025-03-27
+PO-1734,2025-04-22,SKU-021,WH-MUM,152,12,13,2025-05-05
+PO-1735,2025-04-04,SKU-021,WH-MUM,220,12,12,2025-04-16
+PO-1736,2025-05-16,SKU-021,WH-MUM,403,10,15,2025-05-31
+PO-1737,2025-04-22,SKU-021,WH-MUM,212,10,10,2025-05-02
+PO-1738,2025-04-30,SKU-021,WH-MUM,209,11,11,2025-05-11
+PO-1739,2025-04-07,SKU-021,WH-MUM,254,11,11,2025-04-18
+PO-1740,2025-01-27,SKU-021,WH-MUM,92,10,12,2025-02-08
+PO-1741,2025-02-14,SKU-021,WH-MUM,123,11,11,2025-02-25
+PO-1742,2025-02-28,SKU-021,WH-DEL,289,12,12,2025-03-12
+PO-1743,2025-02-15,SKU-021,WH-DEL,327,10,12,2025-02-27
+PO-1744,2025-04-26,SKU-021,WH-DEL,174,12,12,2025-05-08
+PO-1745,2025-04-14,SKU-021,WH-DEL,175,11,18,2025-05-02
+PO-1746,2025-01-21,SKU-021,WH-DEL,307,10,10,2025-01-31
+PO-1747,2025-04-28,SKU-021,WH-DEL,335,10,11,2025-05-09
+PO-1748,2025-06-12,SKU-021,WH-DEL,221,11,16,2025-06-28
+PO-1749,2025-04-06,SKU-021,WH-DEL,257,10,13,2025-04-19
+PO-1750,2025-04-11,SKU-021,WH-DEL,222,11,12,2025-04-23
+PO-1751,2025-02-24,SKU-021,WH-DEL,152,10,10,2025-03-06
+PO-1752,2025-06-14,SKU-021,WH-DEL,110,11,11,2025-06-25
+PO-1753,2025-03-22,SKU-021,WH-DEL,303,11,11,2025-04-02
+PO-1754,2025-01-28,SKU-021,WH-DEL,320,11,11,2025-02-08
+PO-1755,2025-01-07,SKU-021,WH-DEL,112,11,12,2025-01-19
+PO-1756,2025-01-09,SKU-021,WH-DEL,93,11,16,2025-01-25
+PO-1757,2025-03-31,SKU-021,WH-BLR,117,12,12,2025-04-12
+PO-1758,2025-04-07,SKU-021,WH-BLR,269,12,12,2025-04-19
+PO-1759,2025-03-03,SKU-021,WH-BLR,375,12,12,2025-03-15
+PO-1760,2025-02-13,SKU-021,WH-BLR,318,11,11,2025-02-24
+PO-1761,2025-04-30,SKU-021,WH-BLR,369,10,10,2025-05-10
+PO-1762,2025-01-23,SKU-021,WH-BLR,322,11,11,2025-02-03
+PO-1763,2025-03-17,SKU-021,WH-BLR,83,12,12,2025-03-29
+PO-1764,2025-03-07,SKU-021,WH-BLR,225,12,13,2025-03-20
+PO-1765,2025-06-10,SKU-021,WH-BLR,279,10,10,2025-06-20
+PO-1766,2025-02-14,SKU-021,WH-BLR,211,10,15,2025-03-01
+PO-1767,2025-03-04,SKU-021,WH-BLR,356,11,11,2025-03-15
+PO-1768,2025-01-22,SKU-021,WH-BLR,275,12,14,2025-02-05
+PO-1769,2025-06-03,SKU-021,WH-BLR,263,11,16,2025-06-19
+PO-1770,2025-02-27,SKU-021,WH-BLR,134,11,14,2025-03-13
+PO-1771,2025-04-04,SKU-022,WH-MUM,255,12,17,2025-04-21
+PO-1772,2025-05-14,SKU-022,WH-MUM,251,12,19,2025-06-02
+PO-1773,2025-04-25,SKU-022,WH-MUM,277,11,11,2025-05-06
+PO-1774,2025-04-05,SKU-022,WH-MUM,207,11,11,2025-04-16
+PO-1775,2025-05-17,SKU-022,WH-MUM,82,11,14,2025-05-31
+PO-1776,2025-06-13,SKU-022,WH-MUM,391,10,10,2025-06-23
+PO-1777,2025-01-02,SKU-022,WH-MUM,202,10,10,2025-01-12
+PO-1778,2025-02-24,SKU-022,WH-MUM,147,10,11,2025-03-07
+PO-1779,2025-03-10,SKU-022,WH-MUM,83,10,10,2025-03-20
+PO-1780,2025-05-03,SKU-022,WH-MUM,226,10,15,2025-05-18
+PO-1781,2025-01-18,SKU-022,WH-DEL,155,11,11,2025-01-29
+PO-1782,2025-01-18,SKU-022,WH-DEL,319,11,11,2025-01-29
+PO-1783,2025-04-14,SKU-022,WH-DEL,328,12,12,2025-04-26
+PO-1784,2025-05-01,SKU-022,WH-DEL,213,11,11,2025-05-12
+PO-1785,2025-01-01,SKU-022,WH-DEL,160,10,11,2025-01-12
+PO-1786,2025-04-24,SKU-022,WH-DEL,283,10,10,2025-05-04
+PO-1787,2025-02-01,SKU-022,WH-DEL,215,11,11,2025-02-12
+PO-1788,2025-04-10,SKU-022,WH-DEL,345,12,12,2025-04-22
+PO-1789,2025-04-15,SKU-022,WH-DEL,358,12,17,2025-05-02
+PO-1790,2025-06-08,SKU-022,WH-DEL,90,12,15,2025-06-23
+PO-1791,2025-01-14,SKU-022,WH-DEL,291,10,10,2025-01-24
+PO-1792,2025-04-01,SKU-022,WH-DEL,155,12,12,2025-04-13
+PO-1793,2025-05-29,SKU-022,WH-DEL,111,12,12,2025-06-10
+PO-1794,2025-03-30,SKU-022,WH-DEL,361,12,12,2025-04-11
+PO-1795,2025-02-26,SKU-022,WH-DEL,154,12,19,2025-03-17
+PO-1796,2025-04-19,SKU-022,WH-BLR,291,11,11,2025-04-30
+PO-1797,2025-06-08,SKU-022,WH-BLR,126,11,11,2025-06-19
+PO-1798,2025-05-06,SKU-022,WH-BLR,389,12,13,2025-05-19
+PO-1799,2025-04-18,SKU-022,WH-BLR,85,10,12,2025-04-30
+PO-1800,2025-05-24,SKU-022,WH-BLR,146,12,12,2025-06-05
+PO-1801,2025-05-01,SKU-022,WH-BLR,80,11,11,2025-05-12
+PO-1802,2025-06-10,SKU-022,WH-BLR,394,10,10,2025-06-20
+PO-1803,2025-02-03,SKU-022,WH-BLR,143,12,12,2025-02-15
+PO-1804,2025-03-24,SKU-022,WH-BLR,184,11,11,2025-04-04
+PO-1805,2025-05-19,SKU-022,WH-BLR,213,11,11,2025-05-30
+PO-1806,2025-03-14,SKU-022,WH-BLR,160,10,12,2025-03-26
+PO-1807,2025-01-23,SKU-023,WH-MUM,393,6,6,2025-01-29
+PO-1808,2025-01-29,SKU-023,WH-MUM,218,7,7,2025-02-05
+PO-1809,2025-01-23,SKU-023,WH-MUM,171,8,8,2025-01-31
+PO-1810,2025-06-01,SKU-023,WH-MUM,172,7,7,2025-06-08
+PO-1811,2025-02-19,SKU-023,WH-MUM,281,8,8,2025-02-27
+PO-1812,2025-05-20,SKU-023,WH-MUM,131,7,7,2025-05-27
+PO-1813,2025-02-03,SKU-023,WH-MUM,116,8,8,2025-02-11
+PO-1814,2025-01-07,SKU-023,WH-MUM,161,6,6,2025-01-13
+PO-1815,2025-02-10,SKU-023,WH-MUM,356,7,9,2025-02-19
+PO-1816,2025-01-08,SKU-023,WH-MUM,274,7,9,2025-01-17
+PO-1817,2025-05-30,SKU-023,WH-MUM,288,8,15,2025-06-14
+PO-1818,2025-05-17,SKU-023,WH-MUM,115,7,7,2025-05-24
+PO-1819,2025-03-25,SKU-023,WH-MUM,384,8,8,2025-04-02
+PO-1820,2025-05-10,SKU-023,WH-DEL,279,8,8,2025-05-18
+PO-1821,2025-03-07,SKU-023,WH-DEL,239,6,6,2025-03-13
+PO-1822,2025-06-13,SKU-023,WH-DEL,326,6,13,2025-06-26
+PO-1823,2025-02-18,SKU-023,WH-DEL,254,6,6,2025-02-24
+PO-1824,2025-06-14,SKU-023,WH-DEL,169,6,6,2025-06-20
+PO-1825,2025-01-09,SKU-023,WH-DEL,301,7,7,2025-01-16
+PO-1826,2025-01-22,SKU-023,WH-DEL,401,7,8,2025-01-30
+PO-1827,2025-03-01,SKU-023,WH-DEL,131,7,7,2025-03-08
+PO-1828,2025-02-01,SKU-023,WH-DEL,98,6,6,2025-02-07
+PO-1829,2025-02-28,SKU-023,WH-DEL,214,6,6,2025-03-06
+PO-1830,2025-01-14,SKU-023,WH-DEL,292,6,7,2025-01-21
+PO-1831,2025-06-02,SKU-023,WH-BLR,142,7,12,2025-06-14
+PO-1832,2025-05-06,SKU-023,WH-BLR,193,8,8,2025-05-14
+PO-1833,2025-05-17,SKU-023,WH-BLR,371,8,9,2025-05-26
+PO-1834,2025-04-08,SKU-023,WH-BLR,270,8,11,2025-04-19
+PO-1835,2025-03-02,SKU-023,WH-BLR,270,6,6,2025-03-08
+PO-1836,2025-02-27,SKU-023,WH-BLR,239,8,8,2025-03-07
+PO-1837,2025-06-03,SKU-023,WH-BLR,414,8,8,2025-06-11
+PO-1838,2025-04-03,SKU-023,WH-BLR,393,7,7,2025-04-10
+PO-1839,2025-04-22,SKU-023,WH-BLR,161,6,6,2025-04-28
+PO-1840,2025-03-31,SKU-023,WH-BLR,158,7,9,2025-04-09
+PO-1841,2025-04-14,SKU-024,WH-MUM,111,8,8,2025-04-22
+PO-1842,2025-04-14,SKU-024,WH-MUM,299,9,9,2025-04-23
+PO-1843,2025-06-12,SKU-024,WH-MUM,217,9,9,2025-06-21
+PO-1844,2025-02-02,SKU-024,WH-MUM,192,9,9,2025-02-11
+PO-1845,2025-03-29,SKU-024,WH-MUM,106,8,8,2025-04-06
+PO-1846,2025-03-30,SKU-024,WH-MUM,98,10,10,2025-04-09
+PO-1847,2025-02-08,SKU-024,WH-MUM,413,8,9,2025-02-17
+PO-1848,2025-04-25,SKU-024,WH-MUM,379,8,8,2025-05-03
+PO-1849,2025-03-10,SKU-024,WH-MUM,299,8,8,2025-03-18
+PO-1850,2025-01-27,SKU-024,WH-MUM,340,10,10,2025-02-06
+PO-1851,2025-02-02,SKU-024,WH-MUM,280,10,11,2025-02-13
+PO-1852,2025-02-06,SKU-024,WH-MUM,274,10,10,2025-02-16
+PO-1853,2025-03-05,SKU-024,WH-MUM,92,10,10,2025-03-15
+PO-1854,2025-03-10,SKU-024,WH-DEL,264,10,13,2025-03-23
+PO-1855,2025-01-17,SKU-024,WH-DEL,162,10,10,2025-01-27
+PO-1856,2025-05-15,SKU-024,WH-DEL,124,8,10,2025-05-25
+PO-1857,2025-05-15,SKU-024,WH-DEL,266,8,8,2025-05-23
+PO-1858,2025-01-04,SKU-024,WH-DEL,239,9,10,2025-01-14
+PO-1859,2025-03-05,SKU-024,WH-DEL,166,8,10,2025-03-15
+PO-1860,2025-06-02,SKU-024,WH-DEL,274,8,8,2025-06-10
+PO-1861,2025-03-02,SKU-024,WH-DEL,300,10,10,2025-03-12
+PO-1862,2025-01-27,SKU-024,WH-DEL,176,9,9,2025-02-05
+PO-1863,2025-05-01,SKU-024,WH-DEL,382,8,8,2025-05-09
+PO-1864,2025-03-07,SKU-024,WH-DEL,336,9,12,2025-03-19
+PO-1865,2025-02-24,SKU-024,WH-DEL,116,10,10,2025-03-06
+PO-1866,2025-05-14,SKU-024,WH-DEL,297,8,8,2025-05-22
+PO-1867,2025-05-05,SKU-024,WH-DEL,345,9,9,2025-05-14
+PO-1868,2025-03-13,SKU-024,WH-DEL,367,9,9,2025-03-22
+PO-1869,2025-01-10,SKU-024,WH-BLR,330,8,10,2025-01-20
+PO-1870,2025-06-13,SKU-024,WH-BLR,268,9,9,2025-06-22
+PO-1871,2025-05-08,SKU-024,WH-BLR,87,9,9,2025-05-17
+PO-1872,2025-01-18,SKU-024,WH-BLR,327,10,12,2025-01-30
+PO-1873,2025-02-15,SKU-024,WH-BLR,392,10,10,2025-02-25
+PO-1874,2025-01-23,SKU-024,WH-BLR,309,9,10,2025-02-02
+PO-1875,2025-01-06,SKU-024,WH-BLR,123,10,10,2025-01-16
+PO-1876,2025-01-04,SKU-024,WH-BLR,241,8,8,2025-01-12
+PO-1877,2025-04-27,SKU-024,WH-BLR,292,10,13,2025-05-10
+PO-1878,2025-02-04,SKU-024,WH-BLR,297,10,15,2025-02-19

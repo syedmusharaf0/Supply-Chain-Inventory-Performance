@@ -1,44 +1,38 @@
-# Power BI Dashboard — Build Guide
+# Dashboard Guide
 
-Executive dashboard for the Supply Chain & Inventory Performance project.
-Data model: `dim_products` (dimension) related 1→many to `fact_daily_stock`
-and `fact_purchase_orders`. All measures are in `dax_measures.dax`.
+Two dashboards ship with this project:
 
-## Page 1 — Executive Overview
-KPI cards (top row):
-- Total Units Sold
-- Stock Turnover Ratio
-- Stock-out Rate %
-- Carrying Cost (SAR)
-- Avg Lead Time Variance (Days)
-- Estimated Lost Sales Value (SAR)
+1. **Interactive HTML dashboard** — `dashboard/dashboard.html`
+   A complete, self-contained executive dashboard (open it in any browser,
+   no server or Power BI licence needed). Regenerate it any time with
+   `python dashboard/build_dashboard.py` after running the analysis.
+   It can also be published free through **GitHub Pages** (repo Settings → Pages → deploy from the `main` branch) for a shareable live link.
 
-Visuals:
-- Line chart: Stock-out Rate % by month (trend, with previous-month comparison)
-- Bar chart: Units Sold and Units Lost Sales by Warehouse
-- Bar chart: Avg Inventory Value (SAR) by Warehouse vs Carrying Cost (SAR)
+2. **Power BI dashboard** — build it from `dashboard/dax_measures.dax`
+   following the layout below (3 pages: Executive, Warehouse & SKU
+   Deep-Dive, Supplier Performance).
 
-Slicers: Warehouse, Category, Supplier, Date range.
+## Power BI layout
 
-## Page 2 — Inventory Health
-- Bar chart: Stock Turnover Ratio by Category
-- Bar chart: Stock Turnover Ratio by SKU (sorted ascending — slowest movers first)
-- Matrix: SKU × Warehouse with Closing Stock, Stock-out Rate %, Days of Cover
-  (conditional formatting: red where Stock-out Rate % > 3)
-- Scatter: Avg Inventory Value (x) vs Stock Turnover Ratio (y), size = Units Sold
-  — SKUs in the bottom-right are overstocked (high value, low turnover)
+### Page 1 — Executive Overview
+- KPI cards: Stock Turnover Ratio, Stock-Out Rate %, Average Inventory
+  Value (₹), Carrying Cost (₹), Lost Sales Value (₹), Orders Late %
+- Line chart: monthly Stock-Out Rate % trend
+- Bar chart: Stock Turnover by Category
+- Slicers: warehouse, category, month
 
-## Page 3 — Supplier & Lead Time Performance
-- Bar chart: Avg Lead Time Variance (Days) by Supplier
-- Card: % Orders Late
-- Table: Orders by Supplier — orders, standard vs actual lead time, % late
-- Drill-through from a supplier to its SKUs
+### Page 2 — Warehouse & SKU Deep-Dive
+- Matrix: warehouse × category turnover and stock-out rate
+- Bar chart: Top Bottleneck SKUs by Lost Sales Value (₹)
+- Table: SKUs Below Reorder Point (conditional formatting on closing stock)
+- Drill-through on SKU to a daily stock movement page
 
-## Drill-through page — SKU Detail
-Filter by SKU: daily closing stock line chart with the reorder point as a
-constant line, stock-out days highlighted, purchase order history table.
+### Page 3 — Supplier Performance
+- Bar chart: Lead Time Variance by Supplier (days)
+- Table: orders, late %, average variance by supplier
+- Scatter: promised vs actual lead time by purchase order
 
 ## Refresh
-Re-run `python/etl_pipeline.py` after new daily stock files are added to
-`data/`, then refresh the dataset in Power BI (the model reads the same
-tables produced by the ETL: PostgreSQL or the CSV exports in `outputs/`).
+Re-run `python/etl_pipeline.py` then `python/kpi_analysis.py` (and
+`python dashboard/build_dashboard.py` for the HTML dashboard) whenever
+the data extracts change.
