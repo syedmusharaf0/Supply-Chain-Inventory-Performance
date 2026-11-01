@@ -8,8 +8,10 @@ Three ways to view this project's dashboards — same data, same KPIs:
    Complete, self-contained executive dashboard (open in any browser, no
    licence needed): KPI cards, key insights, warehouse table, monthly
    growth (LAG) table and 5 charts. Regenerate with
-   `python dashboard/build_dashboard.py`. Can be published free through
-   GitHub Pages (repo Settings → Pages → deploy from the `main` branch).
+   `python dashboard/build_dashboard.py`. The same folder also contains `index.html` (identical file), so the
+   dashboard deploys as a static site: on **Vercel** set Root Directory =
+   `dashboard` (Framework: Other, no build command); on GitHub Pages,
+   serve the `dashboard` folder.
 
 3. **Power BI dashboard** — build the `.pbix` in Power BI Desktop using
    `dashboard/powerbi_build_guide.md` (page-by-page spec, theme, formatting),

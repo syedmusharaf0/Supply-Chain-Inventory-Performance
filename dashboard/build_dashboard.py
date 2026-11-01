@@ -188,4 +188,8 @@ footer {{ text-align: center; color: #61707e; font-size: 12.5px; padding: 22px; 
 
 out = BASE / "dashboard" / "dashboard.html"
 out.write_text(html, encoding="utf-8")
-print(f"dashboard written: {out} ({out.stat().st_size/1024:.0f} KB)")
+# index.html twin: lets the dashboard/ folder deploy as a static site
+# (e.g. Vercel with Root Directory = dashboard, or GitHub Pages).
+idx = BASE / "dashboard" / "index.html"
+idx.write_text(html, encoding="utf-8")
+print(f"dashboard written: {out} + {idx.name} ({out.stat().st_size/1024:.0f} KB)")
