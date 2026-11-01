@@ -1,4 +1,4 @@
-warehouse_id,units_sold,lost_units,stockout_rate_pct,avg_inventory_value_inr,turnover_period,carrying_cost_inr
-WH-BLR,49401.0,545.0,1.09,23259286.0,21.19,2306811.0
-WH-DEL,60083.0,2093.0,3.37,20844421.0,28.96,2067310.0
-WH-MUM,70370.0,7398.0,9.51,17836310.0,39.74,1768971.0
+warehouse_name,total_units_sold,total_lost_units,stockout_rate_percent,average_inventory_value_inr,stock_turnover_ratio,carrying_cost_inr
+Bengaluru Hub,268238.0,4988.0,1.83,29495779.0,36.38,14739808.0
+Delhi Hub,322748.0,18849.0,5.52,25691767.0,50.53,12838845.0
+Mumbai Central,376967.0,51245.0,11.97,21897725.0,69.54,10942863.0

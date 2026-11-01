@@ -1,10 +1,10 @@
-supplier,orders,avg_variance_days,late_pct
-AutoGrip Parts,112,0.96,39.3
-FlexFit Sports,115,1.24,36.5
-FreshKart Distributors,73,0.88,34.2
-HomeNest Living,145,0.72,31.7
-NorthPeak Clothing,38,0.95,36.8
-NutriCore India,69,1.55,53.6
-TechNova Supplies,140,0.87,37.9
-UrbanThread Apparel,115,1.29,44.3
-VoltEdge Traders,71,1.31,42.3
+supplier_name,total_orders,average_variance_days,late_orders_percent
+AutoGrip Parts,110,1.0,32.7
+FlexFit Sports,107,1.2,39.3
+FreshKart Distributors,74,1.27,41.9
+HomeNest Living,149,1.42,49.7
+NorthPeak Clothing,40,0.9,32.5
+NutriCore India,71,0.96,35.2
+TechNova Supplies,144,1.6,45.1
+UrbanThread Apparel,109,0.97,38.5
+VoltEdge Traders,74,1.43,44.6

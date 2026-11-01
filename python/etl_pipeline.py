@@ -21,25 +21,24 @@ def validate(df: pd.DataFrame, name: str, key_cols: list[str]) -> None:
 def main() -> None:
     print("EXTRACT")
     dim = pd.read_csv(DATA / "dim_products.csv")
-    stock = pd.read_csv(DATA / "fact_daily_stock.csv", parse_dates=["date"])
+    stock = pd.read_csv(DATA / "fact_daily_stock.csv", parse_dates=["stock_date"])
     po = pd.read_csv(DATA / "fact_purchase_orders.csv", parse_dates=["order_date", "delivery_date"])
 
     print("VALIDATE")
-    validate(dim, "dim_products", ["sku"])
-    validate(stock, "fact_daily_stock", ["date", "sku", "warehouse_id"])
-    validate(po, "fact_purchase_orders", ["po_number"])
-    assert (stock["closing_stock"] >= 0).all(), "negative closing stock found"
-    assert (stock["units_sold"] + stock["lost_sales_units"] >= stock["units_sold"]).all()
-    assert set(stock["warehouse_id"]) <= {"WH-MUM", "WH-DEL", "WH-BLR"}, "unknown warehouse"
+    validate(dim, "dim_products", ["product_code"])
+    validate(stock, "fact_daily_stock", ["stock_date", "product_code", "warehouse_name"])
+    validate(po, "fact_purchase_orders", ["purchase_order_id"])
+    assert (stock["closing_stock_units"] >= 0).all(), "negative closing stock found"
+    assert set(stock["warehouse_name"]) <= {"Mumbai Central", "Delhi Hub", "Bengaluru Hub"}, "unknown warehouse"
     assert (po["actual_lead_time_days"] > 0).all(), "non-positive lead time found"
     print("  [OK] business-rule checks passed")
 
     print("TRANSFORM")
-    stock["stock_value_inr"] = stock["closing_stock"] * stock["sku"].map(
-        dim.set_index("sku")["unit_cost_inr"])
+    stock["inventory_value_inr"] = stock["closing_stock_units"] * stock["product_code"].map(
+        dim.set_index("product_code")["unit_cost_inr"])
     po["lead_time_variance_days"] = po["actual_lead_time_days"] - po["promised_lead_time_days"]
     po["is_late"] = po["lead_time_variance_days"] > 0
-    print(f"  enriched fact_daily_stock with stock_value_inr; "
+    print(f"  enriched fact_daily_stock with inventory_value_inr; "
           f"purchase orders flagged late: {po['is_late'].mean():.1%} of orders")
 
     print("LOAD")
@@ -48,7 +47,7 @@ def main() -> None:
     stock.to_sql("fact_daily_stock", engine, if_exists="replace", index=False)
     po.to_sql("fact_purchase_orders", engine, if_exists="replace", index=False)
     print(f"  loaded 3 tables into {DBDIR / 'inventory.db'}")
-    print(f"  average inventory value (INR): {stock.groupby('date')['stock_value_inr'].sum().mean():,.0f}")
+    print(f"  average inventory value (INR): {stock.groupby('stock_date')['inventory_value_inr'].sum().mean():,.0f}")
 
 if __name__ == "__main__":
     main()

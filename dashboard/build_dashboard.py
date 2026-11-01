@@ -9,7 +9,6 @@ from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
 OUT, IMG = BASE / "outputs", BASE / "images"
-WH_NAMES = {"WH-MUM": "Mumbai Central", "WH-DEL": "Delhi Hub", "WH-BLR": "Bengaluru Hub"}
 
 def inr(n):
     s = str(int(round(float(n))))
@@ -26,6 +25,9 @@ def inr_short(n):
     if abs(n) >= 1e5: return f"₹{n/1e5:.1f} L"
     return inr(n)
 
+def pct(v):
+    return "—" if pd.isna(v) else f"{v:+.1f}%"
+
 def svg_inline(path):
     txt = Path(path).read_text(encoding="utf-8")
     i = txt.find("<svg")
@@ -34,40 +36,51 @@ def svg_inline(path):
 s = pd.read_csv(OUT / "kpi_summary.csv").iloc[0]
 wh = pd.read_csv(OUT / "kpi_by_warehouse.csv")
 sku = pd.read_csv(OUT / "kpi_by_sku.csv")
+monthly = pd.read_csv(OUT / "monthly_trend.csv", parse_dates=["month"])
 top = sku.nlargest(8, "lost_sales_value_inr")
-mum_share = 100 * wh.loc[wh.warehouse_id == "WH-MUM", "lost_units"].iloc[0] / s["lost_units"]
+last = monthly.iloc[-1]
+mum = wh.loc[wh.warehouse_name == "Mumbai Central"].iloc[0]
+blr = wh.loc[wh.warehouse_name == "Bengaluru Hub"].iloc[0]
+mum_share = 100 * mum["total_lost_units"] / s["total_lost_units"]
 worst = sku.loc[sku["lost_sales_value_inr"].idxmax()]
-best_wh = wh.loc[wh["avg_inventory_value_inr"].idxmax()]
 
 cards = [
-    ("Units Sold", f"{int(s['units_sold']):,}", "Jan – Jun 2025"),
-    ("Stock-Out Rate", f"{s['stockout_rate_pct']:.2f}%", f"{int(s['lost_units']):,} units lost"),
-    ("Stock Turnover", f"{s['turnover_period']:.1f}×", "period (181 days)"),
-    ("Avg Inventory Value", inr_short(s["avg_inventory_value_inr"]), inr(s["avg_inventory_value_inr"])),
-    ("Carrying Cost", inr_short(s["carrying_cost_inr"]), "20% p.a. assumption"),
-    ("Late Orders", f"{s['orders_late_pct']:.1f}%", f"of {int(s['orders_total'])} purchase orders"),
+    ("Total Units Sold", f"{int(s['total_units_sold']):,}", "Jan 2023 – Jun 2025"),
+    ("Stock-Out Rate", f"{s['stockout_rate_percent']:.2f}%", f"{int(s['total_lost_units']):,} units lost"),
+    ("Stock Turnover", f"{s['stock_turnover_ratio']:.1f}×", "annualised"),
+    ("Avg Inventory Value", inr_short(s["average_inventory_value_inr"]), inr(s["average_inventory_value_inr"])),
+    ("Carrying Cost", inr_short(s["carrying_cost_inr"]), "20% per year assumption"),
+    ("Late Orders", f"{s['late_orders_percent']:.1f}%", f"of {int(s['total_purchase_orders'])} purchase orders"),
 ]
 cards_html = "".join(
     f'<div class="card"><div class="kpi-label">{a}</div><div class="kpi-value">{b}</div>'
     f'<div class="kpi-sub">{c}</div></div>' for a, b, c in cards)
 
 wh_rows = "".join(
-    f"<tr><td>{WH_NAMES[r.warehouse_id]}</td><td>{int(r.units_sold):,}</td>"
-    f"<td>{r.stockout_rate_pct:.2f}%</td><td>{r.turnover_period:.2f}×</td>"
-    f"<td>{inr(r.avg_inventory_value_inr)}</td><td>{int(r.lost_units):,}</td></tr>"
-    for r in wh.sort_values("stockout_rate_pct", ascending=False).itertuples())
+    f"<tr><td>{r.warehouse_name}</td><td>{int(r.total_units_sold):,}</td>"
+    f"<td>{r.stockout_rate_percent:.2f}%</td><td>{r.stock_turnover_ratio:.1f}×</td>"
+    f"<td>{inr(r.average_inventory_value_inr)}</td><td>{int(r.total_lost_units):,}</td></tr>"
+    for r in wh.sort_values("stockout_rate_percent", ascending=False).itertuples())
+
+growth_rows = "".join(
+    f"<tr><td>{r.month.strftime('%b %Y')}</td><td>{int(r.units_sold):,}</td>"
+    f"<td>{pct(r.units_sold_mom_growth_percent)}</td><td>{pct(r.units_sold_yoy_growth_percent)}</td>"
+    f"<td>{inr_short(r.sales_value_inr)}</td><td>{pct(r.sales_value_inr_yoy_growth_percent)}</td>"
+    f"<td>{r.stockout_rate_percent:.2f}%</td></tr>"
+    for r in monthly.tail(6).itertuples())
 
 sku_rows = "".join(
-    f"<tr><td>{r.product_name}</td><td>{r.category}</td><td>{WH_NAMES[r.warehouse_id]}</td>"
-    f"<td>{r.stockout_rate_pct:.2f}%</td><td>{int(r.lost_units):,}</td>"
+    f"<tr><td>{r.product_name}</td><td>{r.product_category}</td><td>{r.warehouse_name}</td>"
+    f"<td>{r.stockout_rate_percent:.2f}%</td><td>{int(r.lost_units):,}</td>"
     f"<td>{inr(r.lost_sales_value_inr)}</td></tr>" for r in top.itertuples())
 
 charts = "".join(
     f'<div class="chart"><h3>{t}</h3>{svg_inline(IMG / f)}</div>'
-    for f, t in [("turnover_by_category.svg", "Stock Turnover by Category"),
-                 ("monthly_stockout_trend.svg", "Monthly Stock-Out Rate Trend"),
+    for f, t in [("turnover_by_category.svg", "Stock Turnover by Product Category"),
+                 ("monthly_stockout_trend.svg", "Monthly Stock-Out Rate Trend (last 12 months)"),
+                 ("yoy_growth_trend.svg", "Units Sold — Year-over-Year Growth"),
                  ("lead_time_variance_by_supplier.svg", "Lead Time Variance by Supplier"),
-                 ("top_bottleneck_skus.svg", "Top Bottleneck SKUs by Lost Sales Value")])
+                 ("top_bottleneck_skus.svg", "Top Bottleneck Products by Lost Sales Value")])
 
 html = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
@@ -87,7 +100,7 @@ main {{ max-width: 1180px; margin: 0 auto; padding: 24px 20px 40px; }}
 .kpi-value {{ font-size: 27px; font-weight: 700; color: #0d2b45; margin: 6px 0 2px; }}
 .kpi-sub {{ font-size: 12px; color: #61707e; }}
 h2 {{ font-size: 18px; color: #0d2b45; margin: 28px 0 12px; }}
-.panel {{ background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(13,43,69,.10); }}
+.panel {{ background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(13,43,69,.10); overflow-x: auto; }}
 .insights {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }}
 .insight {{ background: #fff7e8; border-left: 4px solid #ffb703; border-radius: 8px; padding: 14px 16px; font-size: 14px; line-height: 1.5; }}
 .charts {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 14px; }}
@@ -103,7 +116,7 @@ footer {{ text-align: center; color: #61707e; font-size: 12.5px; padding: 22px; 
 </style></head><body>
 <header>
   <h1>Supply Chain &amp; Inventory Performance</h1>
-  <p>Executive Dashboard · Jan – Jun 2025 · Mumbai Central · Delhi Hub · Bengaluru Hub · All values in INR (₹)</p>
+  <p>Executive Dashboard · Jan 2023 – Jun 2025 · Mumbai Central · Delhi Hub · Bengaluru Hub · All values in INR (₹)</p>
   <span class="badge">Syed Musharaf · Data Analyst</span>
 </header>
 <main>
@@ -112,30 +125,40 @@ footer {{ text-align: center; color: #61707e; font-size: 12.5px; padding: 22px; 
   <h2>Key Insights</h2>
   <div class="insights">
     <div class="insight"><strong>Mumbai Central is the bottleneck.</strong>
-      It holds the leanest stock yet the highest demand, producing a
-      {wh.loc[wh.warehouse_id=='WH-MUM','stockout_rate_pct'].iloc[0]:.2f}% stock-out rate —
+      Leanest stock, highest demand — a {mum['stockout_rate_percent']:.2f}% stock-out rate and
       {mum_share:.0f}% of all lost units across the network.</div>
-    <div class="insight"><strong>Bengaluru is overstocked.</strong>
-      It carries the highest average inventory ({inr_short(best_wh['avg_inventory_value_inr'])})
-      with the lowest turnover ({best_wh['turnover_period']:.1f}×) — capital is locked in slow
-      stock while its stock-out rate is only {best_wh['stockout_rate_pct']:.2f}%.</div>
-    <div class="insight"><strong>Top bottleneck SKU:</strong>
-      {worst['product_name']} at {WH_NAMES[worst['warehouse_id']]} lost
+    <div class="insight"><strong>Bengaluru Hub is overstocked.</strong>
+      Highest average inventory ({inr_short(blr['average_inventory_value_inr'])}) with the
+      lowest turnover ({blr['stock_turnover_ratio']:.1f}×) — capital locked in slow stock
+      while its stock-out rate is only {blr['stockout_rate_percent']:.2f}%.</div>
+    <div class="insight"><strong>Growth is steady.</strong>
+      Latest month ({last['month'].strftime('%b %Y')}): units sold
+      {pct(last['units_sold_yoy_growth_percent'])} vs the same month last year and
+      {pct(last['units_sold_mom_growth_percent'])} vs last month (LAG comparisons).</div>
+    <div class="insight"><strong>Top bottleneck product:</strong>
+      {worst['product_name']} at {worst['warehouse_name']} lost
       {inr_short(worst['lost_sales_value_inr'])} in sales to stock-outs
-      ({worst['stockout_rate_pct']:.1f}% of its demand unfulfilled).</div>
+      ({worst['stockout_rate_percent']:.1f}% of its demand unfulfilled).</div>
   </div>
 
   <h2>Warehouse Performance</h2>
   <div class="panel"><table>
-    <tr><th>Warehouse</th><th>Units Sold</th><th>Stock-Out Rate</th><th>Turnover</th>
+    <tr><th>Warehouse</th><th>Units Sold</th><th>Stock-Out Rate</th><th>Turnover (annualised)</th>
         <th>Avg Inventory Value</th><th>Lost Units</th></tr>
     {wh_rows}
+  </table></div>
+
+  <h2>Growth — Monthly Comparison (LAG)</h2>
+  <div class="panel"><table>
+    <tr><th>Month</th><th>Units Sold</th><th>MoM Growth</th><th>YoY Growth</th>
+        <th>Sales Value</th><th>Sales YoY Growth</th><th>Stock-Out Rate</th></tr>
+    {growth_rows}
   </table></div>
 
   <h2>Charts</h2>
   <div class="charts">{charts}</div>
 
-  <h2>Top Bottleneck SKUs (by lost sales value)</h2>
+  <h2>Top Bottleneck Products (by lost sales value)</h2>
   <div class="panel"><table>
     <tr><th>Product</th><th>Category</th><th>Warehouse</th><th>Stock-Out Rate</th>
         <th>Lost Units</th><th>Lost Sales Value</th></tr>

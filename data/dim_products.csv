@@ -1,25 +1,25 @@
-sku,product_name,category,supplier,unit_cost_inr,reorder_point
-SKU-001,Wireless Earbuds Pro,Electronics,TechNova Supplies,19850,40
-SKU-002,Smart Watch Series 5,Electronics,TechNova Supplies,32340,111
-SKU-003,Bluetooth Speaker,Electronics,TechNova Supplies,7140,78
-SKU-004,USB-C Fast Charger,Electronics,VoltEdge Traders,4680,49
-SKU-005,Laptop Stand Aluminium,Electronics,VoltEdge Traders,12040,59
-SKU-006,Cotton T-Shirt,Apparel,UrbanThread Apparel,2790,81
-SKU-007,Denim Jacket,Apparel,UrbanThread Apparel,5800,40
-SKU-008,Running Shoes,Apparel,UrbanThread Apparel,2120,91
-SKU-009,Winter Jacket NorthPeak,Apparel,NorthPeak Clothing,3900,40
-SKU-010,Organic Basmati Rice 5kg,FMCG,FreshKart Distributors,15160,40
-SKU-011,Cold-Pressed Olive Oil 1L,FMCG,FreshKart Distributors,25650,83
-SKU-012,Protein Powder 1kg,FMCG,NutriCore India,5350,143
-SKU-013,Vitamin D3 Supplements,FMCG,NutriCore India,9370,103
-SKU-014,Ceramic Dinner Set 12pc,Home & Living,HomeNest Living,3350,80
-SKU-015,LED Desk Lamp,Home & Living,HomeNest Living,17390,89
-SKU-016,Memory Foam Pillow,Home & Living,HomeNest Living,8700,72
-SKU-017,Car Vacuum Cleaner,Automotive,AutoGrip Parts,6130,54
-SKU-018,Car Battery 12V 70Ah,Automotive,AutoGrip Parts,13600,40
-SKU-019,Tyre Inflator Portable,Automotive,AutoGrip Parts,4010,118
-SKU-020,Yoga Mat Pro 6mm,Sports,FlexFit Sports,5130,71
-SKU-021,Dumbbell Set 10kg,Sports,FlexFit Sports,7920,60
-SKU-022,Cricket Bat English Willow,Sports,FlexFit Sports,11040,44
-SKU-023,Air Fryer 5L,Electronics,TechNova Supplies,1960,40
-SKU-024,Water Purifier 8L,Home & Living,HomeNest Living,16060,95
+product_code,product_name,product_category,supplier_name,unit_cost_inr,reorder_level
+SKU-001,Wireless Earbuds Pro,Electronics,TechNova Supplies,19850,30
+SKU-002,Smart Watch Series 5,Electronics,TechNova Supplies,32340,159
+SKU-003,Bluetooth Speaker,Electronics,TechNova Supplies,7140,116
+SKU-004,USB-C Fast Charger,Electronics,VoltEdge Traders,4680,74
+SKU-005,Laptop Stand Aluminium,Electronics,VoltEdge Traders,12040,86
+SKU-006,Cotton T-Shirt,Apparel,UrbanThread Apparel,2790,125
+SKU-007,Denim Jacket,Apparel,UrbanThread Apparel,5800,32
+SKU-008,Running Shoes,Apparel,UrbanThread Apparel,2120,133
+SKU-009,Winter Jacket NorthPeak,Apparel,NorthPeak Clothing,3900,47
+SKU-010,Organic Basmati Rice 5kg,FMCG,FreshKart Distributors,15160,30
+SKU-011,Cold-Pressed Olive Oil 1L,FMCG,FreshKart Distributors,25650,118
+SKU-012,Protein Powder 1kg,FMCG,NutriCore India,5350,204
+SKU-013,Vitamin D3 Supplements,FMCG,NutriCore India,9370,149
+SKU-014,Ceramic Dinner Set 12pc,Home & Living,HomeNest Living,3350,122
+SKU-015,LED Desk Lamp,Home & Living,HomeNest Living,17390,131
+SKU-016,Memory Foam Pillow,Home & Living,HomeNest Living,8700,113
+SKU-017,Car Vacuum Cleaner,Automotive,AutoGrip Parts,6130,83
+SKU-018,Car Battery 12V 70Ah,Automotive,AutoGrip Parts,13600,38
+SKU-019,Tyre Inflator Portable,Automotive,AutoGrip Parts,4010,170
+SKU-020,Yoga Mat Pro 6mm,Sports,FlexFit Sports,5130,101
+SKU-021,Dumbbell Set 10kg,Sports,FlexFit Sports,7920,91
+SKU-022,Cricket Bat English Willow,Sports,FlexFit Sports,11040,66
+SKU-023,Air Fryer 5L,Electronics,TechNova Supplies,1960,41
+SKU-024,Water Purifier 8L,Home & Living,HomeNest Living,16060,146

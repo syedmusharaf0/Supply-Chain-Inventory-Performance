@@ -1,2 +1,2 @@
-units_sold,lost_units,stockout_rate_pct,avg_inventory_value_inr,turnover_period,carrying_cost_inr,orders_total,orders_late_pct,mean_lead_time_variance_days
-179854,10036,5.29,61940018,29.15,6143092,878,39.0,1.05
+total_units_sold,total_lost_units,stockout_rate_percent,average_inventory_value_inr,stock_turnover_ratio,carrying_cost_inr,total_purchase_orders,late_orders_percent,average_lead_time_variance_days
+967953,75082,7.2,77085270,50.52,38521516,878,41.1,1.24

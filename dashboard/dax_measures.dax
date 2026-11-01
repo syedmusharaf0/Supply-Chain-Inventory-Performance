@@ -1,7 +1,16 @@
+// ============================================================================
 // Supply Chain & Inventory Performance — Power BI DAX measures
-// Source tables: dim_products, fact_daily_stock, fact_purchase_orders
+// Tables: dim_products, fact_daily_stock, fact_purchase_orders
 // All monetary values in Indian Rupees (INR). Format currency measures as ₹.
+//
+// SETUP for the growth measures: add a calendar table (Modeling > New table):
+//   Calendar = CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2025, 6, 30 ) )
+// and create a relationship Calendar[Date] -> fact_daily_stock[stock_date].
+// Mark Calendar as the date table. The growth measures below are the DAX
+// equivalent of the SQL LAG() comparisons in sql/02_kpi_queries.sql.
+// ============================================================================
 
+// ---------- Core KPIs ----------
 Total Units Sold = SUM ( fact_daily_stock[units_sold] )
 
 Lost Units = SUM ( fact_daily_stock[lost_sales_units] )
@@ -17,24 +26,28 @@ SUMX (
     fact_daily_stock[units_sold] * RELATED ( dim_products[unit_cost_inr] )
 )
 
-Average Inventory Value INR =
-AVERAGEX (
-    VALUES ( fact_daily_stock[date] ),
-    CALCULATE ( SUMX ( fact_daily_stock, fact_daily_stock[closing_stock]
-        * RELATED ( dim_products[unit_cost_inr] ) ) )
-)
-
-Stock Turnover Ratio =
-DIVIDE ( [Sales Value INR], [Average Inventory Value INR] )
-
-Carrying Cost INR =
-[Average Inventory Value INR] * 0.20 * DIVIDE ( 181, 365 )
-
 Lost Sales Value INR =
 SUMX (
     fact_daily_stock,
     fact_daily_stock[lost_sales_units] * RELATED ( dim_products[unit_cost_inr] )
 )
+
+Average Inventory Value INR =
+AVERAGEX (
+    VALUES ( fact_daily_stock[stock_date] ),
+    CALCULATE ( SUMX ( fact_daily_stock, fact_daily_stock[closing_stock_units]
+        * RELATED ( dim_products[unit_cost_inr] ) ) )
+)
+
+Stock Turnover Ratio =
+DIVIDE ( [Sales Value INR], [Average Inventory Value INR] )
+    * DIVIDE ( 365, DATEDIFF ( MIN ( fact_daily_stock[stock_date] ),
+                               MAX ( fact_daily_stock[stock_date] ), DAY ) + 1 )
+
+Carrying Cost INR =
+[Average Inventory Value INR] * 0.20
+    * DIVIDE ( DATEDIFF ( MIN ( fact_daily_stock[stock_date] ),
+                          MAX ( fact_daily_stock[stock_date] ), DAY ) + 1, 365 )
 
 Orders Late % =
 DIVIDE (
@@ -51,11 +64,41 @@ AVERAGEX (
         - fact_purchase_orders[promised_lead_time_days]
 )
 
-SKUs Below Reorder Point =
+Products Below Reorder Level =
 COUNTROWS (
     FILTER (
-        SUMMARIZE ( fact_daily_stock, dim_products[sku] ),
-        CALCULATE ( SUM ( fact_daily_stock[closing_stock] ) )
-            < MAX ( dim_products[reorder_point] )
+        SUMMARIZE ( fact_daily_stock, dim_products[product_code] ),
+        CALCULATE ( SUM ( fact_daily_stock[closing_stock_units] ) )
+            < MAX ( dim_products[reorder_level] )
     )
 )
+
+// ---------- Growth comparisons (LAG equivalents) ----------
+// Week-over-week
+Units Sold Previous Week =
+CALCULATE ( [Total Units Sold], DATEADD ( Calendar[Date], -7, DAY ) )
+
+WoW Growth % =
+DIVIDE ( [Total Units Sold] - [Units Sold Previous Week],
+         [Units Sold Previous Week] ) * 100
+
+// Month-over-month
+Units Sold Previous Month =
+CALCULATE ( [Total Units Sold], DATEADD ( Calendar[Date], -1, MONTH ) )
+
+MoM Growth % =
+DIVIDE ( [Total Units Sold] - [Units Sold Previous Month],
+         [Units Sold Previous Month] ) * 100
+
+// Year-over-year (same period last year)
+Units Sold Same Period Last Year =
+CALCULATE ( [Total Units Sold], SAMEPERIODLASTYEAR ( Calendar[Date] ) )
+
+YoY Growth % =
+DIVIDE ( [Total Units Sold] - [Units Sold Same Period Last Year],
+         [Units Sold Same Period Last Year] ) * 100
+
+Sales Value YoY Growth % =
+VAR Cur = [Sales Value INR]
+VAR Prev = CALCULATE ( [Sales Value INR], SAMEPERIODLASTYEAR ( Calendar[Date] ) )
+RETURN DIVIDE ( Cur - Prev, Prev ) * 100
