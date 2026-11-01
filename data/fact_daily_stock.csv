@@ -1,4 +1,4 @@
-stock_date,product_code,warehouse_name,opening_stock_units,units_received,units_sold,lost_sales_units,closing_stock_units
+Stock Date,Product Code,Warehouse Name,Opening Stock (units),Units Received,Units Sold,Lost Sales (units),Closing Stock (units)
 2023-01-01,SKU-001,Mumbai Central,36,0,6,0,30
 2023-01-02,SKU-001,Mumbai Central,30,0,6,0,24
 2023-01-03,SKU-001,Mumbai Central,24,0,6,0,18

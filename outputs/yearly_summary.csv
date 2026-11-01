@@ -1,4 +1,4 @@
-year,units_sold,lost_units,sales_value_inr,average_inventory_value_inr,period_note,stockout_rate_percent,units_sold_yoy_growth_percent,sales_value_inr_yoy_growth_percent
+Year,Units Sold,Lost Units,Sales Value (INR),Average Inventory Value (INR),Period Note,Stock-Out Rate %,Units Sold YoY Growth %,Sales Value (INR) YoY Growth %
 2023,371627,23459,3734637770,79328833.0,Full year,5.94,,
 2024,394143,31912,3958426150,77396394.0,Full year,7.49,6.06,5.99
 2025,202183,19711,2036893130,71931836.0,Jan-Jun only (partial year),8.88,-48.7,-48.54

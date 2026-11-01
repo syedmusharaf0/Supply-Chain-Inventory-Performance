@@ -2,6 +2,7 @@
 
 Mirrors sql/02_kpi_queries.sql so the same KPIs can be produced from either
 SQL or Python. All monetary values are in Indian Rupees (INR).
+All tables use the friendly display column names (see data/data_dictionary.md).
 Includes LAG-style time comparisons: weekly (week-over-week), monthly
 (month-over-month and year-over-year) and yearly growth percentages —
 in SQL these use the LAG() window function; in Pandas, shift().
@@ -19,51 +20,55 @@ OUT.mkdir(exist_ok=True); IMG.mkdir(exist_ok=True)
 CARRYING_RATE = 0.20  # 20% per year carrying-cost assumption
 
 dim = pd.read_csv(BASE / "data/dim_products.csv")
-stock = pd.read_csv(BASE / "data/fact_daily_stock.csv", parse_dates=["stock_date"])
-po = pd.read_csv(BASE / "data/fact_purchase_orders.csv", parse_dates=["order_date", "delivery_date"])
-cost = dim.set_index("product_code")["unit_cost_inr"]
-stock["stock_value_inr"] = stock["closing_stock_units"] * stock["product_code"].map(cost)
-stock["sales_value_inr"] = stock["units_sold"] * stock["product_code"].map(cost)
-DAYS = (stock["stock_date"].max() - stock["stock_date"].min()).days + 1
+stock = pd.read_csv(BASE / "data/fact_daily_stock.csv", parse_dates=["Stock Date"])
+po = pd.read_csv(BASE / "data/fact_purchase_orders.csv", parse_dates=["Order Date", "Delivery Date"])
+cost = dim.set_index("Product Code")["Unit Cost (INR)"]
+stock["Stock Value (INR)"] = stock["Closing Stock (units)"] * stock["Product Code"].map(cost)
+stock["Sales Value (INR)"] = stock["Units Sold"] * stock["Product Code"].map(cost)
+DAYS = (stock["Stock Date"].max() - stock["Stock Date"].min()).days + 1
 
 def kpis_for(df: pd.DataFrame) -> dict:
-    sold_value = df["sales_value_inr"].sum()
-    avg_inv_value = df.groupby("stock_date")["stock_value_inr"].sum().mean()
-    demand = df["units_sold"].sum() + df["lost_sales_units"].sum()
-    return dict(total_units_sold=int(df["units_sold"].sum()),
-                total_lost_units=int(df["lost_sales_units"].sum()),
-                stockout_rate_percent=round(100 * df["lost_sales_units"].sum() / demand, 2),
-                average_inventory_value_inr=round(avg_inv_value),
-                # annualised turnover so periods of any length stay comparable
-                stock_turnover_ratio=round(sold_value / avg_inv_value * 365 / DAYS, 2),
-                carrying_cost_inr=round(avg_inv_value * CARRYING_RATE * DAYS / 365))
+    sold_value = df["Sales Value (INR)"].sum()
+    avg_inv_value = df.groupby("Stock Date")["Stock Value (INR)"].sum().mean()
+    demand = df["Units Sold"].sum() + df["Lost Sales (units)"].sum()
+    return dict(**{
+        "Total Units Sold": int(df["Units Sold"].sum()),
+        "Total Lost Units": int(df["Lost Sales (units)"].sum()),
+        "Stock-Out Rate %": round(100 * df["Lost Sales (units)"].sum() / demand, 2),
+        "Average Inventory Value (INR)": round(avg_inv_value),
+        # annualised turnover so periods of any length stay comparable
+        "Stock Turnover Ratio": round(sold_value / avg_inv_value * 365 / DAYS, 2),
+        "Carrying Cost (INR)": round(avg_inv_value * CARRYING_RATE * DAYS / 365),
+        "Total Sales Value (INR)": round(sold_value)})
 
 summary = kpis_for(stock)
-summary["total_purchase_orders"] = len(po)
-summary["late_orders_percent"] = round(
-    100 * (po["actual_lead_time_days"] > po["promised_lead_time_days"]).mean(), 1)
-summary["average_lead_time_variance_days"] = round(
-    (po["actual_lead_time_days"] - po["promised_lead_time_days"]).mean(), 2)
+summary["Total Purchase Orders"] = len(po)
+summary["Late Orders %"] = round(
+    100 * (po["Actual Lead Time (days)"] > po["Promised Lead Time (days)"]).mean(), 1)
+summary["Average Lead Time Variance (days)"] = round(
+    (po["Actual Lead Time (days)"] - po["Promised Lead Time (days)"]).mean(), 2)
 pd.DataFrame([summary]).to_csv(OUT / "kpi_summary.csv", index=False)
 
-wh = stock.groupby("warehouse_name").apply(lambda d: pd.Series(kpis_for(d)))
+wh = stock.groupby("Warehouse Name").apply(lambda d: pd.Series(kpis_for(d)))
 wh.to_csv(OUT / "kpi_by_warehouse.csv")
 
-sku = (stock.groupby(["product_code", "warehouse_name"])
-       .agg(units_sold=("units_sold", "sum"), lost_units=("lost_sales_units", "sum"))
+sku = (stock.groupby(["Product Code", "Warehouse Name"])
+       .agg(**{"Units Sold": ("Units Sold", "sum"), "Lost Units": ("Lost Sales (units)", "sum")})
        .reset_index())
-sku["total_demand_units"] = sku["units_sold"] + sku["lost_units"]
-sku["stockout_rate_percent"] = (100 * sku["lost_units"] / sku["total_demand_units"]).round(2)
-sku["lost_sales_value_inr"] = (sku["lost_units"] * sku["product_code"].map(cost)).round(0)
-sku = sku.merge(dim[["product_code", "product_name", "product_category"]], on="product_code")
-sku.sort_values("lost_sales_value_inr", ascending=False).to_csv(OUT / "kpi_by_sku.csv", index=False)
+sku["Total Demand (units)"] = sku["Units Sold"] + sku["Lost Units"]
+sku["Stock-Out Rate %"] = (100 * sku["Lost Units"] / sku["Total Demand (units)"]).round(2)
+sku["Lost Sales Value (INR)"] = (sku["Lost Units"] * sku["Product Code"].map(cost)).round(0)
+sku = sku.merge(dim[["Product Code", "Product Name", "Product Category"]], on="Product Code")
+sku = sku[["Product Code", "Product Name", "Product Category", "Warehouse Name", "Units Sold",
+           "Lost Units", "Total Demand (units)", "Stock-Out Rate %", "Lost Sales Value (INR)"]]
+sku.sort_values("Lost Sales Value (INR)", ascending=False).to_csv(OUT / "kpi_by_sku.csv", index=False)
 
-po["variance_days"] = po["actual_lead_time_days"] - po["promised_lead_time_days"]
-lt = (po.assign(supplier_name=po["product_code"].map(dim.set_index("product_code")["supplier_name"]))
-      .groupby("supplier_name")
-      .agg(total_orders=("purchase_order_id", "count"),
-           average_variance_days=("variance_days", "mean"),
-           late_orders_percent=("variance_days", lambda s: round(100 * (s > 0).mean(), 1)))
+po["Variance (days)"] = po["Actual Lead Time (days)"] - po["Promised Lead Time (days)"]
+lt = (po.assign(**{"Supplier Name": po["Product Code"].map(dim.set_index("Product Code")["Supplier Name"])})
+      .groupby("Supplier Name")
+      .agg(**{"Total Orders": ("Purchase Order ID", "count"),
+              "Average Variance (days)": ("Variance (days)", "mean"),
+              "Late Orders %": ("Variance (days)", lambda s: round(100 * (s > 0).mean(), 1))})
       .round(2).reset_index())
 lt.to_csv(OUT / "kpi_by_supplier_leadtime.csv", index=False)
 
@@ -73,73 +78,73 @@ def add_growth(df: pd.DataFrame, cols: list[str], lags: dict[int, str]) -> pd.Da
     for lag, label in lags.items():
         for c in cols:
             prev = df[c].shift(lag)
-            df[f"{c}_{label}_growth_percent"] = (100 * (df[c] - prev) / prev).round(2)
+            df[f"{c} {label} Growth %"] = (100 * (df[c] - prev) / prev).round(2)
     return df
 
-weekly = (stock.set_index("stock_date").groupby(pd.Grouper(freq="W"))
-          .agg(units_sold=("units_sold", "sum"), lost_units=("lost_sales_units", "sum"),
-               sales_value_inr=("sales_value_inr", "sum")))
-weekly["stockout_rate_percent"] = (100 * weekly["lost_units"] /
-                                   (weekly["units_sold"] + weekly["lost_units"])).round(2)
-weekly = add_growth(weekly.reset_index().rename(columns={"stock_date": "week_ending"}),
-                    ["units_sold", "sales_value_inr"], {1: "wow"})
+weekly = (stock.set_index("Stock Date").groupby(pd.Grouper(freq="W"))
+          .agg(**{"Units Sold": ("Units Sold", "sum"), "Lost Units": ("Lost Sales (units)", "sum"),
+                  "Sales Value (INR)": ("Sales Value (INR)", "sum")}))
+weekly["Stock-Out Rate %"] = (100 * weekly["Lost Units"] /
+                              (weekly["Units Sold"] + weekly["Lost Units"])).round(2)
+weekly = add_growth(weekly.reset_index().rename(columns={"Stock Date": "Week Ending"}),
+                    ["Units Sold", "Sales Value (INR)"], {1: "WoW"})
 weekly.to_csv(OUT / "weekly_trend.csv", index=False)
 
-monthly = (stock.set_index("stock_date").groupby(pd.Grouper(freq="M"))
-           .agg(units_sold=("units_sold", "sum"), lost_units=("lost_sales_units", "sum"),
-                sales_value_inr=("sales_value_inr", "sum")))
-monthly["stockout_rate_percent"] = (100 * monthly["lost_units"] /
-                                    (monthly["units_sold"] + monthly["lost_units"])).round(2)
-monthly = add_growth(monthly.reset_index().rename(columns={"stock_date": "month"}),
-                     ["units_sold", "sales_value_inr"], {1: "mom", 12: "yoy"})
+monthly = (stock.set_index("Stock Date").groupby(pd.Grouper(freq="M"))
+           .agg(**{"Units Sold": ("Units Sold", "sum"), "Lost Units": ("Lost Sales (units)", "sum"),
+                   "Sales Value (INR)": ("Sales Value (INR)", "sum")}))
+monthly["Stock-Out Rate %"] = (100 * monthly["Lost Units"] /
+                               (monthly["Units Sold"] + monthly["Lost Units"])).round(2)
+monthly = add_growth(monthly.reset_index().rename(columns={"Stock Date": "Month"}),
+                     ["Units Sold", "Sales Value (INR)"], {1: "MoM", 12: "YoY"})
 monthly.to_csv(OUT / "monthly_trend.csv", index=False)
 
-daily_totals = stock.groupby("stock_date")["stock_value_inr"].sum()
+daily_totals = stock.groupby("Stock Date")["Stock Value (INR)"].sum()
 avg_inv_by_year = daily_totals.groupby(daily_totals.index.year).mean().round(0)
-yearly = (stock.assign(year=stock["stock_date"].dt.year)
-          .groupby("year")
-          .agg(units_sold=("units_sold", "sum"), lost_units=("lost_sales_units", "sum"),
-               sales_value_inr=("sales_value_inr", "sum")).reset_index())
-yearly["average_inventory_value_inr"] = yearly["year"].map(avg_inv_by_year)
-yearly["period_note"] = yearly["year"].apply(
+yearly = (stock.assign(Year=stock["Stock Date"].dt.year)
+          .groupby("Year")
+          .agg(**{"Units Sold": ("Units Sold", "sum"), "Lost Units": ("Lost Sales (units)", "sum"),
+                  "Sales Value (INR)": ("Sales Value (INR)", "sum")}).reset_index())
+yearly["Average Inventory Value (INR)"] = yearly["Year"].map(avg_inv_by_year)
+yearly["Period Note"] = yearly["Year"].apply(
     lambda y: "Jan-Jun only (partial year)" if y == 2025 else "Full year")
-yearly["stockout_rate_percent"] = (100 * yearly["lost_units"] /
-                                   (yearly["units_sold"] + yearly["lost_units"])).round(2)
-yearly = add_growth(yearly, ["units_sold", "sales_value_inr"], {1: "yoy"})
+yearly["Stock-Out Rate %"] = (100 * yearly["Lost Units"] /
+                              (yearly["Units Sold"] + yearly["Lost Units"])).round(2)
+yearly = add_growth(yearly, ["Units Sold", "Sales Value (INR)"], {1: "YoY"})
 yearly.to_csv(OUT / "yearly_summary.csv", index=False)
 
 # ---------------- Charts (SVG = text, GitHub-friendly) ----------------
 plt.rcParams.update({"font.size": 10, "axes.edgecolor": "#cccccc"})
-cat = dim.merge(stock.groupby("product_code")["units_sold"].sum().rename("sold"), on="product_code")
-cat["sold_value"] = cat["sold"] * cat["unit_cost_inr"]
-inv_cat = stock.merge(dim[["product_code", "product_category"]], on="product_code")
-inv_cat = inv_cat.groupby(["stock_date", "product_category"])["stock_value_inr"].sum().groupby("product_category").mean()
-tc = (cat.groupby("product_category")["sold_value"].sum() / inv_cat * 365 / DAYS).sort_values()
+cat = dim.merge(stock.groupby("Product Code")["Units Sold"].sum().rename("sold"), on="Product Code")
+cat["sold_value"] = cat["sold"] * cat["Unit Cost (INR)"]
+inv_cat = stock.merge(dim[["Product Code", "Product Category"]], on="Product Code")
+inv_cat = inv_cat.groupby(["Stock Date", "Product Category"])["Stock Value (INR)"].sum().groupby("Product Category").mean()
+tc = (cat.groupby("Product Category")["sold_value"].sum() / inv_cat * 365 / DAYS).sort_values()
 fig, ax = plt.subplots(figsize=(7, 4)); tc.plot.barh(ax=ax, color="#1f6f8b")
 ax.set_xlabel("Stock turnover ratio (annualised)"); ax.set_title("Stock Turnover by Product Category")
 fig.tight_layout(); fig.savefig(IMG / "turnover_by_category.svg", format="svg"); plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(7, 4))
-lt.sort_values("average_variance_days").plot.barh(x="supplier_name", y="average_variance_days",
-                                                 ax=ax, color="#c0392b", legend=False)
+lt.sort_values("Average Variance (days)").plot.barh(x="Supplier Name", y="Average Variance (days)",
+                                                   ax=ax, color="#c0392b", legend=False)
 ax.set_xlabel("Average lead time variance (days)"); ax.set_title("Lead Time Variance by Supplier")
 fig.tight_layout(); fig.savefig(IMG / "lead_time_variance_by_supplier.svg", format="svg"); plt.close(fig)
 
-top = sku.nlargest(8, "lost_sales_value_inr").iloc[::-1]
+top = sku.nlargest(8, "Lost Sales Value (INR)").iloc[::-1]
 fig, ax = plt.subplots(figsize=(7, 4.5))
-ax.barh(top["product_name"] + " (" + top["warehouse_name"] + ")", top["lost_sales_value_inr"] / 1000,
+ax.barh(top["Product Name"] + " (" + top["Warehouse Name"] + ")", top["Lost Sales Value (INR)"] / 1000,
         color="#e67e22")
 ax.set_xlabel("Lost sales value (₹ thousands)"); ax.set_title("Top Bottleneck Products by Lost Sales Value")
 fig.tight_layout(); fig.savefig(IMG / "top_bottleneck_skus.svg", format="svg"); plt.close(fig)
 
 recent = monthly.tail(12)
 fig, ax = plt.subplots(figsize=(7, 4))
-ax.plot(recent["month"].dt.strftime("%b %y"), recent["stockout_rate_percent"], marker="o", color="#1f6f8b")
+ax.plot(recent["Month"].dt.strftime("%b %y"), recent["Stock-Out Rate %"], marker="o", color="#1f6f8b")
 ax.set_ylabel("Stock-out rate (%)"); ax.set_title("Monthly Stock-Out Rate Trend (last 12 months)")
 fig.tight_layout(); fig.savefig(IMG / "monthly_stockout_trend.svg", format="svg"); plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(7, 4))
-ax.bar(recent["month"].dt.strftime("%b %y"), recent["units_sold_yoy_growth_percent"], color="#2e7d32")
+ax.bar(recent["Month"].dt.strftime("%b %y"), recent["Units Sold YoY Growth %"], color="#2e7d32")
 ax.axhline(0, color="#888", linewidth=.8)
 ax.set_ylabel("YoY growth (%)"); ax.set_title("Units Sold — Year-over-Year Growth by Month")
 fig.tight_layout(); fig.savefig(IMG / "yoy_growth_trend.svg", format="svg"); plt.close(fig)
@@ -153,15 +158,8 @@ def inr(n):
     if head: parts.insert(0, head)
     return "₹" + ",".join(parts + [tail])
 
-print("PERIOD:", stock["stock_date"].min().date(), "to", stock["stock_date"].max().date(), f"({DAYS} days)")
-print("SUMMARY:", {k: summary[k] for k in ("total_units_sold", "total_lost_units",
-                                           "stockout_rate_percent", "stock_turnover_ratio",
-                                           "late_orders_percent")})
-print(f"Average inventory value: {inr(summary['average_inventory_value_inr'])} | "
-      f"Carrying cost: {inr(summary['carrying_cost_inr'])}")
+print("PERIOD:", stock["Stock Date"].min().date(), "to", stock["Stock Date"].max().date(), f"({DAYS} days)")
+print("SUMMARY:", summary)
 print("\nBY WAREHOUSE:\n", wh.to_string())
 print("\nYEARLY:\n", yearly.to_string(index=False))
 print("\nLATEST MONTH:", monthly.iloc[-1].to_dict())
-print("\nTOP BOTTLENECKS:\n", sku.nlargest(5, "lost_sales_value_inr")[
-    ["product_name", "warehouse_name", "stockout_rate_percent", "lost_units",
-     "lost_sales_value_inr"]].to_string(index=False))

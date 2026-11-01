@@ -1,73 +1,73 @@
-product_code,warehouse_name,units_sold,lost_units,total_demand_units,stockout_rate_percent,lost_sales_value_inr,product_name,product_category
-SKU-024,Mumbai Central,25311,4468,29779,15.0,71756080,Water Purifier 8L,Home & Living
-SKU-002,Mumbai Central,23358,1723,25081,6.87,55721820,Smart Watch Series 5,Electronics
-SKU-015,Mumbai Central,20806,2945,23751,12.4,51213550,LED Desk Lamp,Home & Living
-SKU-016,Mumbai Central,19779,5161,24940,20.69,44900700,Memory Foam Pillow,Home & Living
-SKU-024,Delhi Hub,21775,1886,23661,7.97,30289160,Water Purifier 8L,Home & Living
-SKU-011,Mumbai Central,16556,1077,17633,6.11,27625050,Cold-Pressed Olive Oil 1L,FMCG
-SKU-005,Mumbai Central,13063,1994,15057,13.24,24007760,Laptop Stand Aluminium,Electronics
-SKU-021,Mumbai Central,14625,2834,17459,16.23,22445280,Dumbbell Set 10kg,Sports
-SKU-016,Delhi Hub,17803,2348,20151,11.65,20427600,Memory Foam Pillow,Home & Living
-SKU-017,Mumbai Central,14215,3205,17420,18.4,19646650,Car Vacuum Cleaner,Automotive
-SKU-022,Mumbai Central,10651,1771,12422,14.26,19551840,Cricket Bat English Willow,Sports
-SKU-013,Mumbai Central,22115,1884,23999,7.85,17653080,Vitamin D3 Supplements,FMCG
-SKU-015,Delhi Hub,18022,949,18971,5.0,16503110,LED Desk Lamp,Home & Living
-SKU-003,Mumbai Central,18924,2192,21116,10.38,15650880,Bluetooth Speaker,Electronics
-SKU-002,Delhi Hub,19435,474,19909,2.38,15329160,Smart Watch Series 5,Electronics
-SKU-006,Mumbai Central,22339,5294,27633,19.16,14770260,Cotton T-Shirt,Apparel
-SKU-004,Mumbai Central,12615,2398,15013,15.97,11222640,USB-C Fast Charger,Electronics
-SKU-014,Mumbai Central,21438,3269,24707,13.23,10951150,Ceramic Dinner Set 12pc,Home & Living
-SKU-012,Mumbai Central,29308,2040,31348,6.51,10914000,Protein Powder 1kg,FMCG
-SKU-010,Mumbai Central,4434,620,5054,12.27,9399200,Organic Basmati Rice 5kg,FMCG
-SKU-021,Delhi Hub,12740,1174,13914,8.44,9298080,Dumbbell Set 10kg,Sports
-SKU-024,Bengaluru Hub,18518,565,19083,2.96,9073900,Water Purifier 8L,Home & Living
-SKU-019,Mumbai Central,25122,2197,27319,8.04,8809970,Tyre Inflator Portable,Automotive
-SKU-001,Mumbai Central,4528,425,4953,8.58,8436250,Wireless Earbuds Pro,Electronics
-SKU-005,Delhi Hub,11269,688,11957,5.75,8283520,Laptop Stand Aluminium,Electronics
-SKU-003,Delhi Hub,15817,1106,16923,6.54,7896840,Bluetooth Speaker,Electronics
-SKU-018,Mumbai Central,5574,573,6147,9.32,7792800,Car Battery 12V 70Ah,Automotive
-SKU-017,Delhi Hub,12897,1229,14126,8.7,7533770,Car Vacuum Cleaner,Automotive
-SKU-022,Delhi Hub,9462,625,10087,6.2,6900000,Cricket Bat English Willow,Sports
-SKU-006,Delhi Hub,19409,2347,21756,10.79,6548130,Cotton T-Shirt,Apparel
-SKU-011,Delhi Hub,13921,220,14141,1.56,5643000,Cold-Pressed Olive Oil 1L,FMCG
-SKU-020,Mumbai Central,13854,991,14845,6.68,5083830,Yoga Mat Pro 6mm,Sports
-SKU-016,Bengaluru Hub,15355,564,15919,3.54,4906800,Memory Foam Pillow,Home & Living
-SKU-014,Delhi Hub,18263,1416,19679,7.2,4743600,Ceramic Dinner Set 12pc,Home & Living
-SKU-008,Mumbai Central,20497,2087,22584,9.24,4424440,Running Shoes,Apparel
-SKU-004,Delhi Hub,11030,939,11969,7.85,4394520,USB-C Fast Charger,Electronics
-SKU-013,Delhi Hub,18413,420,18833,2.23,3935400,Vitamin D3 Supplements,FMCG
-SKU-015,Bengaluru Hub,15031,221,15252,1.45,3843190,LED Desk Lamp,Home & Living
-SKU-001,Delhi Hub,3905,171,4076,4.2,3394350,Wireless Earbuds Pro,Electronics
-SKU-019,Delhi Hub,21166,792,21958,3.61,3175920,Tyre Inflator Portable,Automotive
-SKU-006,Bengaluru Hub,16873,946,17819,5.31,2639340,Cotton T-Shirt,Apparel
-SKU-009,Mumbai Central,6823,663,7486,8.86,2585700,Winter Jacket NorthPeak,Apparel
-SKU-018,Delhi Hub,4719,189,4908,3.85,2570400,Car Battery 12V 70Ah,Automotive
-SKU-007,Mumbai Central,4615,439,5054,8.69,2546200,Denim Jacket,Apparel
-SKU-010,Delhi Hub,3694,163,3857,4.23,2471080,Organic Basmati Rice 5kg,FMCG
-SKU-017,Bengaluru Hub,10640,381,11021,3.46,2335530,Car Vacuum Cleaner,Automotive
-SKU-014,Bengaluru Hub,15266,678,15944,4.25,2271300,Ceramic Dinner Set 12pc,Home & Living
-SKU-003,Bengaluru Hub,13241,296,13537,2.19,2113440,Bluetooth Speaker,Electronics
-SKU-022,Bengaluru Hub,7830,181,8011,2.26,1998240,Cricket Bat English Willow,Sports
-SKU-023,Mumbai Central,6417,995,7412,13.42,1950200,Air Fryer 5L,Electronics
-SKU-005,Bengaluru Hub,9454,159,9613,1.65,1914360,Laptop Stand Aluminium,Electronics
-SKU-002,Bengaluru Hub,15825,47,15872,0.3,1519980,Smart Watch Series 5,Electronics
-SKU-012,Delhi Hub,24624,279,24903,1.12,1492650,Protein Powder 1kg,FMCG
-SKU-008,Delhi Hub,17301,588,17889,3.29,1246560,Running Shoes,Apparel
-SKU-021,Bengaluru Hub,10962,146,11108,1.31,1156320,Dumbbell Set 10kg,Sports
-SKU-004,Bengaluru Hub,9300,238,9538,2.5,1113840,USB-C Fast Charger,Electronics
-SKU-020,Delhi Hub,11811,192,12003,1.6,984960,Yoga Mat Pro 6mm,Sports
-SKU-011,Bengaluru Hub,11017,34,11051,0.31,872100,Cold-Pressed Olive Oil 1L,FMCG
-SKU-007,Delhi Hub,3887,138,4025,3.43,800400,Denim Jacket,Apparel
-SKU-009,Delhi Hub,5779,183,5962,3.07,713700,Winter Jacket NorthPeak,Apparel
-SKU-023,Delhi Hub,5606,333,5939,5.61,652680,Air Fryer 5L,Electronics
-SKU-012,Bengaluru Hub,19882,105,19987,0.53,561750,Protein Powder 1kg,FMCG
-SKU-010,Bengaluru Hub,3205,35,3240,1.08,530600,Organic Basmati Rice 5kg,FMCG
-SKU-018,Bengaluru Hub,3851,39,3890,1.0,530400,Car Battery 12V 70Ah,Automotive
-SKU-013,Bengaluru Hub,15154,45,15199,0.3,421650,Vitamin D3 Supplements,FMCG
-SKU-019,Bengaluru Hub,17032,81,17113,0.47,324810,Tyre Inflator Portable,Automotive
-SKU-007,Bengaluru Hub,3156,36,3192,1.13,208800,Denim Jacket,Apparel
-SKU-023,Bengaluru Hub,4736,74,4810,1.54,145040,Air Fryer 5L,Electronics
-SKU-009,Bengaluru Hub,4842,36,4878,0.74,140400,Winter Jacket NorthPeak,Apparel
-SKU-008,Bengaluru Hub,14398,58,14456,0.4,122960,Running Shoes,Apparel
-SKU-020,Bengaluru Hub,9509,23,9532,0.24,117990,Yoga Mat Pro 6mm,Sports
-SKU-001,Bengaluru Hub,3161,0,3161,0.0,0,Wireless Earbuds Pro,Electronics
+Product Code,Product Name,Product Category,Warehouse Name,Units Sold,Lost Units,Total Demand (units),Stock-Out Rate %,Lost Sales Value (INR)
+SKU-024,Water Purifier 8L,Home & Living,Mumbai Central,25311,4468,29779,15.0,71756080
+SKU-002,Smart Watch Series 5,Electronics,Mumbai Central,23358,1723,25081,6.87,55721820
+SKU-015,LED Desk Lamp,Home & Living,Mumbai Central,20806,2945,23751,12.4,51213550
+SKU-016,Memory Foam Pillow,Home & Living,Mumbai Central,19779,5161,24940,20.69,44900700
+SKU-024,Water Purifier 8L,Home & Living,Delhi Hub,21775,1886,23661,7.97,30289160
+SKU-011,Cold-Pressed Olive Oil 1L,FMCG,Mumbai Central,16556,1077,17633,6.11,27625050
+SKU-005,Laptop Stand Aluminium,Electronics,Mumbai Central,13063,1994,15057,13.24,24007760
+SKU-021,Dumbbell Set 10kg,Sports,Mumbai Central,14625,2834,17459,16.23,22445280
+SKU-016,Memory Foam Pillow,Home & Living,Delhi Hub,17803,2348,20151,11.65,20427600
+SKU-017,Car Vacuum Cleaner,Automotive,Mumbai Central,14215,3205,17420,18.4,19646650
+SKU-022,Cricket Bat English Willow,Sports,Mumbai Central,10651,1771,12422,14.26,19551840
+SKU-013,Vitamin D3 Supplements,FMCG,Mumbai Central,22115,1884,23999,7.85,17653080
+SKU-015,LED Desk Lamp,Home & Living,Delhi Hub,18022,949,18971,5.0,16503110
+SKU-003,Bluetooth Speaker,Electronics,Mumbai Central,18924,2192,21116,10.38,15650880
+SKU-002,Smart Watch Series 5,Electronics,Delhi Hub,19435,474,19909,2.38,15329160
+SKU-006,Cotton T-Shirt,Apparel,Mumbai Central,22339,5294,27633,19.16,14770260
+SKU-004,USB-C Fast Charger,Electronics,Mumbai Central,12615,2398,15013,15.97,11222640
+SKU-014,Ceramic Dinner Set 12pc,Home & Living,Mumbai Central,21438,3269,24707,13.23,10951150
+SKU-012,Protein Powder 1kg,FMCG,Mumbai Central,29308,2040,31348,6.51,10914000
+SKU-010,Organic Basmati Rice 5kg,FMCG,Mumbai Central,4434,620,5054,12.27,9399200
+SKU-021,Dumbbell Set 10kg,Sports,Delhi Hub,12740,1174,13914,8.44,9298080
+SKU-024,Water Purifier 8L,Home & Living,Bengaluru Hub,18518,565,19083,2.96,9073900
+SKU-019,Tyre Inflator Portable,Automotive,Mumbai Central,25122,2197,27319,8.04,8809970
+SKU-001,Wireless Earbuds Pro,Electronics,Mumbai Central,4528,425,4953,8.58,8436250
+SKU-005,Laptop Stand Aluminium,Electronics,Delhi Hub,11269,688,11957,5.75,8283520
+SKU-003,Bluetooth Speaker,Electronics,Delhi Hub,15817,1106,16923,6.54,7896840
+SKU-018,Car Battery 12V 70Ah,Automotive,Mumbai Central,5574,573,6147,9.32,7792800
+SKU-017,Car Vacuum Cleaner,Automotive,Delhi Hub,12897,1229,14126,8.7,7533770
+SKU-022,Cricket Bat English Willow,Sports,Delhi Hub,9462,625,10087,6.2,6900000
+SKU-006,Cotton T-Shirt,Apparel,Delhi Hub,19409,2347,21756,10.79,6548130
+SKU-011,Cold-Pressed Olive Oil 1L,FMCG,Delhi Hub,13921,220,14141,1.56,5643000
+SKU-020,Yoga Mat Pro 6mm,Sports,Mumbai Central,13854,991,14845,6.68,5083830
+SKU-016,Memory Foam Pillow,Home & Living,Bengaluru Hub,15355,564,15919,3.54,4906800
+SKU-014,Ceramic Dinner Set 12pc,Home & Living,Delhi Hub,18263,1416,19679,7.2,4743600
+SKU-008,Running Shoes,Apparel,Mumbai Central,20497,2087,22584,9.24,4424440
+SKU-004,USB-C Fast Charger,Electronics,Delhi Hub,11030,939,11969,7.85,4394520
+SKU-013,Vitamin D3 Supplements,FMCG,Delhi Hub,18413,420,18833,2.23,3935400
+SKU-015,LED Desk Lamp,Home & Living,Bengaluru Hub,15031,221,15252,1.45,3843190
+SKU-001,Wireless Earbuds Pro,Electronics,Delhi Hub,3905,171,4076,4.2,3394350
+SKU-019,Tyre Inflator Portable,Automotive,Delhi Hub,21166,792,21958,3.61,3175920
+SKU-006,Cotton T-Shirt,Apparel,Bengaluru Hub,16873,946,17819,5.31,2639340
+SKU-009,Winter Jacket NorthPeak,Apparel,Mumbai Central,6823,663,7486,8.86,2585700
+SKU-018,Car Battery 12V 70Ah,Automotive,Delhi Hub,4719,189,4908,3.85,2570400
+SKU-007,Denim Jacket,Apparel,Mumbai Central,4615,439,5054,8.69,2546200
+SKU-010,Organic Basmati Rice 5kg,FMCG,Delhi Hub,3694,163,3857,4.23,2471080
+SKU-017,Car Vacuum Cleaner,Automotive,Bengaluru Hub,10640,381,11021,3.46,2335530
+SKU-014,Ceramic Dinner Set 12pc,Home & Living,Bengaluru Hub,15266,678,15944,4.25,2271300
+SKU-003,Bluetooth Speaker,Electronics,Bengaluru Hub,13241,296,13537,2.19,2113440
+SKU-022,Cricket Bat English Willow,Sports,Bengaluru Hub,7830,181,8011,2.26,1998240
+SKU-023,Air Fryer 5L,Electronics,Mumbai Central,6417,995,7412,13.42,1950200
+SKU-005,Laptop Stand Aluminium,Electronics,Bengaluru Hub,9454,159,9613,1.65,1914360
+SKU-002,Smart Watch Series 5,Electronics,Bengaluru Hub,15825,47,15872,0.3,1519980
+SKU-012,Protein Powder 1kg,FMCG,Delhi Hub,24624,279,24903,1.12,1492650
+SKU-008,Running Shoes,Apparel,Delhi Hub,17301,588,17889,3.29,1246560
+SKU-021,Dumbbell Set 10kg,Sports,Bengaluru Hub,10962,146,11108,1.31,1156320
+SKU-004,USB-C Fast Charger,Electronics,Bengaluru Hub,9300,238,9538,2.5,1113840
+SKU-020,Yoga Mat Pro 6mm,Sports,Delhi Hub,11811,192,12003,1.6,984960
+SKU-011,Cold-Pressed Olive Oil 1L,FMCG,Bengaluru Hub,11017,34,11051,0.31,872100
+SKU-007,Denim Jacket,Apparel,Delhi Hub,3887,138,4025,3.43,800400
+SKU-009,Winter Jacket NorthPeak,Apparel,Delhi Hub,5779,183,5962,3.07,713700
+SKU-023,Air Fryer 5L,Electronics,Delhi Hub,5606,333,5939,5.61,652680
+SKU-012,Protein Powder 1kg,FMCG,Bengaluru Hub,19882,105,19987,0.53,561750
+SKU-010,Organic Basmati Rice 5kg,FMCG,Bengaluru Hub,3205,35,3240,1.08,530600
+SKU-018,Car Battery 12V 70Ah,Automotive,Bengaluru Hub,3851,39,3890,1.0,530400
+SKU-013,Vitamin D3 Supplements,FMCG,Bengaluru Hub,15154,45,15199,0.3,421650
+SKU-019,Tyre Inflator Portable,Automotive,Bengaluru Hub,17032,81,17113,0.47,324810
+SKU-007,Denim Jacket,Apparel,Bengaluru Hub,3156,36,3192,1.13,208800
+SKU-023,Air Fryer 5L,Electronics,Bengaluru Hub,4736,74,4810,1.54,145040
+SKU-009,Winter Jacket NorthPeak,Apparel,Bengaluru Hub,4842,36,4878,0.74,140400
+SKU-008,Running Shoes,Apparel,Bengaluru Hub,14398,58,14456,0.4,122960
+SKU-020,Yoga Mat Pro 6mm,Sports,Bengaluru Hub,9509,23,9532,0.24,117990
+SKU-001,Wireless Earbuds Pro,Electronics,Bengaluru Hub,3161,0,3161,0.0,0

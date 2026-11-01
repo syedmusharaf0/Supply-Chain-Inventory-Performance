@@ -18,11 +18,27 @@ def validate(df: pd.DataFrame, name: str, key_cols: list[str]) -> None:
     assert df[key_cols].notna().all().all(), f"{name}: null values in key columns"
     print(f"  [OK] {name}: {len(df):,} rows, keys unique, no null keys")
 
+# Source CSVs carry friendly display headers (what you see in the dashboards);
+# the ETL maps them to the database column names used in sql/01_schema_postgresql.sql.
+PRODUCT_COLUMNS = {"Product Code": "product_code", "Product Name": "product_name",
+                   "Product Category": "product_category", "Supplier Name": "supplier_name",
+                   "Unit Cost (INR)": "unit_cost_inr", "Reorder Level": "reorder_level"}
+STOCK_COLUMNS = {"Stock Date": "stock_date", "Product Code": "product_code",
+                 "Warehouse Name": "warehouse_name", "Opening Stock (units)": "opening_stock_units",
+                 "Units Received": "units_received", "Units Sold": "units_sold",
+                 "Lost Sales (units)": "lost_sales_units", "Closing Stock (units)": "closing_stock_units"}
+ORDER_COLUMNS = {"Purchase Order ID": "purchase_order_id", "Order Date": "order_date",
+                 "Product Code": "product_code", "Warehouse Name": "warehouse_name",
+                 "Quantity Ordered": "quantity_ordered",
+                 "Promised Lead Time (days)": "promised_lead_time_days",
+                 "Actual Lead Time (days)": "actual_lead_time_days", "Delivery Date": "delivery_date"}
+
 def main() -> None:
     print("EXTRACT")
-    dim = pd.read_csv(DATA / "dim_products.csv")
-    stock = pd.read_csv(DATA / "fact_daily_stock.csv", parse_dates=["stock_date"])
-    po = pd.read_csv(DATA / "fact_purchase_orders.csv", parse_dates=["order_date", "delivery_date"])
+    dim = pd.read_csv(DATA / "dim_products.csv").rename(columns=PRODUCT_COLUMNS)
+    stock = pd.read_csv(DATA / "fact_daily_stock.csv", parse_dates=["Stock Date"]).rename(columns=STOCK_COLUMNS)
+    po = pd.read_csv(DATA / "fact_purchase_orders.csv",
+                     parse_dates=["Order Date", "Delivery Date"]).rename(columns=ORDER_COLUMNS)
 
     print("VALIDATE")
     validate(dim, "dim_products", ["product_code"])

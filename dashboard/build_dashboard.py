@@ -33,10 +33,22 @@ def svg_inline(path):
     i = txt.find("<svg")
     return txt[i:] if i >= 0 else txt
 
-s = pd.read_csv(OUT / "kpi_summary.csv").iloc[0]
-wh = pd.read_csv(OUT / "kpi_by_warehouse.csv")
-sku = pd.read_csv(OUT / "kpi_by_sku.csv")
-monthly = pd.read_csv(OUT / "monthly_trend.csv", parse_dates=["month"])
+REV = {"Total Units Sold": "total_units_sold", "Total Lost Units": "total_lost_units",
+       "Stock-Out Rate %": "stockout_rate_percent", "Stock Turnover Ratio": "stock_turnover_ratio",
+       "Average Inventory Value (INR)": "average_inventory_value_inr",
+       "Carrying Cost (INR)": "carrying_cost_inr", "Total Sales Value (INR)": "total_sales_value_inr",
+       "Total Purchase Orders": "total_purchase_orders", "Late Orders %": "late_orders_percent",
+       "Warehouse Name": "warehouse_name", "Product Name": "product_name",
+       "Product Category": "product_category", "Lost Units": "lost_units",
+       "Lost Sales Value (INR)": "lost_sales_value_inr", "Month": "month",
+       "Units Sold": "units_sold", "Sales Value (INR)": "sales_value_inr",
+       "Units Sold MoM Growth %": "units_sold_mom_growth_percent",
+       "Units Sold YoY Growth %": "units_sold_yoy_growth_percent",
+       "Sales Value (INR) YoY Growth %": "sales_value_inr_yoy_growth_percent"}
+s = pd.read_csv(OUT / "kpi_summary.csv").rename(columns=REV).iloc[0]
+wh = pd.read_csv(OUT / "kpi_by_warehouse.csv").rename(columns=REV)
+sku = pd.read_csv(OUT / "kpi_by_sku.csv").rename(columns=REV)
+monthly = pd.read_csv(OUT / "monthly_trend.csv", parse_dates=["Month"]).rename(columns=REV)
 top = sku.nlargest(8, "lost_sales_value_inr")
 last = monthly.iloc[-1]
 mum = wh.loc[wh.warehouse_name == "Mumbai Central"].iloc[0]
@@ -45,6 +57,7 @@ mum_share = 100 * mum["total_lost_units"] / s["total_lost_units"]
 worst = sku.loc[sku["lost_sales_value_inr"].idxmax()]
 
 cards = [
+    ("Total Sales", inr_short(s["total_sales_value_inr"]), inr(s["total_sales_value_inr"])),
     ("Total Units Sold", f"{int(s['total_units_sold']):,}", "Jan 2023 – Jun 2025"),
     ("Stock-Out Rate", f"{s['stockout_rate_percent']:.2f}%", f"{int(s['total_lost_units']):,} units lost"),
     ("Stock Turnover", f"{s['stock_turnover_ratio']:.1f}×", "annualised"),

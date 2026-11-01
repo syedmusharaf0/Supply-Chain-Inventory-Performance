@@ -3,9 +3,9 @@
 // How to use: Power BI Desktop > Get Data > Blank Query > Advanced Editor,
 // paste ONE block per table, name the query exactly as shown, Close & Apply.
 // Set the DataFolder path in the first line of each block to your data folder.
-// Model column names stay in the clear snake_case used across this project
-// (product_code, warehouse_name, units_sold, ...) — they read well in the
-// Fields pane and match the SQL, Python and DAX in this repository.
+// The CSV headers are already the friendly display names (Product Code,
+// Warehouse Name, Units Sold, ...) so Power BI shows clean field names
+// with no renaming step. DAX measures in dax_measures.dax use the same names.
 // ============================================================================
 
 // ---- Query name: dim_products ----
@@ -15,9 +15,9 @@ let
         [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.None]),
     Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
     Typed = Table.TransformColumnTypes(Promoted, {
-        {"product_code", type text}, {"product_name", type text},
-        {"product_category", type text}, {"supplier_name", type text},
-        {"unit_cost_inr", type number}, {"reorder_level", Int64.Type}})
+        {"Product Code", type text}, {"Product Name", type text},
+        {"Product Category", type text}, {"Supplier Name", type text},
+        {"Unit Cost (INR)", type number}, {"Reorder Level", Int64.Type}})
 in
     Typed
 
@@ -28,10 +28,10 @@ let
         [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.None]),
     Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
     Typed = Table.TransformColumnTypes(Promoted, {
-        {"stock_date", type date}, {"product_code", type text},
-        {"warehouse_name", type text}, {"opening_stock_units", Int64.Type},
-        {"units_received", Int64.Type}, {"units_sold", Int64.Type},
-        {"lost_sales_units", Int64.Type}, {"closing_stock_units", Int64.Type}})
+        {"Stock Date", type date}, {"Product Code", type text},
+        {"Warehouse Name", type text}, {"Opening Stock (units)", Int64.Type},
+        {"Units Received", Int64.Type}, {"Units Sold", Int64.Type},
+        {"Lost Sales (units)", Int64.Type}, {"Closing Stock (units)", Int64.Type}})
 in
     Typed
 
@@ -42,12 +42,12 @@ let
         [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.None]),
     Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
     Typed = Table.TransformColumnTypes(Promoted, {
-        {"purchase_order_id", type text}, {"order_date", type date},
-        {"product_code", type text}, {"warehouse_name", type text},
-        {"quantity_ordered", Int64.Type}, {"promised_lead_time_days", Int64.Type},
-        {"actual_lead_time_days", Int64.Type}, {"delivery_date", type date}}),
+        {"Purchase Order ID", type text}, {"Order Date", type date},
+        {"Product Code", type text}, {"Warehouse Name", type text},
+        {"Quantity Ordered", Int64.Type}, {"Promised Lead Time (days)", Int64.Type},
+        {"Actual Lead Time (days)", Int64.Type}, {"Delivery Date", type date}}),
     WithVariance = Table.AddColumn(Typed, "lead_time_variance_days", each
-        [actual_lead_time_days] - [promised_lead_time_days], Int64.Type),
+        [Actual Lead Time (days)] - [Promised Lead Time (days)], Int64.Type),
     WithLateFlag = Table.AddColumn(WithVariance, "is_late", each
         [lead_time_variance_days] > 0, type logical)
 in

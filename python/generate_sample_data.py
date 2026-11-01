@@ -6,7 +6,8 @@ project (daily stock records, purchase orders, product master data) across
 Indian regional warehouses, with all monetary values in Indian Rupees (INR).
 It does not contain any real company data.
 
-Column names are written in clear, full words (see data/data_dictionary.md).
+Column names are the friendly display names used in the dashboards
+(see data/data_dictionary.md). The ETL maps them to database column names.
 """
 import numpy as np
 import pandas as pd
@@ -52,8 +53,8 @@ dim = pd.DataFrame(
     [(code, name, cat, sup, cost,
       int(np.clip(round(base_demand[code] * rng.uniform(5.5, 8.5)), 30, 400)))
      for code, name, cat, sup, cost in PRODUCTS],
-    columns=["product_code", "product_name", "product_category", "supplier_name",
-             "unit_cost_inr", "reorder_level"])
+    columns=["Product Code", "Product Name", "Product Category", "Supplier Name",
+             "Unit Cost (INR)", "Reorder Level"])
 dim.to_csv(DATA / "dim_products.csv", index=False)
 
 # ---------------- Warehouses (India) ----------------
@@ -70,7 +71,7 @@ dates = pd.date_range("2023-01-01", "2025-06-30", freq="D")
 rows = []
 for _, p in dim.iterrows():
     for wh, prof in WH_PROFILE.items():
-        stock = int(p["reorder_level"] * prof["cover"] * rng.uniform(1.2, 1.9))
+        stock = int(p["Reorder Level"] * prof["cover"] * rng.uniform(1.2, 1.9))
         pending_day, pending_qty = None, 0   # replenishment in flight (lead-time delay)
         for i, d in enumerate(dates):
             received = 0
@@ -80,22 +81,22 @@ for _, p in dim.iterrows():
             opening = stock
             months_in = (d.year - 2023) * 12 + (d.month - 1)
             trend = 1.006 ** months_in  # gentle ~7% per year demand growth
-            lam = base_demand[p["product_code"]] * prof["demand"] * trend * (1 + 0.18 * np.sin(d.dayofyear / 28.0))
+            lam = base_demand[p["Product Code"]] * prof["demand"] * trend * (1 + 0.18 * np.sin(d.dayofyear / 28.0))
             demand = int(rng.poisson(max(lam, 0.5)))
             sold = min(demand, stock)
             lost = demand - sold
             stock_end = stock - sold
             # reorder when low; delivery lands after a lead-time delay,
             # so a fast-selling product can stock out while waiting (realistic)
-            if stock_end < p["reorder_level"] and pending_day is None:
+            if stock_end < p["Reorder Level"] and pending_day is None:
                 pending_day = i + int(rng.integers(3, 10))
-                pending_qty = int(p["reorder_level"] * rng.uniform(1.4, 2.2))
-            rows.append((d.date(), p["product_code"], wh, opening, received, sold, lost, stock_end))
+                pending_qty = int(p["Reorder Level"] * rng.uniform(1.4, 2.2))
+            rows.append((d.date(), p["Product Code"], wh, opening, received, sold, lost, stock_end))
             stock = stock_end
 
-fact = pd.DataFrame(rows, columns=["stock_date", "product_code", "warehouse_name",
-                                   "opening_stock_units", "units_received", "units_sold",
-                                   "lost_sales_units", "closing_stock_units"])
+fact = pd.DataFrame(rows, columns=["Stock Date", "Product Code", "Warehouse Name",
+                                   "Opening Stock (units)", "Units Received", "Units Sold",
+                                   "Lost Sales (units)", "Closing Stock (units)"])
 fact.to_csv(DATA / "fact_daily_stock.csv", index=False)
 
 # ---------------- Purchase orders ----------------
@@ -108,16 +109,16 @@ for _, p in dim.iterrows():
         for _ in range(rng.integers(10, 16)):
             po_id += 1
             order_date = pd.Timestamp("2023-01-01") + pd.Timedelta(days=int(rng.integers(0, 875)))
-            promised = SUPPLIER_LEAD[p["supplier_name"]] + int(rng.integers(-1, 2))
+            promised = SUPPLIER_LEAD[p["Supplier Name"]] + int(rng.integers(-1, 2))
             delay = int(rng.choice([0, 0, 0, 1, 2, 3, 5, 7], p=[.45, .1, .05, .12, .1, .08, .06, .04]))
             actual = max(promised + delay, 1)
-            po_rows.append((f"PO-{po_id}", order_date.date(), p["product_code"], wh,
+            po_rows.append((f"PO-{po_id}", order_date.date(), p["Product Code"], wh,
                             int(rng.integers(80, 420)), promised, actual,
                             (order_date + pd.Timedelta(days=actual)).date()))
-po = pd.DataFrame(po_rows, columns=["purchase_order_id", "order_date", "product_code",
-                                    "warehouse_name", "quantity_ordered",
-                                    "promised_lead_time_days", "actual_lead_time_days",
-                                    "delivery_date"])
+po = pd.DataFrame(po_rows, columns=["Purchase Order ID", "Order Date", "Product Code",
+                                    "Warehouse Name", "Quantity Ordered",
+                                    "Promised Lead Time (days)", "Actual Lead Time (days)",
+                                    "Delivery Date"])
 po.to_csv(DATA / "fact_purchase_orders.csv", index=False)
 
 print(f"dim_products: {len(dim)} rows | fact_daily_stock: {len(fact)} rows | purchase_orders: {len(po)} rows")

@@ -1,4 +1,4 @@
-warehouse_name,total_units_sold,total_lost_units,stockout_rate_percent,average_inventory_value_inr,stock_turnover_ratio,carrying_cost_inr
-Bengaluru Hub,268238.0,4988.0,1.83,29495779.0,36.38,14739808.0
-Delhi Hub,322748.0,18849.0,5.52,25691767.0,50.53,12838845.0
-Mumbai Central,376967.0,51245.0,11.97,21897725.0,69.54,10942863.0
+Warehouse Name,Total Units Sold,Total Lost Units,Stock-Out Rate %,Average Inventory Value (INR),Stock Turnover Ratio,Carrying Cost (INR),Total Sales Value (INR)
+Bengaluru Hub,268238.0,4988.0,1.83,29495779.0,36.38,14739808.0,2681479670.0
+Delhi Hub,322748.0,18849.0,5.52,25691767.0,50.53,12838845.0,3243757890.0
+Mumbai Central,376967.0,51245.0,11.97,21897725.0,69.54,10942863.0,3804719490.0

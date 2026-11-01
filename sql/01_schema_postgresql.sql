@@ -2,6 +2,8 @@
 -- Star schema: one product dimension, two fact tables.
 -- All monetary values in Indian Rupees (INR). Column names use clear, full
 -- words — see data/data_dictionary.md for a plain-English explanation of each.
+-- The source CSVs use friendly display headers (Product Code, Stock Date, ...);
+-- python/etl_pipeline.py maps them to these database column names on load.
 
 CREATE TABLE IF NOT EXISTS dim_products (
     product_code   VARCHAR(10) PRIMARY KEY,   -- unique product code, e.g. SKU-001

@@ -1,4 +1,4 @@
-week_ending,units_sold,lost_units,sales_value_inr,stockout_rate_percent,units_sold_wow_growth_percent,sales_value_inr_wow_growth_percent
+Week Ending,Units Sold,Lost Units,Sales Value (INR),Stock-Out Rate %,Units Sold WoW Growth %,Sales Value (INR) WoW Growth %
 2023-01-01,1048,0,10543000,0.0,,
 2023-01-08,7460,82,74462890,1.09,611.83,606.28
 2023-01-15,7258,541,72865860,6.94,-2.71,-2.14

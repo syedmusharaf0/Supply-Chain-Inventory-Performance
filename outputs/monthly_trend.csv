@@ -1,4 +1,4 @@
-month,units_sold,lost_units,sales_value_inr,stockout_rate_percent,units_sold_mom_growth_percent,sales_value_inr_mom_growth_percent,units_sold_yoy_growth_percent,sales_value_inr_yoy_growth_percent
+Month,Units Sold,Lost Units,Sales Value (INR),Stock-Out Rate %,Units Sold MoM Growth %,Sales Value (INR) MoM Growth %,Units Sold YoY Growth %,Sales Value (INR) YoY Growth %
 2023-01-31,33253,2146,334737940,6.06,,,,
 2023-02-28,31981,2561,321592320,7.41,-3.83,-3.93,,
 2023-03-31,32749,2435,329870300,6.92,2.4,2.57,,

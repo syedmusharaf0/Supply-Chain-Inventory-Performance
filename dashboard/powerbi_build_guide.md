@@ -17,17 +17,17 @@ model, measures, page layouts, colours and formatting.
    Name the query `dim_products`. Repeat for `fact_daily_stock` and
    `fact_purchase_orders`. **Close & Apply**.
 2. **Model view:** create relationships —
-   `dim_products[product_code]` → `fact_daily_stock[product_code]` and
-   → `fact_purchase_orders[product_code]` (one-to-many, single direction).
+   `dim_products[Product Code]` → `fact_daily_stock[Product Code]` and
+   → `fact_purchase_orders[Product Code]` (one-to-many, single direction).
 3. **Modeling → New table:** paste the `Calendar` DAX from the end of
-   `power_query_m.txt`; relate `Calendar[Date]` → `fact_daily_stock[stock_date]`;
+   `power_query_m.txt`; relate `Calendar[Date]` → `fact_daily_stock[Stock Date]`;
    right-click Calendar → **Mark as date table**.
 
 ## Step 2 — Create the measures (5 min)
 Modeling → New table → name it `_Measures` (enter `1` as the formula, then
 delete that placeholder measure). Paste each measure from `dax_measures.dax`
 as a new measure in `_Measures`. Hide the fact-table numeric columns
-(units_sold, lost_sales_units, …) so report builders use measures only.
+(Units Sold, Lost Sales (units), …) so report builders use measures only.
 **Formatting:** set currency measures (Sales Value INR, Lost Sales Value INR,
 Average Inventory Value INR, Carrying Cost INR) to format `₹ #,##0`;
 percent measures to 0.00 with a "%" suffix in the card titles.
@@ -45,13 +45,13 @@ Font: Segoe UI. Page size: 16:9.
 ## Step 3 — Build the pages (10 min)
 
 ### Page 1 — Executive Overview
-- **Row of 6 KPI cards:** Total Units Sold · Stock-Out Rate % · Stock Turnover
+- **KPI cards:** **Total Sales Value INR** first, then Total Units Sold · Stock-Out Rate % · Stock Turnover
   Ratio · Average Inventory Value INR · Carrying Cost INR · Orders Late %.
 - **Line chart:** Calendar month on axis, **Stock-Out Rate %** — add a constant
   target line at 3% (Analytics pane) labelled "Target 3%".
-- **Bar chart:** Stock Turnover Ratio by `product_category` (teal, data labels on).
-- **Bar chart:** Lost Sales Value INR by `warehouse_name` (amber; Mumbai should stand out).
-- **Slicers (top):** `warehouse_name`, `product_category`, Calendar month.
+- **Bar chart:** Stock Turnover Ratio by `Product Category` (teal, data labels on).
+- **Bar chart:** Lost Sales Value INR by `Warehouse Name` (amber; Mumbai should stand out).
+- **Slicers (top):** `Warehouse Name`, `Product Category`, Calendar month.
 - Title text box: "Supply Chain & Inventory Performance — Executive Overview".
 
 ### Page 2 — Growth & Trends (LAG comparisons)
@@ -67,12 +67,12 @@ Font: Segoe UI. Page size: 16:9.
   Rate % — add a note under 2025: "Jan–Jun only (partial year)".
 
 ### Page 3 — Warehouse & Product Deep-Dive
-- **Matrix:** rows `warehouse_name`, columns `product_category`, values
+- **Matrix:** rows `Warehouse Name`, columns `Product Category`, values
   Stock-Out Rate % + Stock Turnover Ratio (background colour scale on rate).
-- **Bar chart (Top N = 10):** Lost Sales Value INR by `product_name`,
-  filtered by `warehouse_name` when drilled.
+- **Bar chart (Top N = 10):** Lost Sales Value INR by `Product Name`,
+  filtered by `Warehouse Name` when drilled.
 - **Table — Reorder alerts:** product_name, warehouse_name,
-  closing_stock_units (latest date), reorder_level — conditional formatting:
+  Closing Stock (units) (latest date), Reorder Level — conditional formatting:
   red fill when closing stock < reorder level (use the
   **Products Below Reorder Level** measure in the page title card).
 - Enable **drill-through** on product_name to this page from Page 1.
@@ -82,8 +82,8 @@ Font: Segoe UI. Page size: 16:9.
 - **Cards:** Orders Late % · Avg Lead Time Variance (days) · total orders.
 - **Table:** supplier_name, total orders, average variance, late % (from
   `outputs/kpi_by_supplier_leadtime.csv` logic — or rebuild from measures).
-- **Scatter:** promised_lead_time_days (x) vs actual_lead_time_days (y),
-  one dot per purchase order, details = purchase_order_id.
+- **Scatter:** Promised Lead Time (days) (x) vs Actual Lead Time (days) (y),
+  one dot per purchase order, details = Purchase Order ID.
 
 ## Step 4 — Polish & publish
 - Add the amber header band + white title text on each page (rectangle shape).

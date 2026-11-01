@@ -1,4 +1,4 @@
-purchase_order_id,order_date,product_code,warehouse_name,quantity_ordered,promised_lead_time_days,actual_lead_time_days,delivery_date
+Purchase Order ID,Order Date,Product Code,Warehouse Name,Quantity Ordered,Promised Lead Time (days),Actual Lead Time (days),Delivery Date
 PO-1001,2024-12-03,SKU-001,Mumbai Central,123,8,8,2024-12-11
 PO-1002,2024-05-02,SKU-001,Mumbai Central,392,6,8,2024-05-10
 PO-1003,2023-09-04,SKU-001,Mumbai Central,366,8,15,2023-09-19

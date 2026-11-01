@@ -1,4 +1,4 @@
-product_code,product_name,product_category,supplier_name,unit_cost_inr,reorder_level
+Product Code,Product Name,Product Category,Supplier Name,Unit Cost (INR),Reorder Level
 SKU-001,Wireless Earbuds Pro,Electronics,TechNova Supplies,19850,30
 SKU-002,Smart Watch Series 5,Electronics,TechNova Supplies,32340,159
 SKU-003,Bluetooth Speaker,Electronics,TechNova Supplies,7140,116

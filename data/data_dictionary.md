@@ -1,43 +1,48 @@
 # Data Dictionary — every column in plain English
 
+These are the exact column names used in the CSV files, the dashboards and
+Power BI. (The database layer in `sql/` uses matching snake_case names —
+`product_code`, `stock_date`, … — and `python/etl_pipeline.py` maps between
+the two, which is standard ETL practice.)
+
 ## dim_products.csv — one row per product (the product list)
 | Column | What it means |
 |---|---|
-| product_code | Unique code for the product, e.g. SKU-001 |
-| product_name | The product's name, e.g. Wireless Earbuds Pro |
-| product_category | Which family it belongs to: Electronics, Apparel, FMCG, Home & Living, Automotive or Sports |
-| supplier_name | The vendor who supplies this product |
-| unit_cost_inr | What one unit costs, in Indian Rupees (₹) — the only currency used in this project |
-| reorder_level | When stock in a warehouse falls to this many units, a new order is placed |
+| Product Code | Unique code for the product, e.g. SKU-001 |
+| Product Name | The product's name, e.g. Wireless Earbuds Pro |
+| Product Category | Which family it belongs to: Electronics, Apparel, FMCG, Home & Living, Automotive or Sports |
+| Supplier Name | The vendor who supplies this product |
+| Unit Cost (INR) | What one unit costs, in Indian Rupees (₹) — the only currency used in this project |
+| Reorder Level | When stock in a warehouse falls to this many units, a new order is placed |
 
 ## fact_daily_stock.csv — one row per product, per warehouse, per day
 | Column | What it means |
 |---|---|
-| stock_date | The calendar day (1 Jan 2023 – 30 Jun 2025) |
-| product_code | Which product (see dim_products) |
-| warehouse_name | Which warehouse: Mumbai Central, Delhi Hub or Bengaluru Hub |
-| opening_stock_units | Units on the shelf at the start of the day |
-| units_received | Units delivered into the warehouse that day |
-| units_sold | Units sold that day |
-| lost_sales_units | Customers who wanted to buy but the product was out of stock — lost sales |
-| closing_stock_units | Units left at end of day = opening + received − sold |
+| Stock Date | The calendar day (1 Jan 2023 – 30 Jun 2025) |
+| Product Code | Which product (see dim_products) |
+| Warehouse Name | Which warehouse: Mumbai Central, Delhi Hub or Bengaluru Hub |
+| Opening Stock (units) | Units on the shelf at the start of the day |
+| Units Received | Units delivered into the warehouse that day |
+| Units Sold | Units sold that day |
+| Lost Sales (units) | Customers who wanted to buy but the product was out of stock — lost sales |
+| Closing Stock (units) | Units left at end of day = opening + received − sold |
 
 ## fact_purchase_orders.csv — one row per purchase order
 | Column | What it means |
 |---|---|
-| purchase_order_id | Unique order number, e.g. PO-1001 |
-| order_date | The day the order was placed with the supplier |
-| product_code | Which product was ordered |
-| warehouse_name | Which warehouse receives the delivery |
-| quantity_ordered | How many units were ordered |
-| promised_lead_time_days | How many days the supplier promised delivery would take |
-| actual_lead_time_days | How many days delivery actually took |
-| delivery_date | The day the goods arrived (order date + actual lead time) |
+| Purchase Order ID | Unique order number, e.g. PO-1001 |
+| Order Date | The day the order was placed with the supplier |
+| Product Code | Which product was ordered |
+| Warehouse Name | Which warehouse receives the delivery |
+| Quantity Ordered | How many units were ordered |
+| Promised Lead Time (days) | How many days the supplier promised delivery would take |
+| Actual Lead Time (days) | How many days delivery actually took |
+| Delivery Date | The day the goods arrived (order date + actual lead time) |
 
 ## outputs/ — KPI result tables
 | File | What it shows |
 |---|---|
-| kpi_summary.csv | The headline numbers for the whole network |
+| kpi_summary.csv | The headline numbers for the whole network — Total Sales Value, Total Units Sold, Stock-Out Rate %, Stock Turnover Ratio, Carrying Cost, Late Orders % |
 | kpi_by_warehouse.csv | The same KPIs split by warehouse, to compare Mumbai vs Delhi vs Bengaluru |
 | kpi_by_sku.csv | KPIs per product per warehouse — finds bottleneck and overstocked products |
 | kpi_by_supplier_leadtime.csv | Per supplier: how many orders, how late on average, % of orders late |

@@ -1,19 +1,20 @@
 // ============================================================================
 // Supply Chain & Inventory Performance — Power BI DAX measures
 // Tables: dim_products, fact_daily_stock, fact_purchase_orders
+// Columns use the friendly display names from the CSV headers.
 // All monetary values in Indian Rupees (INR). Format currency measures as ₹.
 //
 // SETUP for the growth measures: add a calendar table (Modeling > New table):
 //   Calendar = CALENDAR ( DATE ( 2023, 1, 1 ), DATE ( 2025, 6, 30 ) )
-// and create a relationship Calendar[Date] -> fact_daily_stock[stock_date].
+// and create a relationship Calendar[Date] -> fact_daily_stock[Stock Date].
 // Mark Calendar as the date table. The growth measures below are the DAX
 // equivalent of the SQL LAG() comparisons in sql/02_kpi_queries.sql.
 // ============================================================================
 
 // ---------- Core KPIs ----------
-Total Units Sold = SUM ( fact_daily_stock[units_sold] )
+Total Units Sold = SUM ( fact_daily_stock[Units Sold] )
 
-Lost Units = SUM ( fact_daily_stock[lost_sales_units] )
+Lost Units = SUM ( fact_daily_stock[Lost Sales (units)] )
 
 Total Demand = [Total Units Sold] + [Lost Units]
 
@@ -23,53 +24,55 @@ DIVIDE ( [Lost Units], [Total Demand] ) * 100
 Sales Value INR =
 SUMX (
     fact_daily_stock,
-    fact_daily_stock[units_sold] * RELATED ( dim_products[unit_cost_inr] )
+    fact_daily_stock[Units Sold] * RELATED ( dim_products[Unit Cost (INR)] )
 )
+
+Total Sales INR = [Sales Value INR]   // headline Total Sales measure
 
 Lost Sales Value INR =
 SUMX (
     fact_daily_stock,
-    fact_daily_stock[lost_sales_units] * RELATED ( dim_products[unit_cost_inr] )
+    fact_daily_stock[Lost Sales (units)] * RELATED ( dim_products[Unit Cost (INR)] )
 )
 
 Average Inventory Value INR =
 AVERAGEX (
-    VALUES ( fact_daily_stock[stock_date] ),
-    CALCULATE ( SUMX ( fact_daily_stock, fact_daily_stock[closing_stock_units]
-        * RELATED ( dim_products[unit_cost_inr] ) ) )
+    VALUES ( fact_daily_stock[Stock Date] ),
+    CALCULATE ( SUMX ( fact_daily_stock, fact_daily_stock[Closing Stock (units)]
+        * RELATED ( dim_products[Unit Cost (INR)] ) ) )
 )
 
 Stock Turnover Ratio =
 DIVIDE ( [Sales Value INR], [Average Inventory Value INR] )
-    * DIVIDE ( 365, DATEDIFF ( MIN ( fact_daily_stock[stock_date] ),
-                               MAX ( fact_daily_stock[stock_date] ), DAY ) + 1 )
+    * DIVIDE ( 365, DATEDIFF ( MIN ( fact_daily_stock[Stock Date] ),
+                               MAX ( fact_daily_stock[Stock Date] ), DAY ) + 1 )
 
 Carrying Cost INR =
 [Average Inventory Value INR] * 0.20
-    * DIVIDE ( DATEDIFF ( MIN ( fact_daily_stock[stock_date] ),
-                          MAX ( fact_daily_stock[stock_date] ), DAY ) + 1, 365 )
+    * DIVIDE ( DATEDIFF ( MIN ( fact_daily_stock[Stock Date] ),
+                          MAX ( fact_daily_stock[Stock Date] ), DAY ) + 1, 365 )
 
 Orders Late % =
 DIVIDE (
     COUNTROWS ( FILTER ( fact_purchase_orders,
-        fact_purchase_orders[actual_lead_time_days]
-            > fact_purchase_orders[promised_lead_time_days] ) ),
+        fact_purchase_orders[Actual Lead Time (days)]
+            > fact_purchase_orders[Promised Lead Time (days)] ) ),
     COUNTROWS ( fact_purchase_orders )
 ) * 100
 
 Avg Lead Time Variance (days) =
 AVERAGEX (
     fact_purchase_orders,
-    fact_purchase_orders[actual_lead_time_days]
-        - fact_purchase_orders[promised_lead_time_days]
+    fact_purchase_orders[Actual Lead Time (days)]
+        - fact_purchase_orders[Promised Lead Time (days)]
 )
 
 Products Below Reorder Level =
 COUNTROWS (
     FILTER (
-        SUMMARIZE ( fact_daily_stock, dim_products[product_code] ),
-        CALCULATE ( SUM ( fact_daily_stock[closing_stock_units] ) )
-            < MAX ( dim_products[reorder_level] )
+        SUMMARIZE ( fact_daily_stock, dim_products[Product Code] ),
+        CALCULATE ( SUM ( fact_daily_stock[Closing Stock (units)] ) )
+            < MAX ( dim_products[Reorder Level] )
     )
 )
 

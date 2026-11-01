@@ -1,4 +1,4 @@
-supplier_name,total_orders,average_variance_days,late_orders_percent
+Supplier Name,Total Orders,Average Variance (days),Late Orders %
 AutoGrip Parts,110,1.0,32.7
 FlexFit Sports,107,1.2,39.3
 FreshKart Distributors,74,1.27,41.9
