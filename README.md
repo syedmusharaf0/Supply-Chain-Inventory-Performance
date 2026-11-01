@@ -1,42 +1,49 @@
 # Supply Chain & Inventory Performance
 
+![Python](https://img.shields.io/badge/Python-Pandas%20%7C%20SQLAlchemy-3776AB?logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL%20%7C%20LAG()-336791?logo=postgresql&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-DAX%20Dashboard-F2C811?logo=powerbi&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 **SQL · Python (Pandas) · Power BI** — inventory analytics for a multi-warehouse Indian
 distribution network (Mumbai · Delhi · Bengaluru), Jan 2023 – Jun 2025.
 All values in **Indian Rupees (₹)**. Every column uses a clear, friendly name —
 see the [data dictionary](data/data_dictionary.md).
 
----
-
 ## 📊 Power BI Dashboard
 
-| | |
-|---|---|
-| **Total Sales** | **₹973.00 Cr** |
-| **Total Units Sold** | **967,953** |
-| **Stock-Out Rate** | **7.20%** |
-| **Stock Turnover (annualised)** | **50.52×** |
-| **Average Inventory Value** | **₹7.71 Cr** |
-| **Carrying Cost** | **₹3.85 Cr** |
-| **Late Orders** | **41.1%** |
+![Power BI Dashboard](images/power_bi_dashboard.svg)
 
-![Stock Turnover by Category](images/turnover_by_category.svg)
-![YoY Growth](images/yoy_growth_trend.svg)
-![Monthly Stock-Out Trend](images/monthly_stockout_trend.svg)
+| KPI | Value | | KPI | Value |
+|---|---|---|---|---|
+| **Total Sales** | **₹973.00 Cr** | | Stock Turnover (annualised) | 50.52× |
+| **Total Units Sold** | **967,953** | | Average Inventory Value | ₹7.71 Cr |
+| **Stock-Out Rate** | **7.20%** | | Carrying Cost | ₹3.85 Cr |
+| **Late Orders** | **41.1%** | | Purchase Orders | 878 |
 
 **Dashboard pages:** 1) Executive Overview — KPI cards, turnover by category, lost
 sales by warehouse · 2) Growth & Trends — WoW / MoM / YoY comparisons (LAG) ·
 3) Warehouse & Product Deep-Dive — bottleneck products, reorder alerts, drill-through ·
 4) Supplier Performance — lead-time variance, late orders.
 
-**Build it yourself (Power BI Desktop, ~20 min):**
+**Build it in Power BI Desktop (~20 min):**
 [Build guide](dashboard/powerbi_build_guide.md) ·
 [DAX measures](dashboard/dax_measures.dax) ·
 [Power Query load code](dashboard/power_query_m.txt)
 
-**No Power BI?** The same dashboard opens in any browser:
-[`dashboard/dashboard.html`](dashboard/dashboard.html)
+**Interactive version (browser):**
+[`dashboard/dashboard.html`](dashboard/dashboard.html) — the same dashboard,
+fully interactive, no licence needed.
 
----
+## Contents
+- [Business questions](#business-questions)
+- [Key results](#key-results-jan-2023--jun-2025-sample-data)
+- [Growth — LAG comparisons](#growth--lag-comparisons-weekly--monthly--yearly)
+- [Insights](#insights)
+- [Top bottleneck products](#top-bottleneck-products-lost-sales-value)
+- [Charts](#charts)
+- [Repository structure](#repository-structure)
+- [How to run](#how-to-run)
 
 ## Business questions
 - Which warehouses and products lose the most sales to stock-outs?
@@ -93,7 +100,10 @@ and Jun 2025 is **+5.3% vs Jun 2024**.
 | Memory Foam Pillow | Mumbai Central | 20.69% | 5,161 | ₹4,49,00,700 |
 | Water Purifier 8L | Delhi Hub | 7.97% | 1,886 | ₹3,02,89,160 |
 
-## More charts
+## Charts
+![Stock Turnover by Category](images/turnover_by_category.svg)
+![Monthly Stock-Out Trend](images/monthly_stockout_trend.svg)
+![YoY Growth](images/yoy_growth_trend.svg)
 ![Lead Time Variance by Supplier](images/lead_time_variance_by_supplier.svg)
 ![Top Bottleneck Products](images/top_bottleneck_skus.svg)
 
@@ -103,19 +113,21 @@ data/        dim_products, fact_daily_stock, fact_purchase_orders (CSV) + data d
 sql/         01_schema_postgresql.sql, 02_kpi_queries.sql (11 KPI queries incl. LAG growth)
 python/      generate_sample_data.py, etl_pipeline.py, kpi_analysis.py
 dashboard/   dashboard.html + build_dashboard.py (browser dashboard),
+             build_dashboard_image.py (README dashboard image),
              powerbi_build_guide.md, power_query_m.txt, dax_measures.dax (Power BI pack)
 outputs/     KPI tables with friendly column names: summary, by warehouse, by product,
              supplier lead time, weekly / monthly / yearly trends with growth %
-images/      Charts (SVG)
+images/      power_bi_dashboard.svg (full dashboard) + individual charts (SVG)
 ```
 
 ## How to run
 ```bash
 pip install -r requirements.txt
-python python/generate_sample_data.py   # creates the sample dataset (seed 42)
-python python/etl_pipeline.py           # validate -> transform -> load (SQLite demo DB)
-python python/kpi_analysis.py           # KPI tables + charts + growth comparisons
-python dashboard/build_dashboard.py     # builds dashboard/dashboard.html
+python python/generate_sample_data.py     # creates the sample dataset (seed 42)
+python python/etl_pipeline.py             # validate -> transform -> load (SQLite demo DB)
+python python/kpi_analysis.py             # KPI tables + charts + growth comparisons
+python dashboard/build_dashboard.py       # builds dashboard/dashboard.html
+python dashboard/build_dashboard_image.py # builds images/power_bi_dashboard.svg
 ```
 For production, the same schema and queries run on PostgreSQL
 (`sql/01_schema_postgresql.sql`); the ETL loads to SQLite locally so the full
@@ -134,4 +146,4 @@ chain & inventory dashboard project (daily stock movements, purchase orders,
 reorder levels, supplier lead times). It contains no real company data.
 
 ---
-**Author:** Syed Musharaf — Data Analyst · [GitHub](https://github.com/syedmusharaf0)
+**Author:** Syed Musharaf — Data Analyst · [GitHub](https://github.com/syedmusharaf0) · MIT License
