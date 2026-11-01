@@ -1,0 +1,4 @@
+warehouse,units_sold,units_lost_sales,stockout_days,total_days,avg_inventory_value_sar,stockout_rate_pct,carrying_cost_sar,avg_inventory_value_inr,carrying_cost_inr
+Dammam Hub,66722,192,12,4344,621395.61,0.28,61628.82,13857122.1,1374322.69
+Jeddah Hub,82495,872,77,4344,565727.68,1.77,56107.79,12615727.26,1251203.72
+Riyadh Central,94118,1648,171,4344,502619.02,3.94,49848.79,11208404.15,1111628.02

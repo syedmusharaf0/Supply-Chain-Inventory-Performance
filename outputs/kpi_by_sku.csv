@@ -1,0 +1,25 @@
+sku,product_name,category,supplier,units_sold,stockout_days,total_days,units_lost_sales,cogs_sar,avg_inventory_value_sar,stock_turnover_ratio,stockout_rate_pct,est_lost_sales_value_sar,avg_inventory_value_inr,est_lost_sales_value_inr
+SKU-007,Olive Oil 500ml,FMCG,National Distribution Co.,16776,6,543,133,469728,23252.99,20.2,1.1,3724,518541.68,83045.2
+SKU-011,Men's Cotton T-Shirt,Apparel,Arabian Supply Ltd.,7285,14,543,151,546375,27887.15,19.59,2.58,11325,621883.45,252547.5
+SKU-019,Car Battery 70Ah,Auto Parts,National Distribution Co.,6646,12,543,117,2791320,144489.28,19.32,2.21,49140,3222110.94,1095822.0
+SKU-009,Laundry Detergent 3kg,FMCG,Arabian Supply Ltd.,10023,9,543,171,541242,28341.05,19.1,1.66,9234,632005.42,205918.2
+SKU-024,Dates Premium 1kg,FMCG,Desert Logistics Supplies,9976,8,543,95,598560,31822.21,18.81,1.47,5700,709635.28,127110.0
+SKU-012,Running Shoes AirFlex,Apparel,Gulf Trading Co.,7694,11,543,142,2615960,140031.16,18.68,2.03,48280,3122694.87,1076644.0
+SKU-023,Smartphone Case Armor,Electronics,Arabian Supply Ltd.,21359,7,543,210,1174745,63033.95,18.64,1.29,11550,1405657.08,257565.0
+SKU-005,LED Desk Lamp,Electronics,Desert Logistics Supplies,1685,15,543,44,219050,11787.62,18.58,2.76,5720,262863.93,127556.0
+SKU-015,Air Fryer 5L Digital,Home Appliances,Gulf Trading Co.,4404,15,543,164,1717560,92671.33,18.53,2.76,63960,2066570.66,1426308.0
+SKU-021,Engine Oil Filter,Auto Parts,Arabian Supply Ltd.,28388,5,543,176,1135520,61411.93,18.49,0.92,7040,1369486.04,156992.0
+SKU-020,Brake Pads Set - Sedan,Auto Parts,National Distribution Co.,4486,2,543,9,807480,43862.32,18.41,0.37,1620,978129.74,36126.0
+SKU-003,USB-C Fast Charger 65W,Electronics,Arabian Supply Ltd.,20489,5,543,55,1741565,95126.27,18.31,0.92,4675,2121315.82,104252.5
+SKU-014,Kids School Backpack,Apparel,Arabian Supply Ltd.,7259,6,543,64,871080,47791.16,18.23,1.1,7680,1065742.87,171264.0
+SKU-017,Electric Kettle 1.8L,Home Appliances,Arabian Supply Ltd.,29621,9,543,346,2813995,154759.2,18.18,1.66,32870,3451130.16,733001.0
+SKU-010,Organic Honey 250g,FMCG,Desert Logistics Supplies,2156,26,543,111,146608,8151.36,17.99,4.79,7548,181775.33,168320.4
+SKU-004,Bluetooth Speaker Mini,Electronics,Gulf Trading Co.,6485,8,543,106,1361850,77628.07,17.54,1.47,22260,1731105.96,496398.0
+SKU-008,Basmati Rice 5kg,FMCG,National Distribution Co.,6497,7,543,94,292365,16762.13,17.44,1.29,4230,373795.5,94329.0
+SKU-002,Smart Watch Series 5,Electronics,Gulf Trading Co.,9771,6,543,71,6058020,348779.12,17.37,1.1,44020,7777774.38,981646.0
+SKU-013,Winter Jacket NorthPeak,Apparel,Desert Logistics Supplies,2029,28,543,117,973920,56191.82,17.33,5.16,56160,1253077.59,1252368.0
+SKU-001,Wireless Earbuds X2,Electronics,Gulf Trading Co.,15010,3,543,78,2176450,125672.54,17.32,0.55,11310,2802497.64,252213.0
+SKU-016,Vacuum Cleaner Cyclone,Home Appliances,Gulf Trading Co.,1055,22,543,47,569700,33071.27,17.23,4.05,25380,737489.32,565974.0
+SKU-006,Instant Coffee 200g,FMCG,National Distribution Co.,23233,5,543,168,743456,43375.38,17.14,0.92,5376,967270.97,119884.8
+SKU-022,LED Headlight Bulbs Pair,Auto Parts,Gulf Trading Co.,532,8,543,11,79800,5018.78,15.9,1.47,1650,111918.79,36795.0
+SKU-018,Ceramic Dinner Set 16pc,Home Appliances,Desert Logistics Supplies,476,23,543,32,123760,8824.2,14.03,4.24,8320,196779.66,185536.0

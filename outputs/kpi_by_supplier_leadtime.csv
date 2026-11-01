@@ -1,0 +1,5 @@
+supplier,orders,avg_standard_lead_days,avg_actual_lead_days,lead_time_variance_days,pct_orders_late
+National Distribution Co.,216,5.82,5.87,0.05,38.89
+Arabian Supply Ltd.,304,5.94,5.96,0.03,38.16
+Desert Logistics Supplies,236,11.28,11.27,-0.01,39.41
+Gulf Trading Co.,323,9.54,9.46,-0.08,37.46
